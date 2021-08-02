@@ -1,0 +1,23 @@
+.landingPage {
+  background-color: #2C7E80;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0px;
+  padding: 30px 100px 30px 100px;
+}
+
+.background {
+  padding: 30px 100px 30px 100px;
+  background-color: rgba(116, 140, 180, 0.6);
+}
+
+.landingText {
+  color: #2C7E80;
+}
+
+.pageBackground {
+
+}
