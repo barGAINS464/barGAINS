@@ -9,12 +9,21 @@ import { Stuffs } from '../../api/stuff/Stuff';
 
 // Create a schema to specify the structure of the data to appear in the form.
 const formSchema = new SimpleSchema({
-  name: String,
-  quantity: Number,
-  condition: {
-    type: String,
-    allowedValues: ['excellent', 'good', 'fair', 'poor'],
-    defaultValue: 'good',
+  symptoms: {
+    type: Boolean,
+    defaultValue: true,
+  },
+  quarantine: {
+    type: Boolean,
+    defaultValue: true,
+  },
+  positive: {
+    type: Boolean,
+    defaultValue: true,
+  },
+  vax: {
+    type: Boolean,
+    defaultValue: false,
   },
 });
 
@@ -23,7 +32,7 @@ const bridge = new SimpleSchema2Bridge(formSchema);
 /** Renders the Page for adding a document. */
 class Questionnaire extends React.Component {
 
-  // On submit, insert the data.  Icon='stethoscope'
+  // On submit, insert the data.
   submit(data, formRef) {
     const { name, quantity, condition } = data;
     const owner = Meteor.user().username;
@@ -36,6 +45,10 @@ class Questionnaire extends React.Component {
           formRef.reset();
         }
       });
+  }
+
+  submit() {
+    const { symptoms, quarantine, positive, vax } = false;
   }
 
   // Render the form. Use Uniforms: https://github.com/vazco/uniforms
@@ -54,7 +67,7 @@ class Questionnaire extends React.Component {
           </Header>
 
           <AutoForm ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => this.submit(data, fRef)} >
-            <Segment padded='very'>
+            <Segment padded='very' id='symptoms'>
               <Header>Have you experienced any of the following symptoms?</Header>
               <div>
                 <List bulleted>
@@ -78,21 +91,21 @@ class Questionnaire extends React.Component {
               </div>
             </Segment>
 
-            <Segment padded='very'>
+            <Segment padded='very' id='quarantine'>
               <Header>Are you isolating or quarantining because you tested positive for COVID-19 or are worried that you may be sick or exposed to COVID-19?</Header>
               <div>
                 <Button color='teal' content='Yes' />
                 <Button color='teal' content='No' />
               </div>
             </Segment>
-            <Segment padded='very'>
+            <Segment padded='very' id='positive'>
               <Header>Have you been told that you are suspected to have COVID-19 by a licensed healthcare provider in the past 10 days?</Header>
               <div>
                 <Button color='teal' content='Yes' />
                 <Button color='teal' content='No' />
               </div>
             </Segment>
-            <Segment padded='very'>
+            <Segment padded='very' id='vax'>
               <Header>Are you fully vaccinated?*</Header>
               <Header>OR</Header>
               <Header>Have you recovered from a documented COVID-19 infection in the last 3 months?</Header>
@@ -102,8 +115,8 @@ class Questionnaire extends React.Component {
                 <Button color='teal' content='No' />
               </div>
             </Segment>
-            <Button positive size='large' id='submit' floated='right'>Submit</Button>
 
+            <SubmitField value='Submit'/>
           </AutoForm>
         </Grid.Column>
       </Grid>
