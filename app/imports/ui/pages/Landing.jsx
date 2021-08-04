@@ -12,12 +12,13 @@ class Landing extends React.Component {
           <Grid verticalAlign='middle' textAlign='center' container>
 
             <Grid.Column width={4}>
-              <Image size='small' circular src="/images/meteor-logo.png"/>
+              <Image size='huge' src="/images/Logo.png"/>
             </Grid.Column>
 
             <Grid.Column width={8}>
               <Header as='h1' inverted>Welcome to barGAINS</Header>
               <Header as='h3' inverted>Where you can buy, sell, and exchange technology, books, and music!</Header>
+              <Header as='h2' inverted>No pay, no Gains!</Header>
               <Container textAlign='center'>
                 <Button size="medium" as={Link} to='/Signup'>
                   Get Started
