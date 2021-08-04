@@ -3,7 +3,7 @@ import SimpleSchema from 'simpl-schema';
 import { Tracker } from 'meteor/tracker';
 
 /**
- * The StuffsCollection. It encapsulates state and variable values for stuff.
+ * The ProfileAccountsCollection.
  */
 class ProfileAccountsCollection {
   constructor() {
@@ -13,14 +13,13 @@ class ProfileAccountsCollection {
     this.collection = new Mongo.Collection(this.name);
     // Define the structure of each document in the collection.
     this.schema = new SimpleSchema({
-      name: String,
-      quantity: Number,
-      owner: String,
-      condition: {
-        type: String,
-        allowedValues: ['excellent', 'good', 'fair', 'poor'],
-        defaultValue: 'good',
-      },
+      firstName: String,
+      lastName: String,
+      date: Date,
+      phoneAreaCode: Number,
+      phoneMid: Number,
+      phoneLast: Number,
+      username: String,
     }, { tracker: Tracker });
     // Attach the schema to the collection, so all attempts to insert a document are checked against schema.
     this.collection.attachSchema(this.schema);
@@ -31,7 +30,7 @@ class ProfileAccountsCollection {
 }
 
 /**
- * The singleton instance of the StuffsCollection.
- * @type {StuffsCollection}
+ * The singleton instance of the ProfileAccounts Collection.
+ * @type {ProfileAccountsCollection}
  */
-export const Stuffs = new ProfileAccountsCollection();
+export const ProfileAccounts = new ProfileAccountsCollection();
