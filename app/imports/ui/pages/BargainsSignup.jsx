@@ -39,7 +39,7 @@ class Signup extends React.Component {
       return <Redirect to={from}/>;
     }
     return (
-      <Container id="signup-page">
+      <Container id="signup-page" fluid>
         <Grid textAlign="center" verticalAlign="middle" centered columns={2}>
           <Grid.Column>
             <Header as="h2" textAlign="center">
@@ -61,12 +61,7 @@ class Signup extends React.Component {
                 <div className="two fields">
                   <div className="field">
                     <label>Birthdate</label>
-                    <div className="ui calendar" id="type_calendar" data-type="date" data-date="2019-12-24">
-                      <div className="ui input left icon">
-                        <i className="calendar icon"></i>
-                        <input type="text" placeholder="Date"/>
-                      </div>
-                    </div>
+                    <input type="date" placeholder="Date"/>
                   </div>
                   <div className="field">
                     <label>Phone Number</label>
