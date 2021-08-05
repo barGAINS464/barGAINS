@@ -11,6 +11,11 @@ import ListStuff from '../pages/ListStuff';
 import ListStuffAdmin from '../pages/ListStuffAdmin';
 import AddStuff from '../pages/AddStuff';
 import Questionnaire from '../pages/Questionnaire';
+import Qnext1 from '../pages/Qnext1';
+import Qnext2 from '../pages/Qnext2';
+import Qnext3 from '../pages/Qnext3';
+import Qnext4 from '../pages/Qnext4';
+import Completed from '../pages/Completed';
 import EditStuff from '../pages/EditStuff';
 import NotFound from '../pages/NotFound';
 import Signin from '../pages/Signin';
@@ -32,6 +37,11 @@ class App extends React.Component {
             <ProtectedRoute path="/list" component={ListStuff}/>
             <ProtectedRoute path="/add" component={AddStuff}/>
             <ProtectedRoute path="/questionnaire" component={Questionnaire}/>
+            <ProtectedRoute path="/qnext1" component={Qnext1}/>
+            <ProtectedRoute path="/qnext2" component={Qnext2}/>
+            <ProtectedRoute path="/qnext3" component={Qnext3}/>
+            <ProtectedRoute path="/qnext4" component={Qnext4}/>
+            <ProtectedRoute path="/completed" component={Completed}/>
             <ProtectedRoute path="/edit/:_id" component={EditStuff}/>
             <AdminProtectedRoute path="/admin" component={ListStuffAdmin}/>
             <Route component={NotFound}/>

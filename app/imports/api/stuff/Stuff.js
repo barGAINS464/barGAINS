@@ -16,6 +16,10 @@ class StuffsCollection {
       name: String,
       quantity: Number,
       owner: String,
+      symptoms: Boolean,
+      quarantine: Boolean,
+      positive: Boolean,
+      vax: Boolean,
       condition: {
         type: String,
         allowedValues: ['excellent', 'good', 'fair', 'poor'],

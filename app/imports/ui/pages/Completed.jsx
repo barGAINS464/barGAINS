@@ -5,8 +5,8 @@ import swal from 'sweetalert';
 import { Meteor } from 'meteor/meteor';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
 import SimpleSchema from 'simpl-schema';
-import { Stuffs } from '../../api/stuff/Stuff';
 import { NavLink } from 'react-router-dom';
+import { Stuffs } from '../../api/stuff/Stuff';
 
 // Create a schema to specify the structure of the data to appear in the form.
 const formSchema = new SimpleSchema({
@@ -31,25 +31,13 @@ const formSchema = new SimpleSchema({
 const bridge = new SimpleSchema2Bridge(formSchema);
 
 /** Renders the Page for adding a document. */
-class Questionnaire extends React.Component {
+class Q2next1 extends React.Component {
 
-  // On submit, insert the data.
-  submit(data, formRef) {
-    const { name, quantity, condition } = data;
-    const owner = Meteor.user().username;
-    Stuffs.collection.insert({ name, quantity, condition, owner },
-      (error) => {
-        if (error) {
-          swal('Error', error.message, 'error');
-        } else {
-          swal('Success', 'Item added successfully', 'success');
-          formRef.reset();
-        }
-      });
-  }
-
-  submit() {
-    const { symptoms, quarantine, positive, vax } = false;
+  submit(data) {
+    const { symptoms } = data;
+    Stuffs.collection.update(_id, { $set: { symptoms } }, (error) => (error ?
+      swal('Error', error.message, 'error') :
+      swal('Success', 'Item updated successfully', 'success')));
   }
 
   // Render the form. Use Uniforms: https://github.com/vazco/uniforms
@@ -58,22 +46,22 @@ class Questionnaire extends React.Component {
     return (
       <Grid container centered>
         <Grid.Column>
-          <Header as='h1' icon textAlign={'center'}>
-            <Icon name='stethoscope' circular/>
-            COVID-19 QUESTIONNAIRE
-            <Header as='h3'>
-              Before you contact this seller, please fill out the following questionnaire to assure the safety of both you and the buyer/seller.
-            </Header>
-          </Header>
 
+          <Header as='h1' icon textAlign={'center'}>
+            <Icon name='thumbs up' circular/>
+            QUESTIONNAIRE COMPLETE!
+            <Header as='h3'>
+              Your questionnaire results will be sent to the seller you are contacting.
+            </Header>
+            <Header as='h3'>
+              The seller will also fill out a questionnaire which will be sent to you as well.
+            </Header>
+            <List> </List>
+          </Header>
           <AutoForm ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => this.submit(data, fRef)} >
             <div align='center'>
-              <Button positive size='large' id='submit'  as={NavLink} activeClassName="active" exact to="/Qnext1" key='start'>Start</Button>
-              <List>
-                <List.Item> </List.Item>
-                <List.Item> </List.Item>
-                <List.Item> </List.Item>
-              </List>
+              <Button size='large' id='next' as={NavLink} activeClassName="active" exact to="/pages/ListStuff" key='continue'>Continue</Button>
+              <Button size='large' id='next' as={NavLink} activeClassName="active" exact to="/Landing" key='add'>Home Page</Button>
             </div>
           </AutoForm>
         </Grid.Column>
@@ -82,4 +70,4 @@ class Questionnaire extends React.Component {
   }
 }
 
-export default Questionnaire;
+export default Q2next1;
