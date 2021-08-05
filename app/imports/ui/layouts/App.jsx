@@ -13,7 +13,7 @@ import AddStuff from '../pages/AddStuff';
 import EditStuff from '../pages/EditStuff';
 import NotFound from '../pages/NotFound';
 import Signin from '../pages/Signin';
-import Signup from '../pages/Signup';
+import BargainsSignup from '../pages/BargainsSignup';
 import Signout from '../pages/Signout';
 import SuccessfulPosting from '../pages/SuccessfulPosting';
 import Questionnaire1 from '../pages/Questionnaire1';
@@ -28,7 +28,7 @@ class App extends React.Component {
           <Switch>
             <Route exact path="/" component={Landing}/>
             <Route path="/signin" component={Signin}/>
-            <Route path="/signup" component={Signup}/>
+            <Route path="/signup" component={BargainsSignup}/>
             <Route path="/signout" component={Signout}/>
             <ProtectedRoute path="/questionnaire1" component={Questionnaire1}/>
             <ProtectedRoute path="/successfulposting" component={SuccessfulPosting}/>
