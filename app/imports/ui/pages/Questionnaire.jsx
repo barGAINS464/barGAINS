@@ -68,7 +68,7 @@ class Questionnaire extends React.Component {
 
           <AutoForm ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => this.submit(data, fRef)} >
             <div align='center'>
-              <Button positive size='large' id='submit'  as={NavLink} activeClassName="active" exact to="/Qnext1" key='start'>Start</Button>
+              <Button positive size='large' id='submit' as={NavLink} activeClassName="active" exact to="/Qnext1" key='start'>Start</Button>
               <List>
                 <List.Item> </List.Item>
                 <List.Item> </List.Item>
