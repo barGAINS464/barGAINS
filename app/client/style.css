@@ -9,6 +9,12 @@
   padding: 30px 100px 30px 100px;
 }
 
+.footer {
+  padding: 100px 30px 100px 30px;
+  background-color: #2C7E80;
+  margin: 0;
+}
+
 .background {
   padding: 30px 100px 30px 100px;
   background-color: rgba(116, 140, 180, 0.6);
