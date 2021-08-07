@@ -24,7 +24,7 @@ class Signup extends React.Component {
   }
   /* Handle Signup submission. Create user account and a profile entry, then redirect to the home page. */
 
-  submit(data) {
+  submit(data, formRef) {
     const { email, password } = this.state;
     const { firstName, lastName, date, phoneAreaCode, phoneMid, phoneLast, username } = data;
     const owner = Meteor.user().username;
@@ -40,6 +40,7 @@ class Signup extends React.Component {
         swal('Error', error.message, 'error');
       } else {
         swal('Success', 'Item added successfully', 'success');
+        formRef.reset();
       }
     });
   }

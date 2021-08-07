@@ -9,5 +9,10 @@
     { "name": "Bicycle", "quantity": 2, "owner": "john@foo.com", "condition": "poor" },
     { "name": "Banana", "quantity": 2, "owner": "admin@foo.com", "condition": "good" },
     { "name": "Boogie Board", "quantity": 2, "owner": "admin@foo.com", "condition": "excellent" }
+  ],
+
+  "defaultItems": [
+    { "title": "IT", "cost": 50, "email": "glarita@hawaii.edu", "condition": "excellent", "description": "great book" },
+    { "title": "RTX 2080", "cost": 500, "email": "mhy@hawaii.edu", "condition": "excellent", "description": "great GPU" }
   ]
 }
