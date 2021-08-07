@@ -13,10 +13,10 @@ class ItemsCollection {
     this.collection = new Mongo.Collection(this.name);
     // Define the structure of each document in the collection.
     this.schema = new SimpleSchema({
+      image: String,
       title: String,
       cost: Number,
       email: String,
-      // closingDate: Date,
       condition: {
         type: String,
         allowedValues: ['excellent', 'good', 'fair', 'poor'],
@@ -33,7 +33,7 @@ class ItemsCollection {
 }
 
 /**
- * The singleton instance of the StuffsCollection.
+ * The singleton instance of the ItemsCollection.
  * @type {ItemsCollection}
  */
 export const Items = new ItemsCollection();

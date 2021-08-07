@@ -12,7 +12,7 @@
 .footer {
   padding: 100px 30px 100px 30px;
   background-color: #2C7E80;
-  margin: 0;
+  margin: 0px;
 }
 
 .background {
@@ -24,6 +24,6 @@
   color: #2C7E80;
 }
 
-.pageBackground {
-
+.cardSpace {
+ padding-top: 10px;
 }

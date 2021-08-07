@@ -1,6 +1,6 @@
 import React from 'react';
 import { Grid, Segment, Header } from 'semantic-ui-react';
-import { AutoForm, ErrorsField, NumField, SelectField, SubmitField, TextField, LongTextField, DateField } from 'uniforms-semantic';
+import { AutoForm, ErrorsField, NumField, SelectField, SubmitField, TextField, LongTextField } from 'uniforms-semantic';
 import swal from 'sweetalert';
 import { Meteor } from 'meteor/meteor';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
@@ -9,10 +9,10 @@ import { Items } from '../../api/item/Items';
 
 // Create a schema to specify the structure of the data to appear in the form.
 const formSchema = new SimpleSchema({
+  image: String,
   title: String,
   cost: Number,
   email: String,
-  // closingDate: Date,
   condition: {
     type: String,
     allowedValues: ['excellent', 'good', 'fair', 'poor'],
@@ -28,9 +28,9 @@ class AddItem extends React.Component {
 
   // On submit, insert the data.
   submit(data, formRef) {
-    const { title, cost, email, condition, description } = data;
+    const { image, title, cost, email, condition, description } = data;
     const owner = Meteor.user().username;
-    Items.collection.insert({ title, cost, email, condition, description, owner },
+    Items.collection.insert({ image, title, cost, email, condition, description, owner },
       (error) => {
         if (error) {
           swal('Error', error.message, 'error');
@@ -51,6 +51,7 @@ class AddItem extends React.Component {
           <AutoForm ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => this.submit(data, fRef)} >
             <Segment>
               <TextField name='title'/>
+              <TextField name='image'/>
               <NumField name='cost' decimal={true}/>
               <TextField name='email'/>
               <SelectField name='condition'/>
