@@ -14,9 +14,13 @@ class Products extends React.Component {
       <Card>
         <Card.Content>
           <Card.Header>{this.props.product.title}</Card.Header>
-          <Card.Meta>{this.props.product.cost} {this.props.product.email}</Card.Meta>
+          <Card.Meta>${this.props.product.cost}</Card.Meta>
+          <Card.Meta>${this.props.product.email}</Card.Meta>
           <Card.Description>
-            {this.props.product.condition} {this.props.product.description}
+            {this.props.product.condition}
+          </Card.Description>
+          <Card.Description>
+            {this.props.product.description}
           </Card.Description>
         </Card.Content>
       </Card>
