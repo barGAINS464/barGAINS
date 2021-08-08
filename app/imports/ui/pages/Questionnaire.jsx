@@ -1,11 +1,10 @@
 import React from 'react';
-import { Grid, Header, Icon, Button, List, Divider, Segment } from 'semantic-ui-react';
+import { Grid, Header, Icon, Button, List, Segment } from 'semantic-ui-react';
 import { AutoForm, SubmitField } from 'uniforms-semantic';
 import swal from 'sweetalert';
 import { Meteor } from 'meteor/meteor';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
 import SimpleSchema from 'simpl-schema';
-import { NavLink } from 'react-router-dom';
 import { Stuffs } from '../../api/stuff/Stuff';
 
 // Create a schema to specify the structure of the data to appear in the form.
