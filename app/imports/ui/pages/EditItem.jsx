@@ -23,8 +23,8 @@ const bridge = new SimpleSchema2Bridge(Items.schema);
 class EditItem extends React.Component {
   // On successful submit, insert the data.
   submit(data) {
-    const { image, title, cost, owner, condition, description, _id } = data;
-    Items.collection.update(_id, { $set: { image, title, cost, owner, condition, description } }, (error) => (error ?
+    const { image, title, cost, email, condition, category, description, _id } = data;
+    Items.collection.update(_id, { $set: { image, title, cost, email, condition, category, description } }, (error) => (error ?
       swal('Error', error.message, 'error') :
       swal('Success', 'Item updated successfully', 'success')));
   }
@@ -47,6 +47,7 @@ class EditItem extends React.Component {
                 <TextField name='image'/>
                 <NumField name='cost' decimal={true}/>
                 <SelectField name='condition'/>
+                <SelectField name='category'/>
                 <TextField name='owner'/>
               </div>
               <LongTextField name='description'/>

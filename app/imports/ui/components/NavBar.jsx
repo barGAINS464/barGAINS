@@ -30,7 +30,7 @@ class NavBar extends React.Component {
               <Dropdown text='Shop'>
                 <Dropdown.Menu>
                   <Dropdown.Item text='All Items' as={NavLink} exact to="/shop" />
-                  <Dropdown.Item text='Books' as={NavLink} exact to="/shop" />
+                  <Dropdown.Item text='Books' as={NavLink} exact to="/books" />
                   <Dropdown.Item text='Computers' as={NavLink} exact to="/shop" />
                   <Dropdown.Item text='Music' as={NavLink} exact to="/shop" />
                 </Dropdown.Menu>

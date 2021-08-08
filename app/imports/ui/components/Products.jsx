@@ -19,6 +19,9 @@ class Products extends React.Component {
           <Card.Meta>
             Contact: {this.props.product.owner}
           </Card.Meta>
+          <Card.Meta>
+            Category: {this.props.product.category}
+          </Card.Meta>
           <Card.Description>
             Condition {this.props.product.condition}
           </Card.Description>

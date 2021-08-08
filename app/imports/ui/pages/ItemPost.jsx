@@ -18,6 +18,11 @@ const formSchema = new SimpleSchema({
     allowedValues: ['excellent', 'good', 'fair', 'poor'],
     defaultValue: 'good',
   },
+  category: {
+    type: String,
+    allowedValues: ['Book', 'Computer', 'Music'],
+    defaultValue: 'Book',
+  },
   description: String,
 });
 
@@ -28,9 +33,9 @@ class AddItem extends React.Component {
 
   // On submit, insert the data.
   submit(data, formRef) {
-    const { image, title, cost, email, condition, description } = data;
+    const { image, title, cost, email, condition, category, description } = data;
     const owner = Meteor.user().username;
-    Items.collection.insert({ image, title, cost, email, condition, description, owner },
+    Items.collection.insert({ image, title, cost, email, condition, category, description, owner },
       (error) => {
         if (error) {
           swal('Error', error.message, 'error');
@@ -55,6 +60,7 @@ class AddItem extends React.Component {
                 <TextField name='image' placeholder={'Please paste your image here...'}/>
                 <NumField name='cost' decimal={true}/>
                 <SelectField name='condition'/>
+                <SelectField name='category'/>
                 <TextField name='email'/>
               </div>
               <LongTextField name='description' placeholder={'Add a description about your item...'}/>
