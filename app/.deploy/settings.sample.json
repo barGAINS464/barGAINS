@@ -10,6 +10,15 @@
     { "name": "Banana", "quantity": 2, "owner": "admin@foo.com", "condition": "good" },
     { "name": "Boogie Board", "quantity": 2, "owner": "admin@foo.com", "condition": "excellent" }
   ],
+  "defaultProfile": [
+    { "profilePicture": "https://media.newyorker.com/photos/5d8cfb19a4b97600086ed8ac/master/pass/Patterson-Malkmus-primary.jpg",
+      "firstName": "SUE",
+      "lastName": "FLAYYY",
+      "phone": "(808) 422-2222",
+      "user": "sooooflayy",
+      "owner": "john@foo.com"
+    }
+  ],
 
   "monti": {
     "appId": "changeme",

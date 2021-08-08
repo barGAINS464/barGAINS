@@ -3,10 +3,12 @@ import PropTypes from 'prop-types';
 import { Link, Redirect } from 'react-router-dom';
 import { Container, Divider, Form, Grid, Header, Message, Segment, Image } from 'semantic-ui-react';
 import { Accounts } from 'meteor/accounts-base';
-
+import swal from 'sweetalert';
+import { Profiles } from '../../api/profile/Profile';
 /**
  * Signup component is similar to signin component, but we create a new user instead.
  */
+
 class BargainsSignup extends React.Component {
   /* Initialize state fields. */
   constructor(props) {
@@ -17,19 +19,28 @@ class BargainsSignup extends React.Component {
 
   /* Update the form controls each time the user interacts with them. */
   handleChange = (e, { name, value }) => {
-    this.setState({ [name]: value, file: URL.createObjectURL(e.image.file[0]) });
+    this.setState({ [name]: value, file: URL.createObjectURL(e.target.files[0]) });
   }
 
   /* Handle Signup submission. Create user account and a profile entry, then redirect to the home page. */
   submit = () => {
-    const { email, password } = this.state;
-    Accounts.createUser({ email, username: email, password }, (err) => {
+    const { email, password, profilePicture, firstName, lastName, phone, user } = this.state;
+    Accounts.createUser({ email, username: email, password,
+      profile: { profilePicture, firstName, lastName, phone, user, owner: email } }, (err) => {
       if (err) {
         this.setState({ error: err.reason });
       } else {
         this.setState({ error: '', redirectToReferer: true });
       }
     });
+    Profiles.collection.insert({ profilePicture, firstName, lastName, phone, user, owner: email },
+      (error) => {
+        if (error) {
+          swal('Error', error.message, 'error');
+        } else {
+          swal('Success', 'Accounts added successfully', 'success');
+        }
+      });
   }
 
   /* Display the signup form. Redirect to add page after successful registration and login. */
@@ -57,6 +68,7 @@ class BargainsSignup extends React.Component {
                     onChange={this.handleChange}
                     required
                   />
+                  <p>Only <i>.png</i> and <i>.jpg</i> files supported</p>
                 </Segment>
                 <Form.Group widths='equal'>
                   <Form.Input
@@ -80,21 +92,23 @@ class BargainsSignup extends React.Component {
                 </Form.Group>
                 <Form.Group widths='equal'>
                   <Form.Input
-                    label="Birthdate"
-                    id="signup-form-birthdate"
-                    name="birthdate"
-                    type="date"
-                    placeholder="Birthdate"
+                    label="Username"
+                    id="signup-form-username"
+                    icon="user"
+                    iconPosition="left"
+                    name="user"
+                    type="user"
+                    placeholder="Username"
                     onChange={this.handleChange}
                     required
                   />
                   <Form.Input
                     label="Phone number"
-                    id="signup-form-phoneNumber"
+                    id="signup-form-phone"
                     icon="phone"
                     iconPosition="left"
-                    name="phoneNumber"
-                    type="phoneNumber"
+                    name="phone"
+                    type="phone"
                     placeholder="(xxx) xxx-xxxx"
                     onChange={this.handleChange}
                   />
@@ -102,7 +116,7 @@ class BargainsSignup extends React.Component {
                 <Form.Input
                   label="Email"
                   id="signup-form-email"
-                  icon="user"
+                  icon="mail"
                   iconPosition="left"
                   name="email"
                   type="email"
