@@ -37,7 +37,7 @@ class About extends React.Component {
           <Container>
             <Header as='h2' color="teal">What is barGAINS?</Header>
             <p>
-                barGains is a place for college and elders to use to sell their shit.
+                barGains is a place for college students to buy, sell, and trade technology, books, music, and more.
             </p>
           </Container>
         </Segment>
