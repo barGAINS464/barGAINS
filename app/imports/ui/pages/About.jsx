@@ -57,7 +57,6 @@ class About extends React.Component {
                 href='https://tylerchinen.github.io/'
                 header='Tyler Chinen'
                 meta='Developer'
-                {/* eslint-disable-next-line max-len */}
                 description='I am studying for a B.S. in Computer Science in the Department of Information and Computer Sciences and a B.A. in Studio Art in the Department of Art and Art History at the University of Hawaii. I expect to graduate in Spring, 2022.'
               />
               <Card
