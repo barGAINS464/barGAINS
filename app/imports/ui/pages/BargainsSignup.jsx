@@ -11,10 +11,10 @@ import { Profiles } from '../../api/profile/Profiles';
 
 class BargainsSignup extends React.Component {
   /* Initialize state fields. */
+  /* Initialize state fields. */
   constructor(props) {
     super(props);
-    this.state = { email: '', password: '', error: '', redirectToReferer: false };
-    this.handleChange = this.handleChange.bind(this);
+    this.state = { email: '', password: '', firstname: '', lastName: '', profilePic: '', phone: '', error: '', redirectToReferer: false };
   }
 
   /* Update the form controls each time the user interacts with them. */
@@ -24,28 +24,27 @@ class BargainsSignup extends React.Component {
 
   /* Handle Signup submission. Create user account and a profile entry, then redirect to the home page. */
   submit = () => {
-    const { email, password, profilePicture, firstName, lastName, phone, user } = this.state;
-    Accounts.createUser({ email, username: email, password,
-      profile: { profilePicture, firstName, lastName, phone, user, owner: email } }, (err) => {
+    const { email, password, firstname, lastName, profilePic, phone } = this.state;
+    Accounts.createUser({ email, username: email, password, profile: { firstname, lastName, profilePic, phone, owner: email } }, (err) => {
       if (err) {
         this.setState({ error: err.reason });
       } else {
         this.setState({ error: '', redirectToReferer: true });
       }
     });
-    Profiles.collection.insert({ profilePicture, firstName, lastName, phone, user, owner: email },
+    Profiles.collection.insert({ email, firstname, lastName, profilePic, phone, owner: email },
       (error) => {
         if (error) {
           swal('Error', error.message, 'error');
         } else {
-          swal('Success', 'Accounts added successfully', 'success');
+          swal('Success', 'Account added successfully', 'success');
         }
       });
   }
 
   /* Display the signup form. Redirect to add page after successful registration and login. */
   render() {
-    const { from } = this.props.location.state || { from: { pathname: '/add' } };
+    const { from } = this.props.location.state || { from: { pathname: '/' } };
     // if correct authentication, redirect to from: page instead of signup screen
     if (this.state.redirectToReferer) {
       return <Redirect to={from}/>;
@@ -54,96 +53,82 @@ class BargainsSignup extends React.Component {
       <Container id="signup-page">
         <Grid textAlign="center" verticalAlign="middle" centered columns={2}>
           <Grid.Column>
-            <Header as="h2" textAlign="center" inverted>Register your account</Header>
+            <Header as="h2" textAlign="center" inverted>
+                Register your barGAINS account
+            </Header>
             <Divider/>
             <Form onSubmit={this.submit}>
               <Segment stacked>
                 <Segment>
+                  <Form.Group widths='equal'>
+                    <Form.Input
+                      label="First Name"
+                      id="signup-form-firstname"
+                      name="firstName"
+                      type="firstName"
+                      placeholder="First Name"
+                      onChange={this.handleChange}
+                    />
+                    <Form.Input
+                      label="Last Name"
+                      id="signup-form-lastname"
+                      name="lastName"
+                      type="lastName"
+                      placeholder="Last Name"
+                      onChange={this.handleChange}
+                    />
+                  </Form.Group>
                   <Form.Input
-                    label="Upload a Profile Picture"
+                    label="Profile Picture"
+                    id="signup-form-image"
                     icon="image"
                     iconPosition="left"
-                    id="signup-form-profilePicture"
-                    name="profilePicture"
+                    name="profilePic"
                     type="link"
+                    placeholder="Please paste a profile picture here"
                     onChange={this.handleChange}
-                    required
-                  />
-                </Segment>
-                <Form.Group widths='equal'>
-                  <Form.Input
-                    label="First Name"
-                    id="signup-form-firstName"
-                    name="firstName"
-                    type="firstName"
-                    placeholder="First Name"
-                    onChange={this.handleChange}
-                    required
                   />
                   <Form.Input
-                    label="Last Name"
-                    id="signup-form-lastName"
-                    name="lastName"
-                    type="lastName"
-                    placeholder="Last Name"
-                    onChange={this.handleChange}
-                    required
-                  />
-                </Form.Group>
-                <Form.Group widths='equal'>
-                  <Form.Input
-                    label="Username"
-                    id="signup-form-username"
-                    icon="user"
-                    iconPosition="left"
-                    name="user"
-                    type="user"
-                    placeholder="Username"
-                    onChange={this.handleChange}
-                    required
-                  />
-                  <Form.Input
-                    label="Phone number"
-                    id="signup-form-phone"
+                    label="Phone Number"
+                    id="signup-form-phoneNum"
                     icon="phone"
                     iconPosition="left"
                     name="phone"
                     type="phone"
-                    placeholder="(xxx) xxx-xxxx"
+                    placeholder="Phone Number"
                     onChange={this.handleChange}
                   />
-                </Form.Group>
-                <Form.Input
-                  label="Email"
-                  id="signup-form-email"
-                  icon="mail"
-                  iconPosition="left"
-                  name="email"
-                  type="email"
-                  placeholder="E-mail address"
-                  onChange={this.handleChange}
-                  required
-                />
-                <Form.Input
-                  label="Password"
-                  id="signup-form-password"
-                  icon="lock"
-                  iconPosition="left"
-                  name="password"
-                  placeholder="Password"
-                  type="password"
-                  onChange={this.handleChange}
-                  required
-                />
+                </Segment>
+                <Segment>
+                  <Form.Input
+                    label="Email"
+                    id="signup-form-email"
+                    icon="mail"
+                    iconPosition="left"
+                    name="email"
+                    type="email"
+                    placeholder="E-mail address"
+                    onChange={this.handleChange}
+                  />
+                  <Form.Input
+                    label="Password"
+                    id="signup-form-password"
+                    icon="lock"
+                    iconPosition="left"
+                    name="password"
+                    placeholder="Password"
+                    type="password"
+                    onChange={this.handleChange}
+                  />
+                </Segment>
                 <Form.Button id="signup-form-submit" content="Submit"/>
               </Segment>
             </Form>
+            <Divider/>
             <Message>
                 Already have an account? Login <Link to="/signin">here</Link>
             </Message>
-            {this.state.error === '' ? (
-              ''
-            ) : (
+            {this.state.error === '' ? ('') : (
               <Message
                 error
                 header="Registration was not successful"

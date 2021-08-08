@@ -8,16 +8,15 @@ import { Tracker } from 'meteor/tracker';
 class ProfilesCollection {
   constructor() {
     // The name of this collection.
-    this.name = 'ProfileCollection';
+    this.name = 'ProfilesCollection';
     // Define the Mongo collection.
     this.collection = new Mongo.Collection(this.name);
     // Define the structure of each document in the collection.
     this.schema = new SimpleSchema({
-      profilePicture: String,
       firstName: String,
       lastName: String,
+      profilePic: String,
       phone: String,
-      user: String,
       owner: String,
     }, { tracker: Tracker });
     // Attach the schema to the collection, so all attempts to insert a document are checked against schema.
