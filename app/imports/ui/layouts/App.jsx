@@ -10,7 +10,7 @@ import Landing from '../pages/Landing';
 import ListItems from '../pages/ListItems';
 import ListStuffAdmin from '../pages/ListStuffAdmin';
 import AddItem from '../pages/ItemPost';
-import EditStuff from '../pages/EditStuff';
+import EditItem from '../pages/EditItem';
 import NotFound from '../pages/NotFound';
 import Signin from '../pages/Signin';
 import BargainsSignup from '../pages/BargainsSignup';
@@ -32,9 +32,9 @@ class App extends React.Component {
             <Route path="/signout" component={Signout}/>
             <ProtectedRoute path="/questionnaire1" component={Questionnaire1}/>
             <ProtectedRoute path="/successfulposting" component={SuccessfulPosting}/>
-            <ProtectedRoute path="/list" component={ListItems}/>
+            <ProtectedRoute path="/shop" component={ListItems}/>
             <ProtectedRoute path="/add" component={AddItem}/>
-            <ProtectedRoute path="/edit/:_id" component={EditStuff}/>
+            <ProtectedRoute path="/edit/:_id" component={EditItem}/>
             <AdminProtectedRoute path="/admin" component={ListStuffAdmin}/>
             <Route component={NotFound}/>
           </Switch>

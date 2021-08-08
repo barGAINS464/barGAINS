@@ -16,7 +16,7 @@ class ItemsCollection {
       image: String,
       title: String,
       cost: Number,
-      email: String,
+      owner: String,
       condition: {
         type: String,
         allowedValues: ['excellent', 'good', 'fair', 'poor'],

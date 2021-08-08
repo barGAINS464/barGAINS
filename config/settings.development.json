@@ -12,7 +12,7 @@
   ],
 
   "defaultItems": [
-    { "image": "https://images-na.ssl-images-amazon.com/images/I/51xPIEYPWWL._SX326_BO1,204,203,200_.jpg","title": "IT", "cost": 50, "email": "glarita@hawaii.edu", "condition": "excellent", "description": "great book" },
-    { "image": "https://www.nvidia.com/content/dam/en-zz/Solutions/geforce/geforce-rtx-turing/2080/gallery/geforce-rtx-2080-gallery-c-641-u@2x.jpg","title": "RTX 2080", "cost": 500, "email": "mhy@hawaii.edu", "condition": "excellent", "description": "great GPU" }
+    { "image": "https://images-na.ssl-images-amazon.com/images/I/51xPIEYPWWL._SX326_BO1,204,203,200_.jpg","title": "IT", "cost": 50, "owner": "glarita@hawaii.edu", "condition": "excellent", "description": "great book" },
+    { "image": "https://www.nvidia.com/content/dam/en-zz/Solutions/geforce/geforce-rtx-turing/2080/gallery/geforce-rtx-2080-gallery-c-641-u@2x.jpg","title": "RTX 2080", "cost": 500, "owner": "mhy@hawaii.edu", "condition": "excellent", "description": "great GPU" }
   ]
 }

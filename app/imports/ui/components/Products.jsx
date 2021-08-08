@@ -1,22 +1,23 @@
 import React from 'react';
-import { Card, Image } from 'semantic-ui-react';
+import { Card, Image, Button, Icon } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
-import { withRouter } from 'react-router-dom';
-// import { Items } from '../../api/item/Items';
+import { withRouter, Link } from 'react-router-dom';
+import { Items } from '../../api/item/Items';
 
 /** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
 class Products extends React.Component {
-//  removeItem(docID) {
-//    Items.collection.remove(docID);
-//  }
+  removeItem(docID) {
+    Items.collection.remove(docID);
+  }
+
   render() {
     return (
       <Card centered>
         <Card.Content>
-          <Image src={this.props.product.image} size='medium' rounded />
+          <Image className='cardImage' src={this.props.product.image} wrapped ui={true} rounded/>
           <Card.Header className='cardSpace'> {this.props.product.title} ${this.props.product.cost} </Card.Header>
           <Card.Meta>
-            Contact: {this.props.product.email}
+            Contact: {this.props.product.owner}
           </Card.Meta>
           <Card.Description>
             Condition {this.props.product.condition}
@@ -24,6 +25,14 @@ class Products extends React.Component {
           <Card.Description>
             {this.props.product.description}
           </Card.Description>
+        </Card.Content>
+        <Card.Content extra>
+          <a>
+            <Button icon onClick={() => this.removeItem(this.props.product._id)} size='small'>
+              <Icon name = "trash" />
+            </Button>
+            <Link to={`/edit/${this.props.product._id}`}>Edit</Link>
+          </a>
         </Card.Content>
       </Card>
     );

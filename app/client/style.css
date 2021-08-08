@@ -27,3 +27,12 @@
 .cardSpace {
  padding-top: 10px;
 }
+
+.cardImage{
+  display:flex;
+}
+
+.cardSize{
+  width: 300px;
+  height: 400px;
+}

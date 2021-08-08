@@ -45,17 +45,19 @@ class AddItem extends React.Component {
   render() {
     let fRef = null;
     return (
-      <Grid container centered>
+      <Grid column container centered>
         <Grid.Column>
-          <Header as="h2" textAlign="center">Add Item</Header>
+          <Header as="h2" textAlign="center" inverted> New Post </Header>
           <AutoForm ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => this.submit(data, fRef)} >
             <Segment>
               <TextField name='title'/>
-              <TextField name='image'/>
-              <NumField name='cost' decimal={true}/>
-              <TextField name='email'/>
-              <SelectField name='condition'/>
-              <LongTextField name='description'/>
+              <div className="inline fields">
+                <TextField name='image' placeholder={'Please paste your image here...'}/>
+                <NumField name='cost' decimal={true}/>
+                <SelectField name='condition'/>
+                <TextField name='email'/>
+              </div>
+              <LongTextField name='description' placeholder={'Add a description about your item...'}/>
               <SubmitField value='Submit'/>
               <ErrorsField/>
             </Segment>

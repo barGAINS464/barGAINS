@@ -18,8 +18,8 @@ class ListItems extends React.Component {
   renderPage() {
     return (
       <Container>
-        <Header as="h2" textAlign="center" inverted>List Stuff</Header>
-        <Card.Group>
+        <Header as="h2" textAlign="center" inverted>Available Items</Header>
+        <Card.Group itemsPerRow={4}>
           {this.props.items.map((items, index) => <Products key={index} product={items}/>)}
         </Card.Group>
       </Container>
