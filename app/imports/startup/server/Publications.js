@@ -16,8 +16,11 @@ Meteor.publish(Items.userPublicationName, function () {
 // If logged in and with admin role, then publish all documents from all users. Otherwise publish nothing.
 Meteor.publish(Items.adminPublicationName, function () {
   if (this.userId && Roles.userIsInRole(this.userId, 'admin')) {
-    return Items.collection.find();
+    const username = Meteor.users.findOne(this.userId).username;
+    return Items.collection.find({ owner: username });
   }
+  //  return Items.collection.find();
+  // }
   return this.ready();
 });
 
