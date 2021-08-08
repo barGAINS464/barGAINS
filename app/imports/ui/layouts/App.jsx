@@ -7,17 +7,17 @@ import { HashRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
 import Landing from '../pages/Landing';
-import MyProfile from '../pages/MyProfile';
-import ListStuff from '../pages/ListStuff';
+import ListItems from '../pages/ListItems';
 import ListStuffAdmin from '../pages/ListStuffAdmin';
-import AddStuff from '../pages/AddStuff';
-import EditStuff from '../pages/EditStuff';
+import AddItem from '../pages/ItemPost';
+import EditItem from '../pages/EditItem';
 import NotFound from '../pages/NotFound';
 import Signin from '../pages/Signin';
-import BargainsSignup from '../pages/BargainsSignup';
 import Signout from '../pages/Signout';
 import SuccessfulPosting from '../pages/SuccessfulPosting';
 import Questionnaire1 from '../pages/Questionnaire1';
+import BargainsSignup from '../pages/BargainsSignup';
+import MyProfile from '../pages/MyProfile';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
@@ -33,11 +33,11 @@ class App extends React.Component {
             <Route path="/signout" component={Signout}/>
             <ProtectedRoute path="/questionnaire1" component={Questionnaire1}/>
             <ProtectedRoute path="/successfulposting" component={SuccessfulPosting}/>
-            <ProtectedRoute path="/list" component={ListStuff}/>
-            <ProtectedRoute path="/add" component={AddStuff}/>
-            <ProtectedRoute path="/myprofile" component={MyProfile}/>
-            <ProtectedRoute path="/edit/:_id" component={EditStuff}/>
+            <ProtectedRoute path="/shop" component={ListItems}/>
+            <ProtectedRoute path="/add" component={AddItem}/>
+            <ProtectedRoute path="/edit/:_id" component={EditItem}/>
             <AdminProtectedRoute path="/admin" component={ListStuffAdmin}/>
+            <ProtectedRoute path="/myprofile" component={MyProfile}/>
             <Route component={NotFound}/>
           </Switch>
           <Footer/>

@@ -11,7 +11,7 @@ class Footer extends React.Component {
         <div style={divStyle} className="ui center aligned container">
               barGAINS <br />
               Developed by<br />
-              Alyssandra Cabading, Austin Chong, Tyler Chinen, GLen Larita <br />
+              Alyssandra Cabading, Tyler Chinen, Austin Chong, Glen Larita <br />
         </div>
       </footer>
     );

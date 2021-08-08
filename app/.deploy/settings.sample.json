@@ -4,19 +4,13 @@
     { "email": "john@foo.com", "password": "changeme" }
   ],
 
-  "defaultData": [
-    { "name": "Basket", "quantity": 3, "owner": "john@foo.com", "condition": "excellent" },
-    { "name": "Bicycle", "quantity": 2, "owner": "john@foo.com", "condition": "poor" },
-    { "name": "Banana", "quantity": 2, "owner": "admin@foo.com", "condition": "good" },
-    { "name": "Boogie Board", "quantity": 2, "owner": "admin@foo.com", "condition": "excellent" }
-  ],
   "defaultProfiles": [
     { "profilePicture": "https://media.newyorker.com/photos/5d8cfb19a4b97600086ed8ac/master/pass/Patterson-Malkmus-primary.jpg",
       "firstName": "SUE",
       "lastName": "FLAYYY",
       "phone": "(808) 422-2222",
       "user": "sooooflayy",
-      "owner": "john@foo.com"
+      "owner": "admin@foo.com"
     }
   ],
 
