@@ -1,5 +1,9 @@
 import React from 'react';
+import { Meteor } from 'meteor/meteor';
+import { withTracker } from 'meteor/react-meteor-data';
+import PropTypes from 'prop-types';
 import { Grid, Divider, Header, Image, Container, List, Segment, Menu } from 'semantic-ui-react';
+import { Profiles } from '../../api/profile/Profiles';
 
 /** A simple static component to render some text for the landing page. */
 class MyProfile extends React.Component {
@@ -12,26 +16,24 @@ class MyProfile extends React.Component {
           <Divider />
           <Grid columns={2} divided>
             <Grid.Column>
-              <Image size='medium rounded image' src="https://media.newyorker.com/photos/5d8cfb19a4b97600086ed8ac/master/pass/Patterson-Malkmus-primary" centered/>
+              <Image size='medium rounded image' src='this.props.doc.image' centered/>
             </Grid.Column>
             <Grid.Column>
               <Segment>
-                <Header as='h1' textAlign='center'>SUE FLAY</Header>
+                <Header as='h1' textAlign='center'>{this.props.doc.firstName} {this.props.doc.lastName}</Header>
                 <Divider />
                 <List centered>
                   <List.Item>
                     <List.Icon name='user icon' />
-                    <List.Content>SooFly</List.Content>
+                    <List.Content>{this.props.doc.user}</List.Content>
                   </List.Item>
                   <List.Item>
                     <List.Icon name='mail' />
-                    <List.Content>
-                      <a href='mailto:sueflay@hawiai.edu='>jsueflay@hawaii.edu</a>
-                    </List.Content>
+                    <List.Content>{this.props.doc.email}</List.Content>
                   </List.Item>
                   <List.Item>
                     <List.Icon name='phone' />
-                    <List.Content>(808) 222-2222</List.Content>
+                    <List.Content>{this.props.doc.phone}</List.Content>
                   </List.Item>
                 </List>
               </Segment>
@@ -69,4 +71,17 @@ class MyProfile extends React.Component {
   }
 }
 
-export default MyProfile;
+MyProfile.propTypes = {
+  doc: PropTypes.object,
+  model: PropTypes.object,
+};
+
+export default withTracker(() => {
+  const subscription = Meteor.subscribe(Profiles.userPublicationName);
+  const ready = subscription.ready();
+  const doc = Profiles.collection.find({}).fetch();
+  return {
+    doc,
+    ready,
+  };
+})(MyProfile);

@@ -10,7 +10,7 @@
     { "name": "Banana", "quantity": 2, "owner": "admin@foo.com", "condition": "good" },
     { "name": "Boogie Board", "quantity": 2, "owner": "admin@foo.com", "condition": "excellent" }
   ],
-  "defaultProfile": [
+  "defaultProfiles": [
     { "profilePicture": "https://media.newyorker.com/photos/5d8cfb19a4b97600086ed8ac/master/pass/Patterson-Malkmus-primary.jpg",
       "firstName": "SUE",
       "lastName": "FLAYYY",

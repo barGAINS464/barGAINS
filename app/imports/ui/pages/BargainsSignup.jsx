@@ -4,7 +4,7 @@ import { Link, Redirect } from 'react-router-dom';
 import { Container, Divider, Form, Grid, Header, Message, Segment, Image } from 'semantic-ui-react';
 import { Accounts } from 'meteor/accounts-base';
 import swal from 'sweetalert';
-import { Profiles } from '../../api/profile/Profile';
+import { Profiles } from '../../api/profile/Profiles';
 /**
  * Signup component is similar to signin component, but we create a new user instead.
  */
@@ -13,13 +13,13 @@ class BargainsSignup extends React.Component {
   /* Initialize state fields. */
   constructor(props) {
     super(props);
-    this.state = { email: '', password: '', error: '', file: null, redirectToReferer: false };
+    this.state = { email: '', password: '', error: '', redirectToReferer: false };
     this.handleChange = this.handleChange.bind(this);
   }
 
   /* Update the form controls each time the user interacts with them. */
   handleChange = (e, { name, value }) => {
-    this.setState({ [name]: value, file: URL.createObjectURL(e.target.files[0]) });
+    this.setState({ [name]: value });
   }
 
   /* Handle Signup submission. Create user account and a profile entry, then redirect to the home page. */
@@ -59,16 +59,16 @@ class BargainsSignup extends React.Component {
             <Form onSubmit={this.submit}>
               <Segment stacked>
                 <Segment>
-                  <Image size='small rounded' src={this.state.file} centered/>
                   <Form.Input
                     label="Upload a Profile Picture"
+                    icon="image"
+                    iconPosition="left"
                     id="signup-form-profilePicture"
                     name="profilePicture"
-                    type="file"
+                    type="profilePicture"
                     onChange={this.handleChange}
                     required
                   />
-                  <p>Only <i>.png</i> and <i>.jpg</i> files supported</p>
                 </Segment>
                 <Form.Group widths='equal'>
                   <Form.Input

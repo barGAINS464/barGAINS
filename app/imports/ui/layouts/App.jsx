@@ -35,7 +35,7 @@ class App extends React.Component {
             <ProtectedRoute path="/successfulposting" component={SuccessfulPosting}/>
             <ProtectedRoute path="/list" component={ListStuff}/>
             <ProtectedRoute path="/add" component={AddStuff}/>
-            <ProtectedRoute path="/profile" component={MyProfile}/>
+            <ProtectedRoute path="/myprofile" component={MyProfile}/>
             <ProtectedRoute path="/edit/:_id" component={EditStuff}/>
             <AdminProtectedRoute path="/admin" component={ListStuffAdmin}/>
             <Route component={NotFound}/>
