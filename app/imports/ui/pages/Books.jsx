@@ -17,7 +17,7 @@ class ListItems extends React.Component {
   // Render the page once subscriptions have been received.
   // eslint-disable-next-line consistent-return
   renderPage() {
-    const books = this.props.items.filter(() => this.props.items.category === 'Book');
+    const books = this.props.items.filter(book => book.category === 'Book');
     return (
       <Container>
         <Header as="h2" textAlign="center" inverted>Available Items</Header>
@@ -25,7 +25,6 @@ class ListItems extends React.Component {
           {books.map((items, index) => <Products key={index} product={items}/>)}
         </Card.Group>
       </Container>
-
     );
   }
 }

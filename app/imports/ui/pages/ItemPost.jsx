@@ -57,7 +57,7 @@ class AddItem extends React.Component {
             <Segment>
               <TextField name='title'/>
               <div className="inline fields">
-                <TextField name='image' placeholder={'Please paste your image here...'}/>
+                <TextField name='image' placeholder={'Please paste your image address here...'}/>
                 <NumField name='cost' decimal={true}/>
                 <SelectField name='condition'/>
                 <SelectField name='category'/>
