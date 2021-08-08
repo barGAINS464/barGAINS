@@ -5,7 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9fcb33f4-3437-4830-bdc4-4a1dbe6d1609" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/imports/ui/pages/Books.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/pages/Books.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/imports/ui/pages/Computers.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/pages/Computers.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/imports/ui/pages/ListItems.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/pages/ListItems.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/imports/ui/pages/Music.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/pages/Music.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

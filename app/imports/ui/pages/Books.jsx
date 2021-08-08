@@ -20,7 +20,7 @@ class ListItems extends React.Component {
     const books = this.props.items.filter(book => book.category === 'Book');
     return (
       <Container>
-        <Header as="h2" textAlign="center" inverted>Available Items</Header>
+        <Header as="h2" textAlign="center" inverted>Books</Header>
         <Card.Group itemsPerRow={4}>
           {books.map((items, index) => <Products key={index} product={items}/>)}
         </Card.Group>

@@ -19,7 +19,7 @@ class ListItems extends React.Component {
     const music = this.props.items.filter(musicItem => musicItem.category === 'Music');
     return (
       <Container>
-        <Header as="h2" textAlign="center" inverted>Available Items</Header>
+        <Header as="h2" textAlign="center" inverted>Music</Header>
         <Card.Group itemsPerRow={4}>
           {music.map((items, index) => <Products key={index} product={items}/>)}
         </Card.Group>
