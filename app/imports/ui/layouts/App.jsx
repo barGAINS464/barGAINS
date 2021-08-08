@@ -7,14 +7,14 @@ import { HashRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
 import Landing from '../pages/Landing';
-import Profile from '../pages/Profile';
+import MyProfile from '../pages/MyProfile';
 import ListStuff from '../pages/ListStuff';
 import ListStuffAdmin from '../pages/ListStuffAdmin';
 import AddStuff from '../pages/AddStuff';
 import EditStuff from '../pages/EditStuff';
 import NotFound from '../pages/NotFound';
 import Signin from '../pages/Signin';
-import Signup from '../pages/Signup';
+import BargainsSignup from '../pages/BargainsSignup';
 import Signout from '../pages/Signout';
 import SuccessfulPosting from '../pages/SuccessfulPosting';
 import Questionnaire1 from '../pages/Questionnaire1';
@@ -29,13 +29,13 @@ class App extends React.Component {
           <Switch>
             <Route exact path="/" component={Landing}/>
             <Route path="/signin" component={Signin}/>
-            <Route path="/signup" component={Signup}/>
+            <Route path="/signup" component={BargainsSignup}/>
             <Route path="/signout" component={Signout}/>
             <ProtectedRoute path="/questionnaire1" component={Questionnaire1}/>
             <ProtectedRoute path="/successfulposting" component={SuccessfulPosting}/>
             <ProtectedRoute path="/list" component={ListStuff}/>
             <ProtectedRoute path="/add" component={AddStuff}/>
-            <ProtectedRoute path="/profile" component={Profile}/>
+            <ProtectedRoute path="/profile" component={MyProfile}/>
             <ProtectedRoute path="/edit/:_id" component={EditStuff}/>
             <AdminProtectedRoute path="/admin" component={ListStuffAdmin}/>
             <Route component={NotFound}/>

@@ -2,7 +2,7 @@ import React from 'react';
 import { Grid, Divider, Header, Image, Container, List, Segment, Menu } from 'semantic-ui-react';
 
 /** A simple static component to render some text for the landing page. */
-class Profile extends React.Component {
+class MyProfile extends React.Component {
   render() {
 
     return (
@@ -69,4 +69,4 @@ class Profile extends React.Component {
   }
 }
 
-export default Profile;
+export default MyProfile;
