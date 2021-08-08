@@ -6,11 +6,18 @@
 
   "defaultProfiles": [
     { "profilePicture": "https://media.newyorker.com/photos/5d8cfb19a4b97600086ed8ac/master/pass/Patterson-Malkmus-primary.jpg",
-      "firstName": "SUE",
-      "lastName": "FLAYYY",
+      "firstName": "Adam",
+      "lastName": "Min",
       "phone": "(808) 422-2222",
-      "user": "sooooflayy",
-      "owner": "admin@foo.com"
+      "user": "ImDaMan",
+      "email": "admin@foo.com"
+    },
+    { "profilePicture": "https://media.newyorker.com/photos/5d8cfb19a4b97600086ed8ac/master/pass/Patterson-Malkmus-primary.jpg",
+      "firstName": "Obi",
+      "lastName": "Juan",
+      "phone": "(808) 333-3333",
+      "user": "Kenobi",
+      "email": "john@foo.com"
     }
   ],
 

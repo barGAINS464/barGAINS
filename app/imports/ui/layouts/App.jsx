@@ -9,6 +9,7 @@ import Footer from '../components/Footer';
 import Landing from '../pages/Landing';
 import ListItems from '../pages/ListItems';
 import ListStuffAdmin from '../pages/ListStuffAdmin';
+import ListProfileAdmin from '../pages/ListProfileAdmin';
 import AddItem from '../pages/ItemPost';
 import EditItem from '../pages/EditItem';
 import NotFound from '../pages/NotFound';
@@ -37,6 +38,7 @@ class App extends React.Component {
             <ProtectedRoute path="/add" component={AddItem}/>
             <ProtectedRoute path="/edit/:_id" component={EditItem}/>
             <AdminProtectedRoute path="/admin" component={ListStuffAdmin}/>
+            <AdminProtectedRoute path="/profileadmin" component={ListProfileAdmin}/>
             <ProtectedRoute path="/myprofile" component={MyProfile}/>
             <Route component={NotFound}/>
           </Switch>

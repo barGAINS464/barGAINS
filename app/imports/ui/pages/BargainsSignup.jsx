@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link, Redirect } from 'react-router-dom';
-import { Container, Divider, Form, Grid, Header, Message, Segment, Image } from 'semantic-ui-react';
+import { Container, Divider, Form, Grid, Header, Message, Segment } from 'semantic-ui-react';
 import { Accounts } from 'meteor/accounts-base';
 import swal from 'sweetalert';
 import { Profiles } from '../../api/profile/Profiles';
@@ -65,7 +65,7 @@ class BargainsSignup extends React.Component {
                     iconPosition="left"
                     id="signup-form-profilePicture"
                     name="profilePicture"
-                    type="profilePicture"
+                    type="link"
                     onChange={this.handleChange}
                     required
                   />
