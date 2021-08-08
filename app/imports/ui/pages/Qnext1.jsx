@@ -35,6 +35,7 @@ class Q2next1 extends React.Component {
 
   submit(data) {
     const { symptoms } = data;
+    // eslint-disable-next-line no-undef
     Stuffs.collection.update(_id, { $set: { symptoms } }, (error) => (error ?
       swal('Error', error.message, 'error') :
       swal('Success', 'Item updated successfully', 'success')));
