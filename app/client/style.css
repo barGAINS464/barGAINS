@@ -36,3 +36,8 @@
   width: 300px;
   height: 400px;
 }
+
+.questionnaireButtons {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
