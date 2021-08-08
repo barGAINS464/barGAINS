@@ -27,7 +27,7 @@ class About extends React.Component {
   render() {
     const fRef = null;
     return (
-      <div>
+      <div className='aboutPage'>
         <Header as='h1' icon inverted textAlign='center'>
           <Icon name='users' circular/>
           <Header.Content>About Us</Header.Content>
@@ -37,7 +37,7 @@ class About extends React.Component {
           <Container>
             <Header as='h2' color="teal">What is barGAINS?</Header>
             <p>
-                barGains is a place for college students to buy, sell, and trade technology, books, music, and more.
+                barGAINS is a place for college students to safely buy, sell, and trade technology, books, music, and more. During the times of COVID-19 our site aims to create a safer environment for users to interact and exchange their items.
             </p>
           </Container>
         </Segment>
