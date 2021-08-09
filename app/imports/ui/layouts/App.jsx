@@ -23,6 +23,7 @@ import BargainsProfile from '../pages/BargainsProfile';
 import Books from '../pages/Books';
 import Computers from '../pages/Computers';
 import Music from '../pages/Music';
+import About from '../pages/About';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
@@ -44,6 +45,7 @@ class App extends React.Component {
             <ProtectedRoute path="/music" component={Music}/>
             <ProtectedRoute path="/add" component={AddItem}/>
             <ProtectedRoute path="/edit/:_id" component={EditItem}/>
+            <ProtectedRoute path="/about" component={About}/>
             <AdminProtectedRoute path="/admin" component={ListStuffAdmin}/>
             <AdminProtectedRoute path="/profileadmin" component={ListProfileAdmin}/>
             <ProtectedRoute path="/myprofile" component={MyProfile}/>
