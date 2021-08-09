@@ -21,11 +21,14 @@ class Products extends React.Component {
           <Card.Meta>
               Contact: {this.props.product.email}
           </Card.Meta>
+          <Card.Meta>
+            Category: {this.props.product.category}
+          </Card.Meta>
           <Card.Description>
-            <b>Condition:</b>&emsp;{this.props.product.condition}
+            <b>Condition:</b> &emsp; {this.props.product.condition}
           </Card.Description>
           <Card.Description>
-            <b>Description:</b>&emsp;{this.props.product.description}
+            <b>Description:</b> &emsp; {this.props.product.description}
           </Card.Description>
         </Card.Content>
         <Card.Content extra>

@@ -23,6 +23,11 @@ class ItemsCollection {
         allowedValues: ['excellent', 'good', 'fair', 'poor'],
         defaultValue: 'good',
       },
+      category: {
+        type: String,
+        allowedValues: ['Book', 'Computer', 'Music'],
+        defaultValue: 'Book',
+      },
       description: String,
     }, { tracker: Tracker });
     // Attach the schema to the collection, so all attempts to insert a document are checked against schema.

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
-import { Container, Header, Loader, Card, Divider } from 'semantic-ui-react';
+import { Container, Header, Loader, Card } from 'semantic-ui-react';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import { Items } from '../../api/item/Items';
@@ -15,12 +15,14 @@ class ListItems extends React.Component {
   }
 
   // Render the page once subscriptions have been received.
+  // eslint-disable-next-line consistent-return
   renderPage() {
+    const books = this.props.items.filter(book => book.category === 'Book');
     return (
       <Container>
-        <Header as="h2" textAlign="center" inverted>All Items</Header>
+        <Header as="h2" textAlign="center" inverted>Books</Header>
         <Card.Group itemsPerRow={4}>
-          {this.props.items.map((items, index) => <Products key={index} product={items}/>)}
+          {books.map((items, index) => <Products key={index} product={items}/>)}
         </Card.Group>
       </Container>
     );

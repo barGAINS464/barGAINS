@@ -1,5 +1,6 @@
 import React from 'react';
 import { Grid, Segment, Header, Divider } from 'semantic-ui-react';
+
 import { AutoForm, ErrorsField, NumField, SelectField, SubmitField, TextField, LongTextField } from 'uniforms-semantic';
 import swal from 'sweetalert';
 import { Meteor } from 'meteor/meteor';
@@ -9,15 +10,19 @@ import { Items } from '../../api/item/Items';
 
 // Create a schema to specify the structure of the data to appear in the form.
 const formSchema = new SimpleSchema({
-  email: String,
   image: String,
   title: String,
   cost: Number,
-  owner: String,
+  email: String,
   condition: {
     type: String,
     allowedValues: ['excellent', 'good', 'fair', 'poor'],
     defaultValue: 'good',
+  },
+  category: {
+    type: String,
+    allowedValues: ['Book', 'Computer', 'Music'],
+    defaultValue: 'Book',
   },
   description: String,
 });
@@ -29,9 +34,9 @@ class AddItem extends React.Component {
 
   // On submit, insert the data.
   submit(data, formRef) {
-    const { image, title, cost, email, condition, description } = data;
+    const { image, title, cost, email, condition, category, description } = data;
     const owner = Meteor.user().username;
-    Items.collection.insert({ image, title, cost, email, condition, description, owner },
+    Items.collection.insert({ image, title, cost, email, condition, category, description, owner },
       (error) => {
         if (error) {
           swal('Error', error.message, 'error');
@@ -54,9 +59,10 @@ class AddItem extends React.Component {
             <Segment>
               <TextField name='title'/>
               <div className="inline fields">
-                <TextField name='image' placeholder={'Please paste your image here...'}/>
+                <TextField name='image' placeholder={'Please paste your image address here...'}/>
                 <NumField name='cost' decimal={true}/>
                 <SelectField name='condition'/>
+                <SelectField name='category'/>
                 <TextField name='email'/>
               </div>
               <LongTextField name='description' placeholder={'Add a description about your item...'}/>

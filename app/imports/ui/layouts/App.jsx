@@ -20,6 +20,9 @@ import Questionnaire1 from '../pages/Questionnaire1';
 import BargainsSignup from '../pages/BargainsSignup';
 import MyProfile from '../pages/MyProfile';
 import BargainsProfile from '../pages/BargainsProfile';
+import Books from '../pages/Books';
+import Computers from '../pages/Computers';
+import Music from '../pages/Music';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
@@ -36,6 +39,9 @@ class App extends React.Component {
             <ProtectedRoute path="/questionnaire1" component={Questionnaire1}/>
             <ProtectedRoute path="/successfulposting" component={SuccessfulPosting}/>
             <ProtectedRoute path="/shop" component={ListItems}/>
+            <ProtectedRoute path="/books" component={Books}/>
+            <ProtectedRoute path="/computers" component={Computers}/>
+            <ProtectedRoute path="/music" component={Music}/>
             <ProtectedRoute path="/add" component={AddItem}/>
             <ProtectedRoute path="/edit/:_id" component={EditItem}/>
             <AdminProtectedRoute path="/admin" component={ListStuffAdmin}/>

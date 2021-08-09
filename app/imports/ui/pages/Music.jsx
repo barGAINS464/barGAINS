@@ -1,6 +1,6 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
-import { Container, Header, Loader, Card, Divider } from 'semantic-ui-react';
+import { Container, Header, Loader, Card } from 'semantic-ui-react';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import { Items } from '../../api/item/Items';
@@ -16,11 +16,12 @@ class ListItems extends React.Component {
 
   // Render the page once subscriptions have been received.
   renderPage() {
+    const music = this.props.items.filter(musicItem => musicItem.category === 'Music');
     return (
       <Container>
-        <Header as="h2" textAlign="center" inverted>All Items</Header>
+        <Header as="h2" textAlign="center" inverted>Music</Header>
         <Card.Group itemsPerRow={4}>
-          {this.props.items.map((items, index) => <Products key={index} product={items}/>)}
+          {music.map((items, index) => <Products key={index} product={items}/>)}
         </Card.Group>
       </Container>
     );
