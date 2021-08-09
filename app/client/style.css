@@ -38,5 +38,9 @@
 }
 
 .aboutPage {
-  margin: 40px;
+  margin: 20px;
+}
+
+.descriptionText {
+  color: white;
 }
