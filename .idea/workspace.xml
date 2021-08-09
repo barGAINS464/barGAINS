@@ -5,7 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9fcb33f4-3437-4830-bdc4-4a1dbe6d1609" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/imports/ui/pages/BargainsProfile.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/.deploy/settings.sample.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/.deploy/settings.sample.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/imports/api/item/Items.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/api/item/Items.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/imports/api/profile/Profiles.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/api/profile/Profiles.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/imports/startup/server/Accounts.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/startup/server/Accounts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/imports/startup/server/Mongo.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/startup/server/Mongo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/imports/startup/server/Publications.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/startup/server/Publications.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/imports/ui/components/MainProfile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/components/MainProfile.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/imports/ui/components/NavBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/components/NavBar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/imports/ui/components/Products.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/components/Products.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/imports/ui/components/ProfileCards.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/components/ProfileCards.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/imports/ui/components/ProfileCardsAdmin.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/components/ProfileCardsAdmin.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/imports/ui/layouts/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/layouts/App.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/imports/ui/pages/BargainsSignup.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/pages/BargainsSignup.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/imports/ui/pages/ItemPost.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/pages/ItemPost.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/imports/ui/pages/ListItems.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/pages/ListItems.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/imports/ui/pages/ListProfileAdmin.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/pages/ListProfileAdmin.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/imports/ui/pages/ListStuffAdmin.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/pages/ListStuffAdmin.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/imports/ui/pages/MyProfile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/pages/MyProfile.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/settings.development.json" beforeDir="false" afterPath="$PROJECT_DIR$/config/settings.development.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/imports/startup/server/Publications.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/startup/server/Publications.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/imports/ui/components/ProductsAdmin.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/components/ProductsAdmin.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/imports/ui/pages/ListStuffAdmin.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/pages/ListStuffAdmin.jsx" afterDir="false" />
@@ -33,9 +53,11 @@
     <property name="HbShouldOpenHtmlAsHb" value="enabled" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js.meteor.library.cached" value="$PROJECT_DIR$/app/.meteor" />
     <property name="js.meteor.library.was.enabled" value="true" />
     <property name="js.meteor.project" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/imports/api" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/app/imports/ui/pages" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
@@ -46,10 +68,15 @@
     <property name="node.js.selected.package.standard" value="" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="Errors" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/imports/api" />
+      <recent name="$PROJECT_DIR$/app/imports/ui/pages" />
       <recent name="$PROJECT_DIR$/app/imports/ui/pages" />
       <recent name="$PROJECT_DIR$/app/imports/ui/components" />
       <recent name="$PROJECT_DIR$/app/imports/api/Items" />

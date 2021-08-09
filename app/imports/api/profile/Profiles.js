@@ -3,23 +3,22 @@ import SimpleSchema from 'simpl-schema';
 import { Tracker } from 'meteor/tracker';
 
 /**
- * The ProfileAccountsCollection.
+ * The ProfilesCollection.
  */
-class ProfileAccountsCollection {
+class ProfilesCollection {
   constructor() {
     // The name of this collection.
-    this.name = 'ProfileAccountsCollection';
+    this.name = 'ProfilesCollection';
     // Define the Mongo collection.
     this.collection = new Mongo.Collection(this.name);
     // Define the structure of each document in the collection.
     this.schema = new SimpleSchema({
+      email: String,
       firstName: String,
       lastName: String,
-      date: Date,
-      phoneAreaCode: Number,
-      phoneMid: Number,
-      phoneLast: Number,
-      username: String,
+      profilePic: String,
+      phone: String,
+      owner: String,
     }, { tracker: Tracker });
     // Attach the schema to the collection, so all attempts to insert a document are checked against schema.
     this.collection.attachSchema(this.schema);
@@ -31,6 +30,6 @@ class ProfileAccountsCollection {
 
 /**
  * The singleton instance of the ProfileAccounts Collection.
- * @type {ProfileAccountsCollection}
+ * @type {ProfilesCollection}
  */
-export const ProfileAccounts = new ProfileAccountsCollection();
+export const Profiles = new ProfilesCollection();

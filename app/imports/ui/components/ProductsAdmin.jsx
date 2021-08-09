@@ -44,6 +44,7 @@ class ProductsAdmin extends React.Component {
 
 // Require a document to be passed to this component.
 ProductsAdmin.propTypes = {
+  products: PropTypes.object.isRequired,
   product: PropTypes.object.isRequired,
   Products: PropTypes.object.isRequired,
 };

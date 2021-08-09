@@ -4,6 +4,58 @@
     { "email": "john@foo.com", "password": "changeme" }
   ],
 
+  "defaultProfiles": [
+    { "email": "admin@foo.com",
+      "firstName": "Amanda",
+      "lastName": "Min",
+      "profilePic": "https://media.istockphoto.com/photos/close-up-of-happy-young-asian-woman-picture-id466327868?k=6&m=466327868&s=612x612&w=0&h=TkCB4J3iJstNVppyczVqLqIOtWegFNxlI_MD6R2w2vs=",
+      "phone": "(808) 422-2222",
+      "owner": "admin@foo.com"
+    },
+    { "email": "john@foo.com",
+      "firstName": "John",
+      "lastName": "Jon",
+      "profilePic": "https://media.istockphoto.com/photos/we-grind-the-best-coffee-picture-id523147245?k=6&m=523147245&s=612x612&w=0&h=BuzmyB2fwl04dISCxXnOI4fwya2ETnHQNBvTu7wqjfY=",
+      "phone": "(808) 333-3333",
+      "owner": "john@foo.com"
+    }
+  ],
+
+  "defaultItems": [
+    { "email": "glarita@hawaii.edu",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/51xPIEYPWWL._SX326_BO1,204,203,200_.jpg",
+      "title": "IT! BOOK",
+      "cost": 50,
+      "owner": "glarita@hawaii.edu",
+      "condition": "excellent",
+      "category": "Book",
+      "description": "great book" },
+    { "email": "mhy@hawaii.edu",
+      "image": "https://www.nvidia.com/content/dam/en-zz/Solutions/geforce/geforce-rtx-turing/2080/gallery/geforce-rtx-2080-gallery-c-641-u@2x.jpg",
+      "title": "RTX 2080",
+      "cost": 500,
+      "owner": "mhy@hawaii.edu",
+      "condition": "excellent",
+      "category": "Computer",
+      "description": "great GPU" },
+    { "email": "admin@foo.com",
+      "image": "http://cdn.shopify.com/s/files/1/1025/2995/products/LTD_Orange_LP_mockupSQ_grande.jpg?v=1624975951",
+      "title": "BOYGENIUS VINYL LP",
+      "cost": 60,
+      "owner": "admin@foo.com",
+      "condition": "excellent",
+      "category": "Music",
+      "description": "Limited Edition" },
+    { "email": "john@foo.com",
+      "image": "https://www.retrofret.com/images/8655_Guitar/xLarge/8655_01.jpg",
+      "title": "FENDER STRATOCASTER 2020: YELLOW EDITION",
+      "cost": 120,
+      "owner": "john@foo.com",
+      "condition": "excellent",
+      "category": "Music",
+      "description": "Comes with a free amp." }
+  ],
+
   "defaultData": [
     { "name": "Basket", "quantity": 3, "owner": "john@foo.com", "condition": "excellent" },
     { "name": "Bicycle", "quantity": 2, "owner": "john@foo.com", "condition": "poor" },

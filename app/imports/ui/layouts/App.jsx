@@ -9,14 +9,17 @@ import Footer from '../components/Footer';
 import Landing from '../pages/Landing';
 import ListItems from '../pages/ListItems';
 import ListStuffAdmin from '../pages/ListStuffAdmin';
+import ListProfileAdmin from '../pages/ListProfileAdmin';
 import AddItem from '../pages/ItemPost';
 import EditItem from '../pages/EditItem';
 import NotFound from '../pages/NotFound';
 import Signin from '../pages/Signin';
-import Signup from '../pages/Signup';
 import Signout from '../pages/Signout';
 import SuccessfulPosting from '../pages/SuccessfulPosting';
 import Questionnaire1 from '../pages/Questionnaire1';
+import BargainsSignup from '../pages/BargainsSignup';
+import MyProfile from '../pages/MyProfile';
+import BargainsProfile from '../pages/BargainsProfile';
 import Books from '../pages/Books';
 import Computers from '../pages/Computers';
 import Music from '../pages/Music';
@@ -31,7 +34,7 @@ class App extends React.Component {
           <Switch>
             <Route exact path="/" component={Landing}/>
             <Route path="/signin" component={Signin}/>
-            <Route path="/signup" component={Signup}/>
+            <Route path="/signup" component={BargainsSignup}/>
             <Route path="/signout" component={Signout}/>
             <ProtectedRoute path="/questionnaire1" component={Questionnaire1}/>
             <ProtectedRoute path="/successfulposting" component={SuccessfulPosting}/>
@@ -42,6 +45,9 @@ class App extends React.Component {
             <ProtectedRoute path="/add" component={AddItem}/>
             <ProtectedRoute path="/edit/:_id" component={EditItem}/>
             <AdminProtectedRoute path="/admin" component={ListStuffAdmin}/>
+            <AdminProtectedRoute path="/profileadmin" component={ListProfileAdmin}/>
+            <ProtectedRoute path="/myprofile" component={MyProfile}/>
+            <ProtectedRoute path="/bprofile" component={BargainsProfile}/>
             <Route component={NotFound}/>
           </Switch>
           <Footer/>
