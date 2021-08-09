@@ -35,11 +35,11 @@ class About extends React.Component {
         <div className="ui divider"></div>
         <Segment>
           <Container>
-            <Header as='h2' color="teal">What is barGAINS?</Header>
+            <Header as='h2' color="teal">About barGAINS</Header>
             <p>
                 barGAINS is a place for college students to safely buy, sell, and trade technology, books, music, and more. During the times of COVID-19 our site aims to create a safer environment for users to interact and exchange their items.
             </p>
-            <Header as='h2' color="teal">Who Are We?</Header>
+            <Header as='h2' color="teal">Developers</Header>
             <Card.Group>
               <Card
                 href='https://alyssandra-cabading.github.io/'
