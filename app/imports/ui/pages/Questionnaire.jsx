@@ -58,13 +58,17 @@ class Questionnaire extends React.Component {
             <Icon name='stethoscope' circular inverted/>
               COVID-19 QUESTIONNAIRE
             <Header as='h3' inverted>
-                Before you contact this seller, please fill out the following questionnaire to assure the safety of both you and the buyer/seller.
+              The total amount of COVID-19 cases in Hawaii is above 44,000 and rising.
+              The new Delta variant is much more contagious, more likely to break protections afforded by the virus, and can cause severe disease.
             </Header>
+            <Header.Subheader>
+              Before you contact this seller, please fill out the following questionnaire to assure the safety of both you and the buyer/seller.
+            </Header.Subheader>
           </Header>
           <div className="ui divider"></div>
           <Segment>
             <Grid.Column align="center">
-              <Header>Have you experienced any of the following symptoms?</Header>
+              <Header>Have you experienced any of the following symptoms within the past 2 weeks?</Header>
               <div>
                 <List>
                   <List.Item>fever or chills</List.Item>
