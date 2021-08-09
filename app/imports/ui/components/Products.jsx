@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Image, Button, Icon } from 'semantic-ui-react';
+import { Card, Image, Button, Icon, Divider } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { withRouter, Link } from 'react-router-dom';
 import { Items } from '../../api/item/Items';
@@ -15,15 +15,17 @@ class Products extends React.Component {
       <Card centered>
         <Card.Content>
           <Image className='cardImage' src={this.props.product.image} wrapped ui={true} rounded/>
+          <Divider/>
           <Card.Header className='cardSpace'> {this.props.product.title} ${this.props.product.cost} </Card.Header>
+          <Divider/>
           <Card.Meta>
-              Contact: {this.props.product.owner}
+              Contact: {this.props.product.email}
           </Card.Meta>
           <Card.Description>
-              Condition {this.props.product.condition}
+            <b>Condition:</b>&emsp;{this.props.product.condition}
           </Card.Description>
           <Card.Description>
-            {this.props.product.description}
+            <b>Description:</b>&emsp;{this.props.product.description}
           </Card.Description>
         </Card.Content>
         <Card.Content extra>

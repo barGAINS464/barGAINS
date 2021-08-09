@@ -1,87 +1,88 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
+import { Divider, Header, Loader, Card, Container, Segment, Tab } from 'semantic-ui-react';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
-import { Grid, Divider, Header, Image, Container, List, Segment, Menu } from 'semantic-ui-react';
+import { _ } from 'meteor/underscore';
 import { Profiles } from '../../api/profile/Profiles';
+import { Items } from '../../api/item/Items';
+// import Profile from '../components/Profile';
+import MainProfile from '../components/MainProfile';
+// import MyProduct from '../components/MyProduct';
+import Products from '../components/Products';
 
-/** A simple static component to render some text for the landing page. */
+/** Renders a table containing all of the vendor documents. Use <MyVendorData> to render each row. */
 class MyProfile extends React.Component {
+  // If the subscription(s) have been received, render the page, otherwise show a loading icon.
   render() {
+    return (this.props.ready) ? this.renderPage() : <Loader active>Getting Profile data</Loader>;
+  }
 
+  // Render the page once subscriptions have been received.
+  renderPage() {
+    const username = Meteor.users.findOne({ _id: Meteor.userId() }).username;
+
+    const prof1 = _.filter(this.props.profiles, function (profs) {
+      if (username === profs.owner) {
+        return profs;
+      }
+      return 0;
+    });
+
+    const prod1 = _.filter(this.props.items, function (prods) {
+      if (username === prods.owner) {
+        return prods;
+      }
+      return 0;
+    });
+
+    const panes = [
+      { menuItem: 'My Products', render: () => <Tab.Pane>
+        <Card.Group>
+          {prod1.map((product, index) => <Products key={index} product={product} Products={Products}/>)}
+        </Card.Group>
+      </Tab.Pane> },
+      { menuItem: 'Reviews', render: () => <Tab.Pane>Reviews will go here.</Tab.Pane> },
+
+    ];
     return (
       <div className='profilePage' id='profile-page'>
         <Container text style={{ marginTop: '7em' }}>
           <Header as='h1' textAlign='center' inverted>My Profile</Header>
           <Divider />
-          <Grid columns={2} divided>
-            <Grid.Column>
-              <Image size='medium rounded image' src='this.props.doc.image' centered/>
-            </Grid.Column>
-            <Grid.Column>
-              <Segment>
-                <Header as='h1' textAlign='center'>{this.props.doc.firstName} {this.props.doc.lastName}</Header>
-                <Divider />
-                <List centered>
-                  <List.Item>
-                    <List.Icon name='user icon' />
-                    <List.Content>{this.props.doc.user}</List.Content>
-                  </List.Item>
-                  <List.Item>
-                    <List.Icon name='mail' />
-                    <List.Content>{this.props.doc.email}</List.Content>
-                  </List.Item>
-                  <List.Item>
-                    <List.Icon name='phone' />
-                    <List.Content>{this.props.doc.phone}</List.Content>
-                  </List.Item>
-                </List>
-              </Segment>
-              <Segment>
-                <List.Item>
-                  <List.Header as='h4' textAlign='center'>About Me</List.Header>
-                  <Divider />
-                  <List.Content>
-                    Hi! My name is Sue, a sophomore at UH Mānoa.
-                    I love collecting vinyls and have sparked an interest in learning to play the guitar.
-                    I am here in hopes of selling or trading some of my vinyl collections.
-                    I also love to read a range of novels and have an interest in joining various book clubs.
-                    Contact me if you have any questions!
-                  </List.Content>
-                </List.Item>
-              </Segment>
-            </Grid.Column>
-          </Grid>
+          {prof1.map((prof) => <MainProfile key={prof._id} info={prof} Profiles={Profiles}/>)}
           <Divider/>
-          <Menu attached='top' color='white' tabular widths={2} inverted>
-            <Menu.Item
-              name='POSTS'
-              // active={activeItem === 'bio'}
-              onClick={this.handleItemClick}
-            />
-            <Menu.Item
-              name='REVIEWS'
-              // active={activeItem === 'photos'}
-              onClick={this.handleItemClick}
-            />
-          </Menu>
+          <Segment>
+            <Tab panes={panes}/>
+          </Segment>
         </Container>
       </div>
     );
   }
 }
 
+// Require an array of Vendor documents in the props.
 MyProfile.propTypes = {
-  doc: PropTypes.object,
-  model: PropTypes.object,
+  profiles: PropTypes.array.isRequired,
+  ready: PropTypes.bool.isRequired,
+  items: PropTypes.array.isRequired,
 };
 
+// withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker
 export default withTracker(() => {
+  // Get access to Vendor documents.
+
   const subscription = Meteor.subscribe(Profiles.userPublicationName);
+  const subscription2 = Meteor.subscribe(Items.userPublicationName);
   const ready = subscription.ready();
-  const doc = Profiles.collection.find({}).fetch();
+  const ready2 = subscription2.ready();
+  // Get the Vendor documents
+  const profiles = Profiles.collection.find({}).fetch();
+  const items = Items.collection.find({}).fetch();
   return {
-    doc,
+    profiles,
+    items,
     ready,
+    ready2,
   };
 })(MyProfile);

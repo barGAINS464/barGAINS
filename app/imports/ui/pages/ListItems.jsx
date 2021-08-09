@@ -1,6 +1,6 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
-import { Container, Header, Loader, Card } from 'semantic-ui-react';
+import { Container, Header, Loader, Card, Divider } from 'semantic-ui-react';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import { Items } from '../../api/item/Items';
@@ -19,6 +19,7 @@ class ListItems extends React.Component {
     return (
       <Container>
         <Header as="h2" textAlign="center" inverted>Available Items</Header>
+        <Divider/>
         <Card.Group itemsPerRow={4}>
           {this.props.items.map((items, index) => <Products key={index} product={items}/>)}
         </Card.Group>

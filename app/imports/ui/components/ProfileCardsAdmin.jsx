@@ -10,7 +10,6 @@ class ProfileCardsAdmin extends React.Component {
         <Table.Cell>{this.props.profiles.firstName}</Table.Cell>
         <Table.Cell>{this.props.profiles.lastName}</Table.Cell>
         <Table.Cell>{this.props.profiles.phone}</Table.Cell>
-        <Table.Cell>{this.props.profiles.user}</Table.Cell>
         <Table.Cell>{this.props.profiles.owner}</Table.Cell>
       </Table.Row>
     );

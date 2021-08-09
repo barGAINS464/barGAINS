@@ -14,7 +14,7 @@ class BargainsSignup extends React.Component {
   /* Initialize state fields. */
   constructor(props) {
     super(props);
-    this.state = { email: '', password: '', firstname: '', lastName: '', profilePic: '', phone: '', error: '', redirectToReferer: false };
+    this.state = { email: '', password: '', firstName: '', lastName: '', profilePic: '', phone: '', error: '', redirectToReferer: false };
   }
 
   /* Update the form controls each time the user interacts with them. */
@@ -24,15 +24,15 @@ class BargainsSignup extends React.Component {
 
   /* Handle Signup submission. Create user account and a profile entry, then redirect to the home page. */
   submit = () => {
-    const { email, password, firstname, lastName, profilePic, phone } = this.state;
-    Accounts.createUser({ email, username: email, password, profile: { firstname, lastName, profilePic, phone, owner: email } }, (err) => {
+    const { email, password, firstName, lastName, profilePic, phone } = this.state;
+    Accounts.createUser({ email, username: email, password, profile: { firstName, lastName, profilePic, phone, owner: email } }, (err) => {
       if (err) {
         this.setState({ error: err.reason });
       } else {
         this.setState({ error: '', redirectToReferer: true });
       }
     });
-    Profiles.collection.insert({ email, firstname, lastName, profilePic, phone, owner: email },
+    Profiles.collection.insert({ email, firstName, lastName, profilePic, phone, owner: email },
       (error) => {
         if (error) {
           swal('Error', error.message, 'error');

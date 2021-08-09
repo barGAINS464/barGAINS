@@ -1,6 +1,6 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
-import { Container, Table, Header, Loader } from 'semantic-ui-react';
+import { Container, Table, Header, Loader, Divider } from 'semantic-ui-react';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 // import { Stuffs } from '../../api/stuff/Stuff';
@@ -20,7 +20,8 @@ class ListStuffAdmin extends React.Component {
   renderPage() {
     return (
       <Container>
-        <Header as="h2" textAlign="center">List Stuff (Admin)</Header>
+        <Header as="h2" textAlign="center" inverted>List Items (Admin)</Header>
+        <Divider/>
         <Table celled>
           <Table.Header>
             <Table.Row>

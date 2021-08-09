@@ -42,7 +42,7 @@ class NavBar extends React.Component {
           </Menu.Item>
         ) : (
           <Menu.Menu position="right" style={menuStyle} attached="top" borderless inverted>
-            <Menu.Item as={NavLink} activeClassName="active" exact to="/myprofile" key='profile'>Profile</Menu.Item>
+            <Menu.Item as={NavLink} activeClassName="active" exact to="/myprofile" key='profile'>My Profile</Menu.Item>
             <Menu.Item><Icon name="user circle"/>{this.props.currentUser}</Menu.Item>
             <Menu.Item>
               <Dropdown id="navbar-current-user" pointing="top right" icon="sign-out alternate">

@@ -19,6 +19,7 @@ import SuccessfulPosting from '../pages/SuccessfulPosting';
 import Questionnaire1 from '../pages/Questionnaire1';
 import BargainsSignup from '../pages/BargainsSignup';
 import MyProfile from '../pages/MyProfile';
+import BargainsProfile from '../pages/BargainsProfile';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
@@ -40,6 +41,7 @@ class App extends React.Component {
             <AdminProtectedRoute path="/admin" component={ListStuffAdmin}/>
             <AdminProtectedRoute path="/profileadmin" component={ListProfileAdmin}/>
             <ProtectedRoute path="/myprofile" component={MyProfile}/>
+            <ProtectedRoute path="/bprofile" component={BargainsProfile}/>
             <Route component={NotFound}/>
           </Switch>
           <Footer/>

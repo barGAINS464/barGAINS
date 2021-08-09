@@ -21,9 +21,10 @@ if (Items.collection.find().count() === 0) {
     Meteor.settings.defaultItems.map(data => addItem(data));
   }
 }
+
 if (Profiles.collection.find().count() === 0) {
   if (Meteor.settings.defaultProfiles) {
-    console.log('Creating default profile.');
+    console.log('Creating default profiles.');
     Meteor.settings.defaultProfiles.map(data => addProfile(data));
   }
 }
