@@ -5,7 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9fcb33f4-3437-4830-bdc4-4a1dbe6d1609" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/imports/ui/components/ProductShop.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/imports/startup/server/Mongo.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/startup/server/Mongo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/imports/startup/server/Publications.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/startup/server/Publications.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/imports/ui/components/ProductsAdmin.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/components/ProductsAdmin.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/imports/ui/pages/Books.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/pages/Books.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/imports/ui/pages/Computers.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/pages/Computers.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/imports/ui/pages/ListItems.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/pages/ListItems.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/imports/ui/pages/Music.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/pages/Music.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/settings.development.json" beforeDir="false" afterPath="$PROJECT_DIR$/config/settings.development.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,7 +42,7 @@
     <property name="js.meteor.library.cached" value="$PROJECT_DIR$/app/.meteor" />
     <property name="js.meteor.library.was.enabled" value="true" />
     <property name="js.meteor.project" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/imports/ui/pages" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/imports/ui/components" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -47,8 +56,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/app/imports/ui/pages" />
       <recent name="$PROJECT_DIR$/app/imports/ui/components" />
+      <recent name="$PROJECT_DIR$/app/imports/ui/pages" />
       <recent name="$PROJECT_DIR$/app/imports/api/Items" />
     </key>
   </component>
