@@ -36,3 +36,11 @@
   width: 300px;
   height: 400px;
 }
+
+.aboutPage {
+  margin: 20px;
+}
+
+.descriptionText {
+  color: white;
+}
