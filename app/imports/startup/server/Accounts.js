@@ -3,6 +3,7 @@ import { Accounts } from 'meteor/accounts-base';
 import { Roles } from 'meteor/alanning:roles';
 
 /* eslint-disable no-console */
+// disabled as eslint was providing an warning stating that there were unexpected console statements on lines 8, 28, adn 31.
 
 function createUser(email, password, role, firstName, lastName, phone) {
   console.log(`  Creating user ${email}.`);

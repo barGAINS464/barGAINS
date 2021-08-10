@@ -35,18 +35,7 @@ class ProductShop extends React.Component {
 // Require a document to be passed to this component.
 ProductShop.propTypes = {
   product: PropTypes.object.isRequired,
-  // Products: PropTypes.object.isRequired,
+  Products: PropTypes.object.isRequired,
 };
-// Products.propTypes = {
-//  product: PropTypes.shape({
-//    title: PropTypes.string,
-//    cost: PropTypes.number,
-//    email: PropTypes.string,
-//    // closingDate: PropTypes.string,
-//    condition: PropTypes.string,
-//    description: PropTypes.string,
-//  }).isRequired,
-//
-// };
 // Wrap this component in withRouter since we use the <Link> React Router element.
 export default withRouter(ProductShop);

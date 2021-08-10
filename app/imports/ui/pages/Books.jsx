@@ -15,7 +15,6 @@ class ListItems extends React.Component {
   }
 
   // Render the page once subscriptions have been received.
-  // eslint-disable-next-line consistent-return
   renderPage() {
     const books = this.props.items.filter(book => book.category === 'Book');
     return (

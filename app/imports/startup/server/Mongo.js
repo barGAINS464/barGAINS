@@ -3,6 +3,7 @@ import { Profiles } from '../../api/profile/Profiles';
 import { Items } from '../../api/item/Items';
 
 /* eslint-disable no-console */
+// disabled as eslint was providing warnings about unexpected console statements.
 
 // Initialize the database with a default data document.
 function addItem(data) {
