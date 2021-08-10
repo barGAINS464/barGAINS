@@ -44,3 +44,17 @@
 .descriptionText {
   color: white;
 }
+
+.questionnaire1 {
+  padding-top: 200px;
+}
+
+.questionnaireMiddlepage {
+  background: url('images/') no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+}

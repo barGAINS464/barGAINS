@@ -16,7 +16,7 @@ function addProfile(data) {
   Profiles.collection.insert(data);
 }
 function addAnswers(data) {
-  console.log(`  Adding: ${data.firstName} (${data.owner})`);
+  console.log(`  Adding: Questionnaire (${data.owner})`);
   Answers.collection.insert(data);
 }
 // Initialize the ItemsCollection, ProfilesCollection, and AnswersCollection if empty.
