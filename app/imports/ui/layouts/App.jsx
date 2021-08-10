@@ -17,6 +17,7 @@ import Signin from '../pages/Signin';
 import Signout from '../pages/Signout';
 import SuccessfulPosting from '../pages/SuccessfulPosting';
 import Questionnaire1 from '../pages/Questionnaire1';
+import Questionnaire from '../pages/Questionnaire';
 import BargainsSignup from '../pages/BargainsSignup';
 import MyProfile from '../pages/MyProfile';
 import BargainsProfile from '../pages/BargainsProfile';
@@ -37,7 +38,6 @@ class App extends React.Component {
             <Route path="/signin" component={Signin}/>
             <Route path="/signup" component={BargainsSignup}/>
             <Route path="/signout" component={Signout}/>
-            <ProtectedRoute path="/questionnaire1" component={Questionnaire1}/>
             <ProtectedRoute path="/successfulposting" component={SuccessfulPosting}/>
             <ProtectedRoute path="/shop" component={ListItems}/>
             <ProtectedRoute path="/books" component={Books}/>
@@ -47,6 +47,7 @@ class App extends React.Component {
             <ProtectedRoute path="/edit/:_id" component={EditItem}/>
             <ProtectedRoute path="/about" component={About}/>
             <ProtectedRoute path="/questionnaire" component={Questionnaire1}/>
+            <ProtectedRoute path="/questionnaireform" component={Questionnaire}/>
             <AdminProtectedRoute path="/admin" component={ListStuffAdmin}/>
             <AdminProtectedRoute path="/profileadmin" component={ListProfileAdmin}/>
             <ProtectedRoute path="/myprofile" component={MyProfile}/>

@@ -49,12 +49,23 @@
   padding-top: 200px;
 }
 
-.questionnaireMiddlepage {
-  background: url('images/') no-repeat center center fixed;
+.questionnaireMiddlePage {
+  background: url('public/images/questionnaireBackground.jpeg') no-repeat center center fixed;
   background-size: cover;
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100vh;
   margin: 0;
+  padding-top: 200px;
+}
+
+.questionnaireButtons {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.questionnaire {
+  align-items: center;
+  justify-content: center;
 }
