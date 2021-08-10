@@ -56,6 +56,12 @@
       "description": "Comes with a free amp." }
   ],
 
+  "defaultAnswers": [
+    { "question1": "No", "question2": "No", "question3": "No", "question4": "No", "owner": "john@foo.com"},
+    { "question1": "No", "question2": "No", "question3": "No", "question4": "No", "owner": "admin@foo.com"},
+    { "question1": "No", "question2": "No", "question3": "No", "question4": "No", "owner": "glarita@hawaii.edu"}
+  ],
+
   "defaultData": [
     { "name": "Basket", "quantity": 3, "owner": "john@foo.com", "condition": "excellent" },
     { "name": "Bicycle", "quantity": 2, "owner": "john@foo.com", "condition": "poor" },
