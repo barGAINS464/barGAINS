@@ -64,7 +64,6 @@ class Questionnaire extends React.Component {
               fRef = ref;
             }} schema={bridge} onSubmit={data => this.submit(data, fRef)}>
               <Segment >
-                {/* eslint-disable-next-line max-len */}
                 <Container textAlign='center'>
                   <Header as='h5'>Question 1) Have you experienced any of the following symptoms within the past 2 weeks?</Header>
                   <Header as='h5'>

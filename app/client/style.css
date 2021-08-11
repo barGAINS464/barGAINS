@@ -50,7 +50,7 @@
 }
 
 .questionnaireMiddlePage {
-  background: url('../public/images/Logo.png') no-repeat center center fixed;
+  background-image: url('../public/images/covid.png');
   background-size: cover;
   display: flex;
   align-items: center;
