@@ -44,7 +44,7 @@ class ProductsAdmin extends React.Component {
 ProductsAdmin.propTypes = {
   products: PropTypes.object.isRequired,
   product: PropTypes.object.isRequired,
-  Products: PropTypes.object.isRequired,
+  ProductsAdmin: PropTypes.object.isRequired,
 };
 
 export default ProductsAdmin;

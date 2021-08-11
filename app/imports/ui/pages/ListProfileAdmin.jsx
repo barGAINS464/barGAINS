@@ -38,12 +38,15 @@ ListProfileAdmin.propTypes = {
 export default withTracker(() => {
   // Get access to Stuff documents.
   const subscription = Meteor.subscribe(Profiles.adminPublicationName);
+  const subscription2 = Meteor.subscribe(Profiles.userPublicationName);
   // Determine if the subscription is ready
   const ready = subscription.ready();
+  const ready2 = subscription2.ready();
   // Get the Stuff documents
   const profiles = Profiles.collection.find({}).fetch();
   return {
     profiles,
     ready,
+    ready2,
   };
 })(ListProfileAdmin);

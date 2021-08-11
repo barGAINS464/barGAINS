@@ -1,6 +1,7 @@
 import React from 'react';
 import { Card, Divider, Icon, Image, List } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
+import { Link, withRouter } from 'react-router-dom';
 
 /** Renders a single row in the List Stuff (Admin) table. See pages/ListItemsAdmin.jsx. */
 class ProfileCardsAdmin extends React.Component {
@@ -16,6 +17,7 @@ class ProfileCardsAdmin extends React.Component {
             <List>
               <List.Item> <Icon name='mail' />{this.props.profile.email}</List.Item>
               <List.Item><Icon name='phone' />{this.props.profile.phone}</List.Item>
+              <List.Item><Link to={`/bprofile/${this.props.profile._id}`}>View User Page</Link></List.Item>
             </List>
           </Card.Description>
         </Card.Content>
@@ -26,7 +28,9 @@ class ProfileCardsAdmin extends React.Component {
 
 // Require a document to be passed to this component.
 ProfileCardsAdmin.propTypes = {
+  profiles: PropTypes.object.isRequired,
   profile: PropTypes.object.isRequired,
+  Profiles: PropTypes.object.isRequired,
 };
 
-export default ProfileCardsAdmin;
+export default withRouter(ProfileCardsAdmin);

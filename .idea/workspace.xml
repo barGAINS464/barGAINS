@@ -5,19 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9fcb33f4-3437-4830-bdc4-4a1dbe6d1609" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/imports/ui/pages/UserModal.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/imports/ui/components/ProductShop.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/components/ProductShop.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/imports/ui/components/Products.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/components/Products.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/imports/ui/components/ProductsAdmin.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/components/ProductsAdmin.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/imports/ui/components/ProfileCardsAdmin.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/components/ProfileCardsAdmin.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/imports/ui/components/StuffItemAdmin.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/components/StuffItemAdmin.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/imports/ui/layouts/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/layouts/App.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/imports/ui/pages/BargainsSignup.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/pages/BargainsSignup.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/imports/ui/pages/ListItems.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/pages/ListItems.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/imports/ui/pages/BargainsProfile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/pages/BargainsProfile.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/imports/ui/pages/ListProfileAdmin.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/pages/ListProfileAdmin.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/imports/ui/pages/ListStuffAdmin.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/pages/ListItemsAdmin.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/settings.development.json" beforeDir="false" afterPath="$PROJECT_DIR$/config/settings.development.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
