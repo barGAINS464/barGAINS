@@ -6,11 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="9fcb33f4-3437-4830-bdc4-4a1dbe6d1609" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/imports/startup/server/Accounts.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/startup/server/Accounts.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/imports/startup/server/Mongo.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/startup/server/Mongo.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/imports/ui/components/ProductShop.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/components/ProductShop.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/imports/ui/pages/Books.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/pages/Books.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/imports/ui/components/Products.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/components/Products.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/imports/ui/components/ProductsAdmin.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/components/ProductsAdmin.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/imports/ui/pages/MyProfile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/pages/MyProfile.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

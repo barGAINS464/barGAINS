@@ -1,7 +1,7 @@
 import React from 'react';
-import { Card, Image, Divider } from 'semantic-ui-react';
+import { Card, Image, Divider, Label, List, Icon, Button } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
-import { withRouter } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
 /** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
 class ProductShop extends React.Component {
@@ -12,20 +12,22 @@ class ProductShop extends React.Component {
         <Card.Content>
           <Image className='cardImage' src={this.props.product.image} wrapped ui={true} rounded/>
           <Divider/>
-          <Card.Header className='cardSpace'> {this.props.product.title} ${this.props.product.cost} </Card.Header>
-          <Divider/>
-          <Card.Meta>
-              Contact: {this.props.product.email}
-          </Card.Meta>
-          <Card.Meta>
-            Category: {this.props.product.category}
-          </Card.Meta>
+          <Label color='black' basic ribbon>{this.props.product.category}</Label>
+          <Card.Header className='cardSpace'>{this.props.product.title} <Label size='mini' color='green' tag>${this.props.product.cost}</Label>
+          </Card.Header>
           <Card.Description>
-            <b>Condition:</b> &nbsp; {this.props.product.condition}
+            <List>
+              <List.Item>
+                <Label as='a' basic><Icon name='mail'/>CONTACT<Label.Detail>{this.props.product.email}</Label.Detail></Label>
+              </List.Item>
+              <List.Item><b>Condition:</b> &nbsp; {this.props.product.condition}</List.Item>
+              <List.Item><b>Description:</b> &nbsp; {this.props.product.description}</List.Item>
+            </List>
           </Card.Description>
-          <Card.Description>
-            <b>Description:</b> &nbsp; {this.props.product.description}
-          </Card.Description>
+        </Card.Content>
+        <Card.Content extra>
+          <Button basic>
+            <Icon name='heart' />Add to Wish List</Button>
         </Card.Content>
       </Card>
     );
