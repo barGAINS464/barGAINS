@@ -20,7 +20,7 @@ class NavBar extends React.Component {
       zIndex: 1 };
     return (
       <Menu style={menuStyle} attached="top" borderless inverted>
-        <Menu.Item as={NavLink} activeClassName="" exact to="/">
+        <Menu.Item as={NavLink} activeClassName="" exact to="/" key='landing'>
           <Header inverted as='h1'>barGAINS</Header>
         </Menu.Item>
         {this.props.currentUser ? (
@@ -29,10 +29,10 @@ class NavBar extends React.Component {
             <Menu.Item>
               <Dropdown text='Shop'>
                 <Dropdown.Menu>
-                  <Dropdown.Item text='All Items' as={NavLink} exact to="/shop" />
-                  <Dropdown.Item text='Books' as={NavLink} exact to="/books" />
-                  <Dropdown.Item text='Computers' as={NavLink} exact to="/computers" />
-                  <Dropdown.Item text='Music' as={NavLink} exact to="/music" />
+                  <Dropdown.Item text='All Items' as={NavLink} exact to="/shop" key='shop'/>
+                  <Dropdown.Item text='Books' as={NavLink} exact to="/books" key='books'/>
+                  <Dropdown.Item text='Computers' as={NavLink} exact to="/computers" key='computers'/>
+                  <Dropdown.Item text='Music' as={NavLink} exact to="/music" key='music'/>
                 </Dropdown.Menu>
               </Dropdown>
             </Menu.Item>,
@@ -44,21 +44,21 @@ class NavBar extends React.Component {
         ) : ''}
         {this.props.currentUser === '' ? (
           <Menu.Item position="right">
-            <Dropdown id="login-dropdown" text="Login" pointing="top right" icon={'user'}>
+            <Dropdown id="login-dropdown" text="Login" pointing="top right" icon={'user'} key='login-dropdown'>
               <Dropdown.Menu>
-                <Dropdown.Item id="login-dropdown-sign-in" icon="user" text="Sign In" as={NavLink} exact to="/signin"/>
-                <Dropdown.Item id="login-dropdown-sign-up" icon="add user" text="Sign Up" as={NavLink} exact to="/signup"/>
+                <Dropdown.Item id="login-dropdown-sign-in" icon="user" text="Sign In" as={NavLink} exact to="/signin" key='signin'/>
+                <Dropdown.Item id="login-dropdown-sign-up" icon="add user" text="Sign Up" as={NavLink} exact to="/signup" key='signup'/>
               </Dropdown.Menu>
             </Dropdown>
           </Menu.Item>
         ) : (
           <Menu.Menu position="right" style={menuStyle} attached="top" borderless inverted>
-            <Menu.Item as={NavLink} activeClassName="active" exact to="/myprofile" key='profile'>My Profile</Menu.Item>
-            <Menu.Item><Icon name="user circle"/>{this.props.currentUser}</Menu.Item>
+            <Menu.Item as={NavLink} activeClassName="active" exact to="/myprofile" key='myprofile'>My Profile</Menu.Item>
+            <Menu.Item key='current-user'><Icon name="user circle"/>{this.props.currentUser}</Menu.Item>
             <Menu.Item>
-              <Dropdown id="navbar-current-user" pointing="top right" icon="sign-out alternate">
+              <Dropdown id="navbar-current-user" pointing="top right" icon="sign-out alternate" key='navbar-current-user'>
                 <Dropdown.Menu>
-                  <Dropdown.Item id="navbar-sign-out" icon="sign out" text="Sign Out" as={NavLink} exact to="/signout"/>
+                  <Dropdown.Item id="navbar-sign-out" icon="sign out" text="Sign Out" as={NavLink} exact to="/signout" key='signout'/>
                 </Dropdown.Menu>
               </Dropdown>
             </Menu.Item>

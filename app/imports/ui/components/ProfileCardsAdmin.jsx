@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Divider, Icon, Image, List } from 'semantic-ui-react';
+import { Card, Divider, Icon, Image, List, Button } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { Link, withRouter } from 'react-router-dom';
 
@@ -17,7 +17,10 @@ class ProfileCardsAdmin extends React.Component {
             <List>
               <List.Item> <Icon name='mail' />{this.props.profile.email}</List.Item>
               <List.Item><Icon name='phone' />{this.props.profile.phone}</List.Item>
-              <List.Item><Link to={`/bprofile/${this.props.profile._id}`}>View User Page</Link></List.Item>
+              <Divider/>
+              <Button compact as={Link} to={`/bprofile/${this.props.profile._id}`} color='teal' basic attached>
+                <Button.Content><Icon name='eye'/>View User Page</Button.Content>
+              </Button>
             </List>
           </Card.Description>
         </Card.Content>
