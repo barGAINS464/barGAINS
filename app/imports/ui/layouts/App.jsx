@@ -8,7 +8,7 @@ import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
 import Landing from '../pages/Landing';
 import ListItems from '../pages/ListItems';
-import ListStuffAdmin from '../pages/ListStuffAdmin';
+import ListStuffAdmin from '../pages/ListItemsAdmin';
 import ListProfileAdmin from '../pages/ListProfileAdmin';
 import AddItem from '../pages/ItemPost';
 import EditItem from '../pages/EditItem';
@@ -24,6 +24,7 @@ import Books from '../pages/Books';
 import Computers from '../pages/Computers';
 import Music from '../pages/Music';
 import About from '../pages/About';
+import UserModal from '../pages/UserModal';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
@@ -50,6 +51,7 @@ class App extends React.Component {
             <AdminProtectedRoute path="/profileadmin" component={ListProfileAdmin}/>
             <ProtectedRoute path="/myprofile" component={MyProfile}/>
             <ProtectedRoute path="/bprofile" component={BargainsProfile}/>
+            <ProtectedRoute path="/modal" component={UserModal}/>
             <Route component={NotFound}/>
           </Switch>
           <Footer/>

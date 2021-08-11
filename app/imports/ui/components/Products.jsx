@@ -21,7 +21,7 @@ class Products extends React.Component {
           </Card.Header>
           <Card.Description>
             <List>
-              <List.Item><Label as='a' basic><Icon name='mail'/> {this.props.product.email}</Label></List.Item>
+              <List.Item><Label basic><Icon name='mail'/> {this.props.product.email}</Label></List.Item>
               <List.Item><b>Condition:</b> &nbsp; {this.props.product.condition}</List.Item>
               <List.Item><b>Description:</b> &nbsp; {this.props.product.description}</List.Item>
             </List>
@@ -29,10 +29,10 @@ class Products extends React.Component {
         </Card.Content>
         <Card.Content extra>
           <a>
-            <Button icon onClick={() => this.removeItem(this.props.product._id)} size='small'>
-              <Icon name = "trash" />
+            <Button inverted color='red' icon onClick={() => this.removeItem(this.props.product._id)} size='small' circular>
+              <Icon name = "trash"/>
             </Button>
-            <Link to={`/edit/${this.props.product._id}`}>Edit</Link>
+            <Button inverted compact color='blue' as={Link} to={`/edit/${this.props.product._id}`}><Icon name='pencil'/>Edit</Button>
           </a>
         </Card.Content>
       </Card>

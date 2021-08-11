@@ -1,7 +1,8 @@
 import React from 'react';
 import { Card, Image, Divider, Label, List, Icon, Button } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
-import { Link, withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
+import UserModal from '../pages/UserModal';
 
 /** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
 class ProductShop extends React.Component {
@@ -18,7 +19,7 @@ class ProductShop extends React.Component {
           <Card.Description>
             <List>
               <List.Item>
-                <Label as='a' basic><Icon name='mail'/>CONTACT<Label.Detail>{this.props.product.email}</Label.Detail></Label>
+                <UserModal/><Label pointing='left' size='tiny' basic>{this.props.product.email} </Label>
               </List.Item>
               <List.Item><b>Condition:</b> &nbsp; {this.props.product.condition}</List.Item>
               <List.Item><b>Description:</b> &nbsp; {this.props.product.description}</List.Item>

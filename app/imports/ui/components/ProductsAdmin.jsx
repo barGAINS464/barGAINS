@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { Items } from '../../api/item/Items';
 
-/** Renders a single row in the List Stuff (Admin) table. See pages/ListStuffAdmin.jsx. */
+/** Renders a single row in the List Stuff (Admin) table. See pages/ListItemsAdmin.jsx. */
 class ProductsAdmin extends React.Component {
   removeItem(docID) {
     Items.collection.remove(docID);
@@ -29,10 +29,10 @@ class ProductsAdmin extends React.Component {
         </Card.Content>
         <Card.Content extra>
           <a>
-            <Button icon onClick={() => this.removeItem(this.props.product._id)} size='small'>
-              <Icon name = "trash" />
+            <Button inverted color='red' icon onClick={() => this.removeItem(this.props.product._id)} size='small' circular>
+              <Icon name = "trash"/>
             </Button>
-            <Link to={`/edit/${this.props.product._id}`}>Edit</Link>
+            <Button inverted compact color='blue' as={Link} to={`/edit/${this.props.product._id}`}><Icon name='pencil'/>Edit</Button>
           </a>
         </Card.Content>
       </Card>
