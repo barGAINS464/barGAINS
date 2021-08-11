@@ -1,7 +1,7 @@
 import React from 'react';
-import { Divider, Grid, Header, Image, List, Segment } from 'semantic-ui-react';
+import { Button, Divider, Grid, Header, Icon, Image, List, Segment } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
-import { withRouter } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
 class MainProfile extends React.Component {
 
@@ -26,6 +26,8 @@ class MainProfile extends React.Component {
                   <List.Content>{this.props.info.phone}</List.Content>
                 </List.Item>
               </List>
+              <Divider/>
+              <Button inverted compact color='blue' as={Link} to={`/editProfile/${this.props.info._id}`}><Icon name='pencil'/>Edit Profile</Button>
             </Segment>
           </Grid.Column>
         </Grid>

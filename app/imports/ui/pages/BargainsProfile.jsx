@@ -16,7 +16,7 @@ class BargainsProfile extends React.Component {
 
   renderPage() {
     const panes = [
-      { menuItem: 'My Products', render: () => <Tab.Pane>
+      { menuItem: 'Products', render: () => <Tab.Pane>
         <Card.Group itemsPerRow={2}>
           {this.props.products.map((product, index) => <Products key={index} product={product} Products={Items}/>)}
         </Card.Group>
@@ -27,7 +27,8 @@ class BargainsProfile extends React.Component {
     return (
       <div className='userProfilePage' id='userProfile-page'>
         <Container text style={{ marginTop: '7em' }}>
-          <Header as="h2">User Profile</Header>
+          <Header as='h1' textAlign='center' inverted>User Profile</Header>
+          <Divider/>
           <Grid columns={2} divided>
             <Grid.Column>
               <Image size='medium rounded image' src={this.props.bProfile.profilePic} wrapped ui={true} centered/>
@@ -49,7 +50,6 @@ class BargainsProfile extends React.Component {
               </Segment>
             </Grid.Column>
           </Grid>
-          <Header as="h2" textAlign="center">User Products</Header>
           <Divider/>
           <Segment>
             <Tab panes={panes}/>

@@ -12,6 +12,7 @@ import ListStuffAdmin from '../pages/ListItemsAdmin';
 import ListProfileAdmin from '../pages/ListProfileAdmin';
 import AddItem from '../pages/ItemPost';
 import EditItem from '../pages/EditItem';
+import EditProfile from '../pages/EditProfile';
 import NotFound from '../pages/NotFound';
 import Signin from '../pages/Signin';
 import Signout from '../pages/Signout';
@@ -46,11 +47,12 @@ class App extends React.Component {
             <ProtectedRoute path="/music" component={Music}/>
             <ProtectedRoute path="/add" component={AddItem}/>
             <ProtectedRoute path="/edit/:_id" component={EditItem}/>
+            <ProtectedRoute path="/editProfile/:_id" component={EditProfile}/>
             <ProtectedRoute path="/about" component={About}/>
             <AdminProtectedRoute path="/admin" component={ListStuffAdmin}/>
             <AdminProtectedRoute path="/profileadmin" component={ListProfileAdmin}/>
             <ProtectedRoute path="/myprofile" component={MyProfile}/>
-            <ProtectedRoute path="/bprofile" component={BargainsProfile}/>
+            <ProtectedRoute path="/bprofile/:_id" component={BargainsProfile}/>
             <ProtectedRoute path="/modal" component={UserModal}/>
             <Route component={NotFound}/>
           </Switch>
