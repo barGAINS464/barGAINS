@@ -46,7 +46,7 @@ class MyProfile extends React.Component {
 
     const panes = [
       { menuItem: 'My Products', render: () => <Tab.Pane>
-        <Card.Group>
+        <Card.Group itemsPerRow={2}>
           {prod1.map((product, index) => <Products key={index} product={product} Products={Products}/>)}
         </Card.Group>
       </Tab.Pane> },

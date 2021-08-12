@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Image, Button, Icon, Divider } from 'semantic-ui-react';
+import { Card, Image, Button, Icon, Divider, List, Label } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { withRouter, Link } from 'react-router-dom';
 import { Items } from '../../api/item/Items';
@@ -16,27 +16,23 @@ class Products extends React.Component {
         <Card.Content>
           <Image className='cardImage' src={this.props.product.image} wrapped ui={true} rounded/>
           <Divider/>
-          <Card.Header className='cardSpace'> {this.props.product.title} ${this.props.product.cost} </Card.Header>
-          <Divider/>
-          <Card.Meta>
-              Contact: {this.props.product.email}
-          </Card.Meta>
-          <Card.Meta>
-            Category: {this.props.product.category}
-          </Card.Meta>
+          <Label color='black' basic ribbon>{this.props.product.category}</Label>
+          <Card.Header className='cardSpace'>{this.props.product.title} <Label size='mini' color='green' tag>${this.props.product.cost}</Label>
+          </Card.Header>
           <Card.Description>
-            <b>Condition:</b> &emsp; {this.props.product.condition}
-          </Card.Description>
-          <Card.Description>
-            <b>Description:</b> &emsp; {this.props.product.description}
+            <List>
+              <List.Item><Label basic><Icon name='mail'/> {this.props.product.email}</Label></List.Item>
+              <List.Item><b>Condition:</b> &nbsp; {this.props.product.condition}</List.Item>
+              <List.Item><b>Description:</b> &nbsp; {this.props.product.description}</List.Item>
+            </List>
           </Card.Description>
         </Card.Content>
         <Card.Content extra>
           <a>
-            <Button icon onClick={() => this.removeItem(this.props.product._id)} size='small'>
-              <Icon name = "trash" />
+            <Button inverted color='red' icon onClick={() => this.removeItem(this.props.product._id)} size='small' circular>
+              <Icon name = "trash"/>
             </Button>
-            <Link to={`/edit/${this.props.product._id}`}>Edit</Link>
+            <Button inverted compact color='blue' as={Link} to={`/edit/${this.props.product._id}`}><Icon name='pencil'/>Edit</Button>
           </a>
         </Card.Content>
       </Card>
