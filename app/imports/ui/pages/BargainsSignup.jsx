@@ -68,6 +68,7 @@ class BargainsSignup extends React.Component {
                       type="firstName"
                       placeholder="First Name"
                       onChange={this.handleChange}
+                      required
                     />
                     <Form.Input
                       label="Last Name"
@@ -76,6 +77,7 @@ class BargainsSignup extends React.Component {
                       type="lastName"
                       placeholder="Last Name"
                       onChange={this.handleChange}
+                      required
                     />
                   </Form.Group>
                   <Form.Input
@@ -87,6 +89,7 @@ class BargainsSignup extends React.Component {
                     type="link"
                     placeholder="Please paste a profile picture here"
                     onChange={this.handleChange}
+                    required
                   />
                   <Form.Input
                     label="Phone Number"
@@ -109,6 +112,7 @@ class BargainsSignup extends React.Component {
                     type="email"
                     placeholder="E-mail address"
                     onChange={this.handleChange}
+                    required
                   />
                   <Form.Input
                     label="Password"
@@ -119,6 +123,7 @@ class BargainsSignup extends React.Component {
                     placeholder="Password"
                     type="password"
                     onChange={this.handleChange}
+                    required
                   />
                 </Segment>
                 <Form.Button id="signup-form-submit" content="Submit"/>

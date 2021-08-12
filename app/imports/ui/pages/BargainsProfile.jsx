@@ -3,10 +3,11 @@ import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import { _ } from 'meteor/underscore';
-import { Item, Container, Header, Loader, Card } from 'semantic-ui-react';
+import { Container, Header, Loader, Card, Grid, Image, Segment, Divider, List, Tab } from 'semantic-ui-react';
 import { Profiles } from '../../api/profile/Profiles';
+import Products from '../components/Products';
 import { Items } from '../../api/item/Items';
-import { Products } from '../../ui/components/Products';
+import ProductShop from '../components/ProductShop';
 
 class BargainsProfile extends React.Component {
 
@@ -15,50 +16,70 @@ class BargainsProfile extends React.Component {
   }
 
   renderPage() {
-    return (
-      <Container>
-        <Header as="h2">User Profile</Header>
-        <Item.Group>
-          <Item>
-            <Item.Image size='medium' src={this.props.profile.profilePic} />
-
-            <Item.Content>
-              <Item.Header textAlign={'left'}>{this.props.profile.firstName} {this.props.profile.lastName}</Item.Header>
-              <Item.Meta>
-                <span className='email'>{this.props.profile.email}</span>
-              </Item.Meta>
-              <Item.Description>User email: {this.props.profile.owner}</Item.Description>
-            </Item.Content>
-          </Item>
-        </Item.Group>
-        <Header as="h2" textAlign="center">User Products</Header>
-        <Card.Group>
-          {this.props.items.map((item, index) => <Products key={index} item={item} Products={Products}/>)}
+    const panes = [
+      { menuItem: 'Products', render: () => <Tab.Pane>
+        <Card.Group itemsPerRow={2}>
+          {this.props.products.map((product, index) => <ProductShop key={index} product={product} Products={Items}/>)}
         </Card.Group>
-      </Container>
+      </Tab.Pane> },
+      { menuItem: 'Reviews', render: () => <Tab.Pane>Reviews will go here.</Tab.Pane> },
+    ];
+
+    return (
+      <div className='userProfilePage' id='userProfile-page'>
+        <Container text style={{ marginTop: '7em' }}>
+          <Header as='h1' textAlign='center' inverted>User Profile</Header>
+          <Divider/>
+          <Grid columns={2} divided>
+            <Grid.Column>
+              <Image size='medium rounded image' src={this.props.bProfile.profilePic} wrapped ui={true} centered/>
+            </Grid.Column>
+            <Grid.Column>
+              <Segment>
+                <Header as='h1' textAlign='center'>{this.props.bProfile.firstName} {this.props.bProfile.lastName}</Header>
+                <Divider />
+                <List centered>
+                  <List.Item>
+                    <List.Icon name='mail' />
+                    <List.Content>{this.props.bProfile.email}</List.Content>
+                  </List.Item>
+                  <List.Item>
+                    <List.Icon name='phone' />
+                    <List.Content>{this.props.bProfile.phone}</List.Content>
+                  </List.Item>
+                </List>
+              </Segment>
+            </Grid.Column>
+          </Grid>
+          <Divider/>
+          <Segment>
+            <Tab panes={panes}/>
+          </Segment>
+        </Container>
+      </div>
     );
   }
 }
 
 BargainsProfile.propTypes = {
-  profile: PropTypes.object,
+  bProfile: PropTypes.object,
   model: PropTypes.object,
-  items: PropTypes.array.isRequired,
+  products: PropTypes.array.isRequired,
   ready: PropTypes.bool.isRequired,
 };
 
 export default withTracker(({ match }) => {
-  const documentId = match.params._id;
+  const docId = match.params._id;
   const subscription = Meteor.subscribe(Profiles.userPublicationName);
   const ready = subscription.ready();
-  const profile = Profiles.collection.findOne(documentId);
+  const bProfile = Profiles.collection.findOne(docId);
   const subscription2 = Meteor.subscribe(Items.userPublicationName);
   const ready2 = subscription2.ready();
-  const username = _.first(_.pluck(Profiles.collection.find(documentId).fetch(), 'owner'));
-  const items = Items.collection.find({ owner: username }).fetch();
+  const username = _.first(_.pluck(Profiles.collection.find(docId).fetch(), 'owner'));
+  const products = Items.collection.find({ owner: username }).fetch();
   return {
-    profile,
-    items,
+    bProfile,
+    products,
     ready,
     ready2,
   };

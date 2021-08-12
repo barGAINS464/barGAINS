@@ -1,7 +1,9 @@
 {
   "defaultAccounts": [
     { "email": "admin@foo.com", "password": "changeme", "role": "admin" },
-    { "email": "john@foo.com", "password": "changeme" }
+    { "email": "john@foo.com", "password": "changeme" },
+    { "email": "sueflay@hawaii.edu", "password": "changeme" },
+    { "email": "obijuan@gmail.com", "password": "changeme" }
   ],
 
   "defaultProfiles": [
@@ -18,6 +20,20 @@
       "profilePic": "https://media.istockphoto.com/photos/we-grind-the-best-coffee-picture-id523147245?k=6&m=523147245&s=612x612&w=0&h=BuzmyB2fwl04dISCxXnOI4fwya2ETnHQNBvTu7wqjfY=",
       "phone": "(808) 333-3333",
       "owner": "john@foo.com"
+    },
+    { "email": "sueflay@hawaii.edu",
+      "firstName": "Sue",
+      "lastName": "Flay",
+      "profilePic": "https://media.newyorker.com/photos/5d8cfb19a4b97600086ed8ac/master/pass/Patterson-Malkmus-primary.jpg",
+      "phone": "(808) 123-4567",
+      "owner": "sueflay@hawaii.edu"
+    },
+    { "email": "obijuan@gmail.com",
+      "firstName": "Obi",
+      "lastName": "Juan",
+      "profilePic": "https://pbs.twimg.com/media/E5nMI2nXwAM6JS8.png",
+      "phone": "(808) 123-4567",
+      "owner": "obijuan@gmail.com"
     }
   ],
 
@@ -30,19 +46,19 @@
       "condition": "excellent",
       "category": "Book",
       "description": "great book" },
-    { "email": "mhy@hawaii.edu",
+    { "email": "obijuan@gmail.com",
       "image": "https://www.nvidia.com/content/dam/en-zz/Solutions/geforce/geforce-rtx-turing/2080/gallery/geforce-rtx-2080-gallery-c-641-u@2x.jpg",
       "title": "RTX 2080",
       "cost": 500,
-      "owner": "mhy@hawaii.edu",
+      "owner": "obijuan@gmail.com",
       "condition": "excellent",
       "category": "Computer",
       "description": "great GPU" },
-    { "email": "admin@foo.com",
+    { "email": "sueflay@hawaii.edu",
       "image": "http://cdn.shopify.com/s/files/1/1025/2995/products/LTD_Orange_LP_mockupSQ_grande.jpg?v=1624975951",
       "title": "BOYGENIUS VINYL LP",
       "cost": 60,
-      "owner": "admin@foo.com",
+      "owner": "sueflay@hawaii.edu",
       "condition": "excellent",
       "category": "Music",
       "description": "Limited Edition" },
@@ -53,7 +69,15 @@
       "owner": "john@foo.com",
       "condition": "excellent",
       "category": "Music",
-      "description": "Comes with a free amp." }
+      "description": "Comes with a free amp." },
+    { "email": "admin@foo.com",
+      "image": "https://atwoodmagazine.com/wp-content/uploads/2019/10/Space-Cadet-beabadoobee.jpeg",
+      "title": "EP Space Cadet: Beabadoobee VINYL ",
+      "cost": 20,
+      "owner": "admin@foo.com",
+      "condition": "fair",
+      "category": "Music",
+      "description": "‘Space Cadet’ is both an ode to nineties rock and a grungy exclamation of the frustration Dirty Hit signee Beabadoobee feels in establishing her identity as an artist and human being." }
   ],
 
   "defaultAnswers": [
