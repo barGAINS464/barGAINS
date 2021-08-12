@@ -1,17 +1,30 @@
 import React from 'react';
-import { Table } from 'semantic-ui-react';
+import { Card, Divider, Icon, Image, List, Button } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
+import { Link, withRouter } from 'react-router-dom';
 
-/** Renders a single row in the List Stuff (Admin) table. See pages/ListStuffAdmin.jsx. */
+/** Renders a single row in the List Stuff (Admin) table. See pages/ListItemsAdmin.jsx. */
 class ProfileCardsAdmin extends React.Component {
   render() {
     return (
-      <Table.Row>
-        <Table.Cell>{this.props.profiles.firstName}</Table.Cell>
-        <Table.Cell>{this.props.profiles.lastName}</Table.Cell>
-        <Table.Cell>{this.props.profiles.phone}</Table.Cell>
-        <Table.Cell>{this.props.profiles.owner}</Table.Cell>
-      </Table.Row>
+      <Card>
+        <Card.Content>
+          <Card.Header><Image src={this.props.profile.profilePic} wrapped ui={true} avatar/>{this.props.profile.firstName} {this.props.profile.lastName}</Card.Header>
+          <Divider/>
+          <Card.Meta>
+          </Card.Meta>
+          <Card.Description>
+            <List>
+              <List.Item> <Icon name='mail' />{this.props.profile.email}</List.Item>
+              <List.Item><Icon name='phone' />{this.props.profile.phone}</List.Item>
+              <Divider/>
+              <Button compact as={Link} to={`/bprofile/${this.props.profile._id}`} color='teal' basic attached>
+                <Button.Content><Icon name='eye'/>View User Page</Button.Content>
+              </Button>
+            </List>
+          </Card.Description>
+        </Card.Content>
+      </Card>
     );
   }
 }
@@ -19,6 +32,8 @@ class ProfileCardsAdmin extends React.Component {
 // Require a document to be passed to this component.
 ProfileCardsAdmin.propTypes = {
   profiles: PropTypes.object.isRequired,
+  profile: PropTypes.object.isRequired,
+  Profiles: PropTypes.object.isRequired,
 };
 
-export default ProfileCardsAdmin;
+export default withRouter(ProfileCardsAdmin);

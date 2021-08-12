@@ -17,6 +17,7 @@ class About extends React.Component {
           <Header as='h2' color="teal">About barGAINS</Header>
           <div className="descriptionText">
             <p>
+              {/* The main body of our About page includes a paragraph description which should not be broken up. */}
               {/* eslint-disable-next-line max-len */}
                 barGAINS is a place for college students to safely buy, sell, and trade technology, books, music, and more. During the times of COVID-19 our site aims to create a safer environment for users to interact and exchange their items. Users are able to create an account, login, post items to sell or trade, and view items to buy. In addition, users are asked to complete a survey which will screen them for COVID-19 symptoms, thus attempting to create a safer environment for our users to decide how they would like to interact with each other as they buy, sell, or trade their items in person or through other means.
             </p>
