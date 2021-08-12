@@ -49,6 +49,12 @@ export default class Signin extends React.Component {
               Login to your barGAINS account
             </Header>
             <Divider/>
+            <Message
+              icon='user circle outline'
+              attached
+              header='Welcome back to the barGAINS site!'
+              content='Login to continue your bartering journey.'
+            />
             <Form onSubmit={this.submit}>
               <Segment stacked>
                 <Form.Input

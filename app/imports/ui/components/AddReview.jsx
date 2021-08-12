@@ -26,15 +26,17 @@ class AddReview extends React.Component {
   }
 
   render() {
-    let fRef = null;
-    const userName = Meteor.user().username;
+    // let fRef = null;
+    // const userName = Meteor.user().username;
+    // ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => this.submit(data, fRef)}
+
     return (
-      <AutoForm id='review-page' ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => this.submit(data, fRef)} >
+      <AutoForm id='review-page' >
         <Segment>
           <LongTextField id='review-page-userReview' label="Add a review!" name='userReview'/>
           <SubmitField id='review-page-userReview-submit' value='Submit'/>
           <ErrorsField/>
-          <HiddenField name='userName' value={userName}/>
+          <HiddenField name='userName' />
           <HiddenField name='createdAt' value={new Date()}/>
         </Segment>
       </AutoForm>

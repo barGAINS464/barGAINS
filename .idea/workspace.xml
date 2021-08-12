@@ -5,15 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9fcb33f4-3437-4830-bdc4-4a1dbe6d1609" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/imports/api/review/Reviews.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/imports/ui/components/AddReview.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/public/images/covid.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/public/images/signout.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/imports/ui/components/Review.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/imports/ui/pages/UserReview.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/client/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/client/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/imports/ui/components/AddReview.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/components/AddReview.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/imports/ui/components/NavBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/components/NavBar.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/imports/ui/layouts/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/layouts/App.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/imports/ui/pages/Signout.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/pages/Signout.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/imports/ui/pages/BargainsSignup.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/pages/BargainsSignup.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/imports/ui/pages/Signin.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/pages/Signin.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
