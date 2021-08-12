@@ -56,7 +56,6 @@ class App extends React.Component {
             <ProtectedRoute path="/myprofile" component={MyProfile}/>
             <ProtectedRoute path="/bprofile/:_id" component={BargainsProfile}/>
             <ProtectedRoute path="/productpage/:_id" component={ProductPage}/>
-            <ProtectedRoute path="/modal" component={UserModal}/>
             <Route component={NotFound}/>
           </Switch>
           <Footer/>
