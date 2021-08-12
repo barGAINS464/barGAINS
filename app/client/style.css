@@ -44,3 +44,32 @@
 .descriptionText {
   color: white;
 }
+
+.questionnaire1 {
+  padding-top: 200px;
+}
+
+.questionnaireMiddlePage {
+  background-image: url('../public/images/covid.png');
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  padding-top: 200px;
+}
+
+.questionnaireButtons {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.questionnaire {
+  align-items: center;
+  justify-content: center;
+}
+
+.questionnaireForm {
+  padding-top: 10px;
+}

@@ -1,15 +1,17 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
-import { Divider, Header, Loader, Card, Container, Segment, Tab } from 'semantic-ui-react';
+import { Divider, Header, Loader, Card, Container, Segment, Tab, Table } from 'semantic-ui-react';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import { _ } from 'meteor/underscore';
 import { Profiles } from '../../api/profile/Profiles';
 import { Items } from '../../api/item/Items';
+import { Answers } from '../../api/answer/Answers';
 // import Profile from '../components/Profile';
 import MainProfile from '../components/MainProfile';
 // import MyProduct from '../components/MyProduct';
 import Products from '../components/Products';
+import Answer from '../components/Answers';
 
 /** Renders a table containing all of the vendor documents. Use <MyVendorData> to render each row. */
 class MyProfile extends React.Component {
@@ -35,6 +37,12 @@ class MyProfile extends React.Component {
       }
       return 0;
     });
+    const answ1 = _.filter(this.props.answers, function (answer) {
+      if (username === answer.owner) {
+        return answer;
+      }
+      return 0;
+    });
 
     const panes = [
       { menuItem: 'My Products', render: () => <Tab.Pane>
@@ -43,6 +51,21 @@ class MyProfile extends React.Component {
         </Card.Group>
       </Tab.Pane> },
       { menuItem: 'Reviews', render: () => <Tab.Pane>Reviews will go here.</Tab.Pane> },
+      { menuItem: 'Questionnaire', render: () => <Tab.Pane>
+        <Table celled selectable>
+          <Table.Header>
+            <Table.Row>
+              <Table.HeaderCell>Have you experienced any of the following symptoms within the past 2 weeks?</Table.HeaderCell>
+              <Table.HeaderCell>Are you isolating or quarantining because you tested positive for COVID-19 or are worried that you may be sick or exposed to COVID-19?</Table.HeaderCell>
+              <Table.HeaderCell>Have you been told that you are suspected to have COVID-19 by a licensed healthcare provider in the past 10 days?</Table.HeaderCell>
+              <Table.HeaderCell>Are you fully vaccinated? OR Have you recovered from a documented COVID-19 infection in the last 3 months? </Table.HeaderCell>
+            </Table.Row>
+          </Table.Header>
+          <Table.Body>
+            {answ1.map(answer => <Answer key={answer._id} answers={answer}/>)}
+          </Table.Body>
+        </Table>
+      </Tab.Pane> },
 
     ];
     return (
@@ -66,6 +89,7 @@ MyProfile.propTypes = {
   profiles: PropTypes.array.isRequired,
   ready: PropTypes.bool.isRequired,
   items: PropTypes.array.isRequired,
+  answers: PropTypes.array.isRequired,
 };
 
 // withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker
@@ -74,15 +98,20 @@ export default withTracker(() => {
 
   const subscription = Meteor.subscribe(Profiles.userPublicationName);
   const subscription2 = Meteor.subscribe(Items.userPublicationName);
+  const subscription3 = Meteor.subscribe(Answers.userPublicationName);
   const ready = subscription.ready();
   const ready2 = subscription2.ready();
+  const ready3 = subscription3.ready();
   // Get the Vendor documents
   const profiles = Profiles.collection.find({}).fetch();
   const items = Items.collection.find({}).fetch();
+  const answers = Answers.collection.find({}).fetch();
   return {
     profiles,
     items,
+    answers,
     ready,
     ready2,
+    ready3,
   };
 })(MyProfile);
