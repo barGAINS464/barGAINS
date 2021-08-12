@@ -7,6 +7,7 @@ import { Container, Header, Loader, Card, Grid, Image, Segment, Divider, List, T
 import { Profiles } from '../../api/profile/Profiles';
 import Products from '../components/Products';
 import { Items } from '../../api/item/Items';
+import ProductShop from '../components/ProductShop';
 
 class BargainsProfile extends React.Component {
 
@@ -18,7 +19,7 @@ class BargainsProfile extends React.Component {
     const panes = [
       { menuItem: 'Products', render: () => <Tab.Pane>
         <Card.Group itemsPerRow={2}>
-          {this.props.products.map((product, index) => <Products key={index} product={product} Products={Items}/>)}
+          {this.props.products.map((product, index) => <ProductShop key={index} product={product} Products={Items}/>)}
         </Card.Group>
       </Tab.Pane> },
       { menuItem: 'Reviews', render: () => <Tab.Pane>Reviews will go here.</Tab.Pane> },

@@ -21,7 +21,11 @@ class ProductsAdmin extends React.Component {
           </Card.Header>
           <Card.Description>
             <List>
-              <List.Item><Label as='a' basic><Icon name='mail'/> {this.props.product.email}</Label></List.Item>
+              <List.Item>
+                <Button compact as={Link} to={`/productpage/${this.props.product._id}`} color='teal' basic attached>
+                  <Button.Content><Icon name='mail'/>Contact {this.props.product.email}</Button.Content>
+                </Button>
+              </List.Item>
               <List.Item><b>Condition:</b> &nbsp; {this.props.product.condition}</List.Item>
               <List.Item><b>Description:</b> &nbsp; {this.props.product.description}</List.Item>
             </List>
