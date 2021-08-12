@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import { _ } from 'meteor/underscore';
 import { Container, Header, Loader, Card, Grid, Image, Segment, Divider, List, Tab } from 'semantic-ui-react';
 import { Profiles } from '../../api/profile/Profiles';
-import Products from '../components/Products';
+// import Products from '../components/Products';
 import { Items } from '../../api/item/Items';
 import ProductShop from '../components/ProductShop';
 
