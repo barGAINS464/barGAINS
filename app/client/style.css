@@ -1,5 +1,5 @@
 .landingPage {
-  background-color: #2C7E80;
+  background: url('images/backgroundNEW.jpg') no-repeat center center fixed;
   background-size: cover;
   display: flex;
   align-items: center;
