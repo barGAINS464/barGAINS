@@ -10,6 +10,7 @@ import {
   ErrorsField,
   HiddenField,
   SubmitField,
+  SelectField,
   TextField } from 'uniforms-semantic';
 import { Link } from 'react-router-dom';
 import { Profiles } from '../../api/profile/Profiles';
@@ -20,8 +21,8 @@ const bridge = new SimpleSchema2Bridge(Profiles.schema);
 class EditItem extends React.Component {
   // On successful submit, insert the data.
   submit(data) {
-    const { email, firstName, lastName, profilePic, phone, _id } = data;
-    Profiles.collection.update(_id, { $set: { email, firstName, lastName, profilePic, phone, _id } }, (error) => (error ?
+    const { email, firstName, lastName, profilePic, phone, questionnaire, _id } = data;
+    Profiles.collection.update(_id, { $set: { email, firstName, lastName, profilePic, phone, questionnaire, _id } }, (error) => (error ?
       swal('Error', error.message, 'error') :
       swal('Success', 'Profile updated successfully', 'success')));
   }
@@ -50,6 +51,7 @@ class EditItem extends React.Component {
                 </Form.Group>
                 <TextField name='profilePic'/>
                 <TextField name='phone'/>
+                <SelectField name='questionnaire'/>
                 <SubmitField value='Submit'/>
                 <ErrorsField/>
                 <HiddenField name='owner' />

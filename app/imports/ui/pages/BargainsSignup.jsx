@@ -1,20 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link, Redirect } from 'react-router-dom';
-import { Container, Divider, Form, Grid, Header, Message, Segment } from 'semantic-ui-react';
+import { Container, Divider, Form, Grid, Header, Message, Segment, Select } from 'semantic-ui-react';
 import { Accounts } from 'meteor/accounts-base';
 import swal from 'sweetalert';
 import { Profiles } from '../../api/profile/Profiles';
 /**
  * Signup component is similar to signin component, but we create a new user instead.
  */
-
+const options = [
+  { key: 'Incomplete', text: 'Incomplete', value: 'Incomplete' },
+  { key: 'Completed', text: 'Completed', value: 'Completed' },
+];
 class BargainsSignup extends React.Component {
   /* Initialize state fields. */
   /* Initialize state fields. */
   constructor(props) {
     super(props);
-    this.state = { email: '', password: '', firstName: '', lastName: '', profilePic: '', phone: '', error: '', redirectToReferer: false };
+    this.state = { email: '', password: '', firstName: '', lastName: '', profilePic: '', phone: '', questionnaire: '', error: '', redirectToReferer: false };
   }
 
   /* Update the form controls each time the user interacts with them. */
@@ -24,15 +27,15 @@ class BargainsSignup extends React.Component {
 
   /* Handle Signup submission. Create user account and a profile entry, then redirect to the home page. */
   submit = () => {
-    const { email, password, firstName, lastName, profilePic, phone } = this.state;
-    Accounts.createUser({ email, username: email, password, profile: { firstName, lastName, profilePic, phone, owner: email } }, (err) => {
+    const { email, password, firstName, lastName, profilePic, phone, questionnaire } = this.state;
+    Accounts.createUser({ email, username: email, password, profile: { firstName, lastName, profilePic, phone, questionnaire, owner: email } }, (err) => {
       if (err) {
         this.setState({ error: err.reason });
       } else {
         this.setState({ error: '', redirectToReferer: true });
       }
     });
-    Profiles.collection.insert({ email, firstName, lastName, profilePic, phone, owner: email },
+    Profiles.collection.insert({ email, firstName, lastName, profilePic, phone, questionnaire, owner: email },
       (error) => {
         if (error) {
           swal('Error', error.message, 'error');
@@ -99,6 +102,15 @@ class BargainsSignup extends React.Component {
                     name="phone"
                     type="phone"
                     placeholder="Phone Number"
+                    onChange={this.handleChange}
+                  />
+                  <Form.Field
+                    control={Select}
+                    label='barGAINS COVID-19 Questionnaire'
+                    options={options}
+                    name='questionnaire'
+                    type='questionnaire'
+                    placeholder='Select Completed or Incomplete'
                     onChange={this.handleChange}
                   />
                 </Segment>

@@ -50,6 +50,7 @@ class BargainsProfile extends React.Component {
                     <List.Content>{this.props.bProfile.phone}</List.Content>
                   </List.Item>
                   <List.Item>
+                    <List.Content><Header as='h4'>Questionnaire: {this.props.bProfile.questionnaire}</Header></List.Content>
                   </List.Item>
                 </List>
               </Segment>

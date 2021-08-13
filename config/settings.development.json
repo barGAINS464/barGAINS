@@ -12,6 +12,7 @@
       "lastName": "Min",
       "profilePic": "https://media.istockphoto.com/photos/close-up-of-happy-young-asian-woman-picture-id466327868?k=6&m=466327868&s=612x612&w=0&h=TkCB4J3iJstNVppyczVqLqIOtWegFNxlI_MD6R2w2vs=",
       "phone": "(808) 422-2222",
+      "questionnaire": "Completed",
       "owner": "admin@foo.com"
     },
     { "email": "john@foo.com",
@@ -19,6 +20,7 @@
       "lastName": "Jon",
       "profilePic": "https://media.istockphoto.com/photos/we-grind-the-best-coffee-picture-id523147245?k=6&m=523147245&s=612x612&w=0&h=BuzmyB2fwl04dISCxXnOI4fwya2ETnHQNBvTu7wqjfY=",
       "phone": "(808) 333-3333",
+      "questionnaire": "Completed",
       "owner": "john@foo.com"
     },
     { "email": "sueflay@hawaii.edu",
@@ -26,6 +28,7 @@
       "lastName": "Flay",
       "profilePic": "https://media.newyorker.com/photos/5d8cfb19a4b97600086ed8ac/master/pass/Patterson-Malkmus-primary.jpg",
       "phone": "(808) 123-4567",
+      "questionnaire": "Incomplete",
       "owner": "sueflay@hawaii.edu"
     },
     { "email": "obijuan@gmail.com",
@@ -33,6 +36,7 @@
       "lastName": "Juan",
       "profilePic": "https://pbs.twimg.com/media/E5nMI2nXwAM6JS8.png",
       "phone": "(808) 123-4567",
+      "questionnaire": "Incomplete",
       "owner": "obijuan@gmail.com"
     }
   ],
