@@ -7,16 +7,15 @@
     <list default="true" id="9fcb33f4-3437-4830-bdc4-4a1dbe6d1609" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/imports/api/review/Reviews.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/api/review/Reviews.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/imports/ui/components/AddReview.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/components/AddReview.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/imports/startup/server/Mongo.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/startup/server/Mongo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/imports/startup/server/Publications.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/startup/server/Publications.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/imports/ui/components/AddReview.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/imports/ui/components/NavBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/components/NavBar.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/imports/ui/components/Review.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/components/Review.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/imports/ui/layouts/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/layouts/App.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/imports/ui/pages/Books.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/pages/Books.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/imports/ui/pages/Computers.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/pages/Computers.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/imports/ui/pages/Landing.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/pages/Landing.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/imports/ui/pages/Music.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/pages/Music.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/imports/ui/pages/BargainsProfile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/pages/BargainsProfile.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/imports/ui/pages/MyProfile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/pages/MyProfile.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/imports/ui/pages/Signout.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/pages/Signout.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/imports/ui/pages/UserReview.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/components/UserReview.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/settings.development.json" beforeDir="false" afterPath="$PROJECT_DIR$/config/settings.development.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

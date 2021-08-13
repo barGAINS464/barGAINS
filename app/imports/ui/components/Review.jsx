@@ -1,5 +1,5 @@
 import React from 'react';
-import { Feed, Rating } from 'semantic-ui-react';
+import { Feed, Icon, Rating } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 
@@ -8,12 +8,13 @@ class Review extends React.Component {
   render() {
     return (
       <Feed.Event>
+        <Icon name='user circle' size='huge' basic/>
         <Feed.Content>
-          <Feed.User>{this.review.userName}</Feed.User>
-          <Rating defaultRating={this.review.rating()} maxRating={5} disabled />
-          <Feed.Date content={this.review.createdAt.toLocaleDateString('en-US')} />
-          <Feed.Summary content={this.review.purchased} />
-          <Feed.Extra text content={this.review.comment} />
+          <Feed.Date>{this.props.review.createdAt.toLocaleDateString('en-US')}</Feed.Date>
+          <Rating icon='star'defaultRating={this.props.review.rating} maxRating={5} disabled centered/>
+          <Feed.Meta text content={this.props.review.commenter} />
+          <Feed.Summary content={this.props.review.purchased} />
+          <Feed.Meta text content={this.props.review.comment} />
         </Feed.Content>
       </Feed.Event>
     );

@@ -37,8 +37,7 @@ class NavBar extends React.Component {
               </Dropdown>
             </Menu.Item>,
             <Menu.Item as={NavLink} activeClassName="active" exact to="/about" key='about'>About Us</Menu.Item>,
-            <Menu.Item as={NavLink} activeClassName="active" exact to="/questionnaire" key='questionnaire'>Questionnaire</Menu.Item>,
-            <Menu.Item as={NavLink} activeClassName="active" exact to="/userReview" key='userReview'>Reviews</Menu.Item>]
+            <Menu.Item as={NavLink} activeClassName="active" exact to="/questionnaire" key='questionnaire'>Questionnaire</Menu.Item>]
         ) : ''}
         {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
           [<Menu.Item key='drop-down admin'>

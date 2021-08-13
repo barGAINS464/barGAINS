@@ -2,6 +2,7 @@ import { Meteor } from 'meteor/meteor';
 import { Profiles } from '../../api/profile/Profiles';
 import { Items } from '../../api/item/Items';
 import { Answers } from '../../api/answer/Answers';
+import { Reviews } from '../../api/review/Reviews';
 
 /* eslint-disable no-console */
 // disabled as eslint was providing warnings about unexpected console statements.
@@ -18,6 +19,10 @@ function addProfile(data) {
 function addAnswers(data) {
   console.log(`  Adding: Questionnaire (${data.owner})`);
   Answers.collection.insert(data);
+}
+function addReviews(data) {
+  console.log(`  Adding: Reviews (${data.owner})`);
+  Reviews.collection.insert(data);
 }
 // Initialize the ItemsCollection, ProfilesCollection, and AnswersCollection if empty.
 if (Items.collection.find().count() === 0) {
@@ -38,5 +43,12 @@ if (Answers.collection.find().count() === 0) {
   if (Meteor.settings.defaultAnswers) {
     console.log('Creating default profiles.');
     Meteor.settings.defaultAnswers.map(data => addAnswers(data));
+  }
+}
+
+if (Reviews.collection.find().count() === 0) {
+  if (Meteor.settings.defaultReviews) {
+    console.log('Creating default reviews.');
+    Meteor.settings.defaultReviews.map(data => addReviews(data));
   }
 }
