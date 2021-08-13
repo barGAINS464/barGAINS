@@ -7,7 +7,7 @@ import { Items } from '../../api/item/Items';
 import ProductShop from '../components/ProductShop';
 
 /** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
-class ListItems extends React.Component {
+class Computers extends React.Component {
 
   // If the subscription(s) have been received, render the page, otherwise show a loading icon.
   render() {
@@ -29,7 +29,7 @@ class ListItems extends React.Component {
 }
 
 // Require an array of products documents in the props.
-ListItems.propTypes = {
+Computers.propTypes = {
   items: PropTypes.array.isRequired,
   ready: PropTypes.bool.isRequired,
 };
@@ -46,4 +46,4 @@ export default withTracker(() => {
     items,
     ready,
   };
-})(ListItems);
+})(Computers);

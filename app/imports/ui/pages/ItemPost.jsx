@@ -1,6 +1,5 @@
 import React from 'react';
 import { Grid, Segment, Header, Divider } from 'semantic-ui-react';
-
 import { AutoForm, ErrorsField, NumField, SelectField, SubmitField, TextField, LongTextField } from 'uniforms-semantic';
 import swal from 'sweetalert';
 import { Meteor } from 'meteor/meteor';

@@ -5,7 +5,6 @@ import PropTypes from 'prop-types';
 import { _ } from 'meteor/underscore';
 import { Container, Header, Loader, Card, Grid, Image, Segment, Divider, List, Tab } from 'semantic-ui-react';
 import { Profiles } from '../../api/profile/Profiles';
-// import Products from '../components/Products';
 import { Items } from '../../api/item/Items';
 import ProductShop from '../components/ProductShop';
 
@@ -17,11 +16,13 @@ class BargainsProfile extends React.Component {
 
   renderPage() {
     const panes = [
-      { menuItem: 'Products', render: () => <Tab.Pane>
-        <Card.Group itemsPerRow={2}>
-          {this.props.products.map((product, index) => <ProductShop key={index} product={product} Products={Items}/>)}
-        </Card.Group>
-      </Tab.Pane> },
+      {
+        menuItem: 'Products', render: () => <Tab.Pane>
+          <Card.Group itemsPerRow={2}>
+            {this.props.products.map((product, index) => <ProductShop key={index} product={product} Products={Items}/>)}
+          </Card.Group>
+        </Tab.Pane>,
+      },
       { menuItem: 'Reviews', render: () => <Tab.Pane>Reviews will go here.</Tab.Pane> },
     ];
 
@@ -35,16 +36,17 @@ class BargainsProfile extends React.Component {
             </Grid.Column>
             <Grid.Column>
               <Segment>
-                <Header as='h1' textAlign='center'>{this.props.bProfile.firstName} {this.props.bProfile.lastName}</Header>
+                <Header as='h1'
+                  textAlign='center'>{this.props.bProfile.firstName} {this.props.bProfile.lastName}</Header>
                 <Divider/>
                 <Image size='medium rounded image' src={this.props.bProfile.profilePic} wrapped ui={true} centered/>
                 <List centered>
                   <List.Item>
-                    <List.Icon name='mail' />
+                    <List.Icon name='mail'/>
                     <List.Content>{this.props.bProfile.email}</List.Content>
                   </List.Item>
                   <List.Item>
-                    <List.Icon name='phone' />
+                    <List.Icon name='phone'/>
                     <List.Content>{this.props.bProfile.phone}</List.Content>
                   </List.Item>
                   <List.Item>

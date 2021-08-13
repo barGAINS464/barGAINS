@@ -36,7 +36,7 @@ if (Profiles.collection.find().count() === 0) {
 
 if (Answers.collection.find().count() === 0) {
   if (Meteor.settings.defaultAnswers) {
-    console.log('Creating default profiles.');
+    console.log('Creating default answers.');
     Meteor.settings.defaultAnswers.map(data => addAnswers(data));
   }
 }
