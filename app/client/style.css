@@ -1,5 +1,5 @@
 .landingPage {
-  background: url('../images/landing.jpeg');
+  background: url('../images/landing4.jpeg');
   background-size: cover;
   display: flex;
   align-items: center;
@@ -50,8 +50,10 @@
 }
 
 .questionnaireMiddlePage {
-  background: url('../images/covid19.jpeg');
+  background: url('../images/covid19.jpeg'), linear-gradient(rgb(219, 166, 166), rgb(0, 0, 172));
   background-size: cover;
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -59,6 +61,11 @@
   margin: 0;
   padding-top: 200px;
 }
+.blur{
+  backdrop-filter: blur(10px);
+  color: white;
+}
+
 
 .questionnaireButtons {
   padding-top: 10px;

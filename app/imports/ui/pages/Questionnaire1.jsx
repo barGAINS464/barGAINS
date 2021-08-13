@@ -9,22 +9,23 @@ export default class Signout extends React.Component {
       color: '#344C7E',
     };
     return (
-      <div className='questionnaireMiddlePage'>
-        <Container textAlign='center'>
-          <Header as='h1' inverted>COVID-19 Questionnaire</Header><br/>
-          <Header as='h3' inverted>The total amount of COVID-19 cases in Hawaii is above 44,000 and rising. The new
+      <div className='questionnaireMiddlePage' >
+        <div className='blur' >
+          <Container textAlign='center' >
+            <Header as='h1' inverted>COVID-19 Questionnaire</Header><br/>
+            <Header as='h3' inverted>The total amount of COVID-19 cases in Hawaii is above 44,000 and rising. The new
               Delta variant is much more
               contagious, more likely to break protections afforded by the virus, and can cause severe disease.</Header>
-          <Header as='h4' inverted>To help prevent the spread of COVID-19 and for the safety of you and the user you
+            <Header as='h4' inverted>To help prevent the spread of COVID-19 and for the safety of you and the user you
               are contacting, please
               answer the following 4 questions truthfully and to the best of your knowledge.</Header>
-          <Header as='h5' inverted><i>Information from <a href='https://health.hawaii.gov/coronavirusdisease2019/' target='_blank' style={salmon}
-            rel='noreferrer'>www.health.hawaii.gov</a>.</i></Header>
-          <Button as={Link} to='/questionnaireform'>Agree</Button>
-          <Button as={Link} to='/shop'>Disagree</Button>
-        </Container>
+            <Header as='h5' inverted><i>Information from <a href='https://health.hawaii.gov/coronavirusdisease2019/' target='_blank' style={salmon}
+              rel='noreferrer'>www.health.hawaii.gov</a>.</i></Header>
+            <Button as={Link} to='/questionnaireform'>Agree</Button>
+            <Button as={Link} to='/shop'>Disagree</Button>
+          </Container>
+        </div>
       </div>
-
     );
   }
 }
