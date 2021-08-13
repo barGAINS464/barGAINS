@@ -6,7 +6,7 @@ import { Accounts } from 'meteor/accounts-base';
 import swal from 'sweetalert';
 import { Profiles } from '../../api/profile/Profiles';
 /**
- * Signup component is similar to signin component, but we create a new user instead.
+ * Bargain Signup component is similar to signin component, but we create a new user instead.
  */
 const options = [
   { key: 'Incomplete', text: 'Incomplete', value: 'Incomplete' },
@@ -53,114 +53,116 @@ class BargainsSignup extends React.Component {
       return <Redirect to={from}/>;
     }
     return (
-      <Container id="signup-page">
-        <Grid textAlign="center" verticalAlign="middle" centered columns={2}>
-          <Grid.Column>
-            <Header as="h2" textAlign="center" inverted>
+      <div className='topRoom'>
+        <Container id="signup-page">
+          <Grid textAlign="center" verticalAlign="middle" centered columns={2}>
+            <Grid.Column>
+              <Header as="h2" textAlign="center" inverted>
                 Register your barGAINS account
-            </Header>
-            <Divider/>
-            <Message
-              icon='user circle outline'
-              attached
-              header='Welcome to the barGAINS site!'
-              content='Create a new account in a few, easy steps.'
-            />
-            <Form onSubmit={this.submit}>
-              <Segment stacked>
-                <Segment>
-                  <Form.Group widths='equal'>
-                    <Form.Input
-                      label="First Name"
-                      id="signup-form-firstname"
-                      name="firstName"
-                      type="firstName"
-                      placeholder="First Name"
-                      onChange={this.handleChange}
-                      required
-                    />
-                    <Form.Input
-                      label="Last Name"
-                      id="signup-form-lastname"
-                      name="lastName"
-                      type="lastName"
-                      placeholder="Last Name"
-                      onChange={this.handleChange}
-                      required
-                    />
-                  </Form.Group>
-                  <Form.Input
-                    label="Profile Picture"
-                    id="signup-form-image"
-                    icon="image"
-                    iconPosition="left"
-                    name="profilePic"
-                    type="link"
-                    placeholder="Please paste a profile picture here"
-                    onChange={this.handleChange}
-                    required
-                  />
-                  <Form.Input
-                    label="Phone Number"
-                    id="signup-form-phoneNum"
-                    icon="phone"
-                    iconPosition="left"
-                    name="phone"
-                    type="phone"
-                    placeholder="Phone Number"
-                    onChange={this.handleChange}
-                  />
-                  <Form.Field
-                    control={Select}
-                    label='barGAINS COVID-19 Questionnaire'
-                    options={options}
-                    name='questionnaire'
-                    type='questionnaire'
-                    placeholder='Select Completed or Incomplete'
-                    onChange={this.handleChange}
-                  />
-                </Segment>
-                <Segment>
-                  <Form.Input
-                    label="Email"
-                    id="signup-form-email"
-                    icon="mail"
-                    iconPosition="left"
-                    name="email"
-                    type="email"
-                    placeholder="E-mail address"
-                    onChange={this.handleChange}
-                    required
-                  />
-                  <Form.Input
-                    label="Password"
-                    id="signup-form-password"
-                    icon="lock"
-                    iconPosition="left"
-                    name="password"
-                    placeholder="Password"
-                    type="password"
-                    onChange={this.handleChange}
-                    required
-                  />
-                </Segment>
-                <Form.Button id="signup-form-submit" content="Submit"/>
-              </Segment>
-            </Form>
-            <Divider/>
-            <Message>
-                Already have an account? Login <Link to="/signin">here</Link>
-            </Message>
-            {this.state.error === '' ? ('') : (
+              </Header>
+              <Divider/>
               <Message
-                error
-                header="Registration was not successful"
-                content={this.state.error}
+                icon='user circle outline'
+                attached
+                header='Welcome to the barGAINS site!'
+                content='Create a new account in a few, easy steps.'
               />
-            )}
-          </Grid.Column>
-        </Grid>
-      </Container>
+              <Form onSubmit={this.submit}>
+                <Segment stacked>
+                  <Segment>
+                    <Form.Group widths='equal'>
+                      <Form.Input
+                        label="First Name"
+                        id="signup-form-firstname"
+                        name="firstName"
+                        type="firstName"
+                        placeholder="First Name"
+                        onChange={this.handleChange}
+                        required
+                      />
+                      <Form.Input
+                        label="Last Name"
+                        id="signup-form-lastname"
+                        name="lastName"
+                        type="lastName"
+                        placeholder="Last Name"
+                        onChange={this.handleChange}
+                        required
+                      />
+                    </Form.Group>
+                    <Form.Input
+                      label="Profile Picture"
+                      id="signup-form-image"
+                      icon="image"
+                      iconPosition="left"
+                      name="profilePic"
+                      type="link"
+                      placeholder="Please paste a profile picture here"
+                      onChange={this.handleChange}
+                      required
+                    />
+                    <Form.Input
+                      label="Phone Number"
+                      id="signup-form-phoneNum"
+                      icon="phone"
+                      iconPosition="left"
+                      name="phone"
+                      type="phone"
+                      placeholder="Phone Number"
+                      onChange={this.handleChange}
+                    />
+                    <Form.Field
+                      control={Select}
+                      label='barGAINS COVID-19 Questionnaire'
+                      options={options}
+                      name='questionnaire'
+                      type='questionnaire'
+                      placeholder='Select Completed or Incomplete'
+                      onChange={this.handleChange}
+                    />
+                  </Segment>
+                  <Segment>
+                    <Form.Input
+                      label="Email"
+                      id="signup-form-email"
+                      icon="mail"
+                      iconPosition="left"
+                      name="email"
+                      type="email"
+                      placeholder="E-mail address"
+                      onChange={this.handleChange}
+                      required
+                    />
+                    <Form.Input
+                      label="Password"
+                      id="signup-form-password"
+                      icon="lock"
+                      iconPosition="left"
+                      name="password"
+                      placeholder="Password"
+                      type="password"
+                      onChange={this.handleChange}
+                      required
+                    />
+                  </Segment>
+                  <Form.Button id="signup-form-submit" content="Submit"/>
+                </Segment>
+              </Form>
+              <Divider/>
+              <Message>
+                Already have an account? Login <Link to="/signin">here</Link>
+              </Message>
+              {this.state.error === '' ? ('') : (
+                <Message
+                  error
+                  header="Registration was not successful"
+                  content={this.state.error}
+                />
+              )}
+            </Grid.Column>
+          </Grid>
+        </Container>
+      </div>
     );
   }
 }

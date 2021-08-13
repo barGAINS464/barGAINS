@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import { Items } from '../../api/item/Items';
 import ProductShop from '../components/ProductShop';
 
-/** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
+/** Renders a page containing all of the Products cards. */
 class ListItems extends React.Component {
 
   // If the subscription(s) have been received, render the page, otherwise show a loading icon.
@@ -17,13 +17,15 @@ class ListItems extends React.Component {
   // Render the page once subscriptions have been received.
   renderPage() {
     return (
-      <Container>
-        <Header as="h2" textAlign="center" inverted>All Items</Header>
-        <Divider/>
-        <Card.Group itemsPerRow={4}>
-          {this.props.items.map((items, index) => <ProductShop key={index} product={items}/>)}
-        </Card.Group>
-      </Container>
+      <div className='topRoom'>
+        <Container>
+          <Header as="h2" textAlign="center" inverted>All Items</Header>
+          <Divider/>
+          <Card.Group itemsPerRow={4}>
+            {this.props.items.map((items, index) => <ProductShop key={index} product={items}/>)}
+          </Card.Group>
+        </Container>
+      </div>
     );
   }
 }

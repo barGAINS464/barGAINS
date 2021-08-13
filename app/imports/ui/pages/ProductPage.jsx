@@ -18,6 +18,7 @@ import { Items } from '../../api/item/Items';
 import { Profiles } from '../../api/profile/Profiles';
 import ProfileCards from '../components/ProfileCards';
 
+/** Renders a page that shows the sellers information and product */
 class ProductPage extends React.Component {
 
   render() {

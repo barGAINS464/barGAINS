@@ -19,7 +19,7 @@ import { Items } from '../../api/item/Items';
 
 const bridge = new SimpleSchema2Bridge(Items.schema);
 
-/** Renders the Page for editing a single document. */
+/** Renders the Page for editing a single item. */
 class EditItem extends React.Component {
   // On successful submit, insert the data.
   submit(data) {

@@ -30,7 +30,7 @@ const formSchema = new SimpleSchema({
 
 const bridge = new SimpleSchema2Bridge(formSchema);
 
-/** Renders the Page for adding a document. */
+/** Renders the second questionnaire Page where the user fills out the form */
 class Questionnaire extends React.Component {
 
   // On submit, insert the data.
@@ -53,7 +53,7 @@ class Questionnaire extends React.Component {
   render() {
     let fRef = null;
     const salmon = {
-      color: 'lightsalmon',
+      color: '#344C7E',
     };
     return (
       <div className='questionnaireForm'>

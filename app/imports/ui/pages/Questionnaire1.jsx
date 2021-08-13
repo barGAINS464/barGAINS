@@ -2,11 +2,11 @@ import React from 'react';
 import { Button, Container, Header } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 
-/** After the user clicks the "Signout" link in the NavBar, log them out and display this page. */
+/** Renders the first questionnaire page that the user will either agree or disagree on */
 export default class Signout extends React.Component {
   render() {
     const salmon = {
-      color: 'lightsalmon',
+      color: '#344C7E',
     };
     return (
       <div className='questionnaireMiddlePage'>

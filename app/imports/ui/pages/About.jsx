@@ -1,11 +1,12 @@
 import React from 'react';
 import { Header, Icon, Container, Card } from 'semantic-ui-react';
 
-/** Renders the Page for adding a document. */
+/** Renders the About us Page */
 class About extends React.Component {
-
-  // Render the form. Use Uniforms: https://github.com/vazco/uniforms
   render() {
+    const style = {
+      color: '#344C7E',
+    };
     return (
       <div className='aboutPage'>
         <Header as='h1' icon inverted textAlign='center'>
@@ -14,7 +15,7 @@ class About extends React.Component {
         </Header>
         <div className="ui divider"></div>
         <Container>
-          <Header as='h2' color="teal">About barGAINS</Header>
+          <Header as='h2' style={style}>About barGAINS</Header>
           <div className="descriptionText">
             <p>
                 barGAINS is a place for college students to safely buy, sell, and trade technology, books, music, and
@@ -25,7 +26,7 @@ class About extends React.Component {
               interact with each other as they buy, sell, or trade their items in person or through other means.
             </p>
           </div>
-          <Header as='h2' color="teal">Developers</Header>
+          <Header as='h2' style={style}>Developers</Header>
           <Card.Group itemsPerRow={4}>
             <Card
               href='https://alyssandra-cabading.github.io/'

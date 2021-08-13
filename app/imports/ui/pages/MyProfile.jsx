@@ -7,15 +7,13 @@ import { _ } from 'meteor/underscore';
 import { Profiles } from '../../api/profile/Profiles';
 import { Items } from '../../api/item/Items';
 import { Answers } from '../../api/answer/Answers';
-// import Profile from '../components/Profile';
 import MainProfile from '../components/MainProfile';
-// import MyProduct from '../components/MyProduct';
 import Products from '../components/Products';
 import Answer from '../components/Answers';
 import Review from '../components/Review';
 import { Reviews } from '../../api/review/Reviews';
 
-/** Renders a table containing all of the vendor documents. Use <MyVendorData> to render each row. */
+/** Renders a page containing the users personal profile card information. */
 class MyProfile extends React.Component {
   // If the subscription(s) have been received, render the page, otherwise show a loading icon.
   render() {

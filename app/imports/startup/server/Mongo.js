@@ -24,7 +24,7 @@ function addReviews(data) {
   console.log(`  Adding: Reviews (${data.owner})`);
   Reviews.collection.insert(data);
 }
-// Initialize the ItemsCollection, ProfilesCollection, and AnswersCollection if empty.
+// Initialize the ItemsCollection, ProfilesCollection, AnswersCollection, and ReviewsCollection if empty.
 if (Items.collection.find().count() === 0) {
   if (Meteor.settings.defaultItems) {
     console.log('Creating default items.');

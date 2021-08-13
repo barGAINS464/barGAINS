@@ -28,7 +28,7 @@ const formSchema = new SimpleSchema({
 
 const bridge = new SimpleSchema2Bridge(formSchema);
 
-/** Renders the Page for adding a document. */
+/** Renders the Page for posting and adding an item. */
 class AddItem extends React.Component {
 
   // On submit, insert the data.
@@ -50,27 +50,29 @@ class AddItem extends React.Component {
   render() {
     let fRef = null;
     return (
-      <Grid column container centered>
-        <Grid.Column>
-          <Header as="h2" textAlign="center" inverted> New Post </Header>
-          <Divider/>
-          <AutoForm ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => this.submit(data, fRef)} >
-            <Segment>
-              <TextField name='title'/>
-              <div className="inline fields">
-                <TextField name='image' placeholder={'Please paste your image address here...'}/>
-                <NumField name='cost' decimal={true}/>
-                <SelectField name='condition'/>
-                <SelectField name='category'/>
-                <TextField name='email'/>
-              </div>
-              <LongTextField name='description' placeholder={'Add a description about your item...'}/>
-              <SubmitField value='Submit'/>
-              <ErrorsField/>
-            </Segment>
-          </AutoForm>
-        </Grid.Column>
-      </Grid>
+      <div className='topRoom'>
+        <Grid column container centered>
+          <Grid.Column>
+            <Header as="h2" textAlign="center" inverted> New Post </Header>
+            <Divider/>
+            <AutoForm ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => this.submit(data, fRef)} >
+              <Segment>
+                <TextField name='title'/>
+                <div className="inline fields">
+                  <TextField name='image' placeholder={'Please paste your image address here...'}/>
+                  <NumField name='cost' decimal={true}/>
+                  <SelectField name='condition'/>
+                  <SelectField name='category'/>
+                  <TextField name='email'/>
+                </div>
+                <LongTextField name='description' placeholder={'Add a description about your item...'}/>
+                <SubmitField value='Submit'/>
+                <ErrorsField/>
+              </Segment>
+            </AutoForm>
+          </Grid.Column>
+        </Grid>
+      </div>
     );
   }
 }

@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import { Profiles } from '../../api/profile/Profiles';
 import ProfileCardsAdmin from '../components/ProfileCardsAdmin';
 
-/** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
+/** Renders a page containing all of the profile cards. */
 class ListProfileAdmin extends React.Component {
 
   // If the subscription(s) have been received, render the page, otherwise show a loading icon.

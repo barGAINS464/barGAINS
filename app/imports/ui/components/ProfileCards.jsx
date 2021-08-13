@@ -3,7 +3,7 @@ import { Button, Card, Divider, Header, Icon, Image, Label, List, Segment } from
 import PropTypes from 'prop-types';
 import { Link, withRouter } from 'react-router-dom';
 
-/** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
+/** Renders a user profile card. */
 class ProfileCards extends React.Component {
   render() {
     return (

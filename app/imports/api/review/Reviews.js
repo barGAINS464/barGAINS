@@ -2,6 +2,9 @@ import { Mongo } from 'meteor/mongo';
 import SimpleSchema from 'simpl-schema';
 import { Tracker } from 'meteor/tracker';
 
+/**
+ * The ReviewsCollection.
+ */
 class ReviewsCollection {
   constructor() {
     // The name of this collection.

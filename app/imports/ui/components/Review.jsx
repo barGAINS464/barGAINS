@@ -3,7 +3,7 @@ import { Feed, Icon, Rating } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 
-/** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
+/** Renders a review in the form of a feed. See pages/MyProfile.jsx. in the tab section for example */
 class Review extends React.Component {
   render() {
     return (

@@ -15,6 +15,7 @@ import Review from '../components/Review';
 
 const bridge = new SimpleSchema2Bridge(Reviews.schema);
 
+/** Renders the Profile Page of a user */
 class BargainsProfile extends React.Component {
 
   submit(data, formRef) {

@@ -3,7 +3,7 @@ import { Card, Divider, Icon, Image, List, Button } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { Link, withRouter } from 'react-router-dom';
 
-/** Renders a single row in the List Stuff (Admin) table. See pages/ListItemsAdmin.jsx. */
+/** Renders a single profile in the form of an (Admin) card. See pages/ListItemsAdmin.jsx. */
 class ProfileCardsAdmin extends React.Component {
   render() {
     return (

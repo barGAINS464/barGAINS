@@ -1,18 +1,18 @@
 .landingPage {
-  background: url('images/backgroundNEW.jpg') no-repeat center center fixed;
+  background-image: url("/app/public/images/landing.jpeg");
   background-size: cover;
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100vh;
-  margin: 0px;
+  margin: 0;
   padding: 30px 100px 30px 100px;
 }
 
 .footer {
   padding: 100px 30px 100px 30px;
-  background-color: #2C7E80;
-  margin: 0px;
+  background-color: #8DA9C4;
+  margin: 0;
 }
 
 .background {
@@ -50,7 +50,7 @@
 }
 
 .questionnaireMiddlePage {
-  background-image: url('../public/images/covid.jpeg');
+  background-image: url("/app/public/images/covid.png");
   background-size: cover;
   display: flex;
   align-items: center;
@@ -78,5 +78,7 @@
   color: white;
   background-color: teal;
 }
-
+.topRoom {
+  padding-top: 20px;
+}
 

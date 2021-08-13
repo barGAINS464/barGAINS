@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 import { Answers } from '../../api/answer/Answers';
 
-/** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
+/** Renders a single row in the questionnaire table. See pages/MyProfile.jsx for example */
 class Answer extends React.Component {
   removeItem(docID) {
     Answers.collection.remove(docID);
@@ -30,18 +30,6 @@ class Answer extends React.Component {
 // Require a document to be passed to this component.
 Answer.propTypes = {
   answers: PropTypes.object.isRequired,
-  // Products: PropTypes.object.isRequired,
 };
-// Products.propTypes = {
-//  product: PropTypes.shape({
-//    title: PropTypes.string,
-//    cost: PropTypes.number,
-//    email: PropTypes.string,
-//    // closingDate: PropTypes.string,
-//    condition: PropTypes.string,
-//    description: PropTypes.string,
-//  }).isRequired,
-//
-// };
-// Wrap this component in withRouter since we use the <Link> React Router element.
+
 export default withRouter(Answer);

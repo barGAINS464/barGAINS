@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import { Items } from '../../api/item/Items';
 import ProductShop from '../components/ProductShop';
 
-/** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
+/** Renders a page containing all of the computer products cards. */
 class Computers extends React.Component {
 
   // If the subscription(s) have been received, render the page, otherwise show a loading icon.
@@ -18,13 +18,15 @@ class Computers extends React.Component {
   renderPage() {
     const computers = this.props.items.filter(computer => computer.category === 'Computer');
     return (
-      <Container>
-        <Header as="h2" textAlign="center" inverted>Computers</Header>
-        <Divider/>
-        <Card.Group itemsPerRow={4}>
-          {computers.map((items, index) => <ProductShop key={index} product={items}/>)}
-        </Card.Group>
-      </Container>
+      <div className='topRoom'>
+        <Container>
+          <Header as="h2" textAlign="center" inverted>Computers</Header>
+          <Divider/>
+          <Card.Group itemsPerRow={4}>
+            {computers.map((items, index) => <ProductShop key={index} product={items}/>)}
+          </Card.Group>
+        </Container>
+      </div>
     );
   }
 }

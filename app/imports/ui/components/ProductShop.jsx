@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import { Link, withRouter } from 'react-router-dom';
 import { Roles } from 'meteor/alanning:roles';
 
-/** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
+/** Renders a single product item in the form of a card. See pages/ListItems.jsx. */
 
 class ProductShop extends React.Component {
   render() {

@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import { Items } from '../../api/item/Items';
 import ProductsAdmin from '../components/ProductsAdmin';
 
-/** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
+/** Renders a page containing all of the product cards (admin). */
 class ListItemsAdmin extends React.Component {
 
   // If the subscription(s) have been received, render the page, otherwise show a loading icon.

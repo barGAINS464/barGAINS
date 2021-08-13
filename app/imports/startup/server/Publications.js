@@ -9,8 +9,6 @@ import { Reviews } from '../../api/review/Reviews';
 // If logged in, then publish documents owned by this user. Otherwise publish nothing.
 Meteor.publish(Items.userPublicationName, function () {
   if (this.userId) {
-    // const username = Meteor.users.findOne(this.userId).username;
-    // return Items.collection.find({ owner: username }) && Items.collection.find({ });
     return Items.collection.find({ });
   }
   return this.ready();
@@ -18,8 +16,6 @@ Meteor.publish(Items.userPublicationName, function () {
 
 Meteor.publish(Profiles.userPublicationName, function () {
   if (this.userId) {
-    // const username = Meteor.users.findOne(this.userId).username;
-    // return Profiles.collection.find({ owner: username }) && Profiles.collection.find({ });
     return Profiles.collection.find({ });
   }
   return this.ready();
@@ -27,8 +23,6 @@ Meteor.publish(Profiles.userPublicationName, function () {
 
 Meteor.publish(Answers.userPublicationName, function () {
   if (this.userId) {
-    // const username = Meteor.users.findOne(this.userId).username;
-    // return Profiles.collection.find({ owner: username }) && Profiles.collection.find({ });
     return Answers.collection.find({ });
   }
   return this.ready();

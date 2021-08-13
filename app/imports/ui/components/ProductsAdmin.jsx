@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { Items } from '../../api/item/Items';
 
-/** Renders a single row in the List Stuff (Admin) table. See pages/ListItemsAdmin.jsx. */
+/** Renders a single Item in the form of an (Admin) card. See pages/ListItemsAdmin.jsx. */
 class ProductsAdmin extends React.Component {
   removeItem(docID) {
     Items.collection.remove(docID);

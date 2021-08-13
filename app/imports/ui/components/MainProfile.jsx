@@ -3,6 +3,7 @@ import { Button, Divider, Grid, Header, Icon, Image, List, Segment } from 'seman
 import PropTypes from 'prop-types';
 import { Link, withRouter } from 'react-router-dom';
 
+/** Renders a editable profile. See pages/MyProfile.jsx for example */
 class MainProfile extends React.Component {
 
   render() {
