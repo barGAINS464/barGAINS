@@ -1,6 +1,10 @@
 # Include your project-specific ignores in this file
 # Read about how to use .gitignore: https://help.github.com/articles/ignoring-files
 # Useful .gitignore templates: https://github.com/github/gitignore
+*.iml
+.idea
+.DS_Store
 node_modules
-dist
-.cache
+settings.production.json
+app/.deploy/mup.js
+app/.deploy/settings.json
