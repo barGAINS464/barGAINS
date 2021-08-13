@@ -6,8 +6,8 @@ import { Link, withRouter } from 'react-router-dom';
 import { Roles } from 'meteor/alanning:roles';
 
 /** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
-class ProductShop extends React.Component {
 
+class ProductShop extends React.Component {
   render() {
     return (
       <Card centered>
@@ -30,10 +30,6 @@ class ProductShop extends React.Component {
               <List.Item><b>Description:</b> &nbsp; {this.props.product.description}</List.Item>
             </List>
           </Card.Description>
-        </Card.Content>
-        <Card.Content extra>
-          <Button color='red' basic attached>
-            <Icon name='heart' />Add to Wish List</Button>
         </Card.Content>
         {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
           <Card.Content extra>

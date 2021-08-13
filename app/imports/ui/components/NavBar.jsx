@@ -24,9 +24,10 @@ class NavBar extends React.Component {
           <Header inverted as='h1'>barGAINS</Header>
         </Menu.Item>
         {this.props.currentUser ? (
-          [<Menu.Item as={NavLink} activeClassName="active" exact to="/add" key='add'>Post Item</Menu.Item>,
-            // eslint-disable-next-line react/jsx-key
-            <Menu.Item>
+          [<Menu.Item as={NavLink} activeClassName="active" exact to="/about" key='about'>About Us</Menu.Item>,
+            <Menu.Item as={NavLink} activeClassName="active" exact to="/questionnaire" key='questionnaire'>Fill Questionnaire</Menu.Item>,
+            <Menu.Item as={NavLink} activeClassName="active" exact to="/add" key='add'>Post Item</Menu.Item>,
+            <Menu.Item key='Shop'>
               <Dropdown text='Shop'>
                 <Dropdown.Menu>
                   <Dropdown.Item text='All Items' as={NavLink} exact to="/shop" key='shop'/>
@@ -35,9 +36,7 @@ class NavBar extends React.Component {
                   <Dropdown.Item text='Music' as={NavLink} exact to="/music" key='music'/>
                 </Dropdown.Menu>
               </Dropdown>
-            </Menu.Item>,
-            <Menu.Item as={NavLink} activeClassName="active" exact to="/about" key='about'>About Us</Menu.Item>,
-            <Menu.Item as={NavLink} activeClassName="active" exact to="/questionnaire" key='questionnaire'>Questionnaire</Menu.Item>]
+            </Menu.Item>]
         ) : ''}
         {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
           [<Menu.Item key='drop-down admin'>

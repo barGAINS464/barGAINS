@@ -25,6 +25,9 @@ class MainProfile extends React.Component {
                   <List.Icon name='phone' />
                   <List.Content>{this.props.info.phone}</List.Content>
                 </List.Item>
+                <List.Item>
+                  <List.Content><Header as='h4'>Questionnaire: {this.props.info.questionnaire}</Header></List.Content>
+                </List.Item>
               </List>
               <Divider/>
               <Button inverted compact color='blue' as={Link} to={`/editProfile/${this.props.info._id}`}><Icon name='pencil'/>Edit Profile</Button>

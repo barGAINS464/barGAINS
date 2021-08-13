@@ -43,7 +43,7 @@ class Questionnaire extends React.Component {
         if (error) {
           swal('Error', error.message, 'error');
         } else {
-          swal('Success', 'Item added successfully', 'success');
+          swal('Success', 'Questionnaire Completed!', 'success');
           formRef.reset();
         }
       });
@@ -52,6 +52,9 @@ class Questionnaire extends React.Component {
   // Render the form. Use Uniforms: https://github.com/vazco/uniforms
   render() {
     let fRef = null;
+    const salmon = {
+      color: 'lightsalmon',
+    };
     return (
       <div className='questionnaireForm'>
         <Grid column container centered>
@@ -117,6 +120,13 @@ class Questionnaire extends React.Component {
                 <ErrorsField/>
               </Segment>
             </AutoForm>
+            <Container textAlign='center' className='questionnaireForm'>
+              <Header as='h4' inverted><i> Questions gathered from
+                <a href='https://www.cdc.gov/screening/index.html' target='_blank' style={salmon}
+                  rel='noreferrer'> www.cdc.gov </a> and <a href='https://www.osha.gov/sites/default/files/publications/OSHA4132.pdf' target='_blank'
+                  style={salmon} rel='noreferrer'> www.osha.gov</a>.</i>
+              </Header>
+            </Container>
           </Grid.Column>
         </Grid>
       </div>

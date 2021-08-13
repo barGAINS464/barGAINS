@@ -5,6 +5,9 @@ import { Link } from 'react-router-dom';
 /** After the user clicks the "Signout" link in the NavBar, log them out and display this page. */
 export default class Signout extends React.Component {
   render() {
+    const salmon = {
+      color: 'lightsalmon',
+    };
     return (
       <div className='questionnaireMiddlePage'>
         <Container textAlign='center'>
@@ -15,6 +18,8 @@ export default class Signout extends React.Component {
           <Header as='h4' inverted>To help prevent the spread of COVID-19 and for the safety of you and the user you
               are contacting, please
               answer the following 4 questions truthfully and to the best of your knowledge.</Header>
+          <Header as='h5' inverted><i>Information from <a href='https://health.hawaii.gov/coronavirusdisease2019/' target='_blank' style={salmon}
+            rel='noreferrer'>www.health.hawaii.gov</a>.</i></Header>
           <Button as={Link} to='/questionnaireform'>Agree</Button>
           <Button as={Link} to='/shop'>Disagree</Button>
         </Container>

@@ -24,6 +24,9 @@ class ProfileCards extends React.Component {
                   <List.Icon name='phone' />
                   <List.Content>{this.props.pc.phone}</List.Content>
                 </List.Item>
+                <List.Item>
+                  <List.Content><Header as='h4'>Questionnaire: {this.props.pc.questionnaire}</Header></List.Content>
+                </List.Item>
               </List>
             </Card.Content>
             <Card.Content>

@@ -4,12 +4,11 @@ import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import { _ } from 'meteor/underscore';
 import {
-  Button,
   Card,
   Container,
   Divider,
   Grid,
-  Header, Icon,
+  Header,
   Image,
   Label,
   List,
@@ -51,10 +50,6 @@ class ProductPage extends React.Component {
                       <List.Item><b>Description:</b> &nbsp; {this.props.uItem.description}</List.Item>
                     </List>
                   </Card.Description>
-                </Card.Content>
-                <Card.Content>
-                  <Button color='red' basic attached>
-                    <Icon name='heart' />Add to Wish List</Button>
                 </Card.Content>
               </Card>
             </Segment>
