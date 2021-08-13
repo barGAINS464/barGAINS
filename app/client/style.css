@@ -1,5 +1,5 @@
 .landingPage {
-  background-image: url("/app/public/images/landing.jpeg");
+  background: url('../public/images/landing2.jpeg');
   background-size: cover;
   display: flex;
   align-items: center;
@@ -50,7 +50,7 @@
 }
 
 .questionnaireMiddlePage {
-  background-image: url("/app/public/images/covid.png");
+  background: url("/app/public/images/covid.png");
   background-size: cover;
   display: flex;
   align-items: center;
