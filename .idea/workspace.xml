@@ -4,7 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9fcb33f4-3437-4830-bdc4-4a1dbe6d1609" name="Default Changelist" comment="" />
+    <list default="true" id="9fcb33f4-3437-4830-bdc4-4a1dbe6d1609" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/imports/api/review/Reviews.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/api/review/Reviews.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/imports/startup/server/Mongo.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/startup/server/Mongo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/imports/startup/server/Publications.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/startup/server/Publications.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/imports/ui/components/AddReview.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/imports/ui/components/NavBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/components/NavBar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/imports/ui/components/Review.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/components/Review.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/imports/ui/layouts/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/layouts/App.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/imports/ui/pages/BargainsProfile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/pages/BargainsProfile.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/imports/ui/pages/MyProfile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/pages/MyProfile.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/settings.development.json" beforeDir="false" afterPath="$PROJECT_DIR$/config/settings.development.json" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -31,7 +43,7 @@
     <property name="js.meteor.library.cached" value="$PROJECT_DIR$/app/.meteor" />
     <property name="js.meteor.library.was.enabled" value="true" />
     <property name="js.meteor.project" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/imports/ui/pages" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/public/images" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -45,11 +57,15 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/public/images" />
       <recent name="$PROJECT_DIR$/app/imports/ui/pages" />
       <recent name="$PROJECT_DIR$/app/imports/ui/components" />
       <recent name="$PROJECT_DIR$/app/imports/api/like" />
       <recent name="$PROJECT_DIR$/app/imports/api/answer" />
       <recent name="$PROJECT_DIR$/app/imports/api/Items" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/imports/ui/components" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />

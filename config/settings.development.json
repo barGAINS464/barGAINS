@@ -90,6 +90,23 @@
     { "question1": "No", "question2": "No", "question3": "No", "question4": "No", "owner": "glarita@hawaii.edu"}
   ],
 
+  "defaultReviews": [
+    {"commenter": "john@foo.com",
+      "purchased": "RTX 2080",
+      "rating": 4,
+      "createdAt": "2021-08-10",
+      "comment": "Very awesome item! Great Quality, Obi is a great seller!",
+      "owner": "obijuan@gmail.com"
+    },
+    {"commenter": "admin@foo.com",
+      "purchased": "BOYGENIUS VINYL LP",
+      "rating": 5,
+      "createdAt": "2021-08-10",
+      "comment": "Very awesome VINYL! I love this band so much! Thank you Sue!",
+      "owner": "sueflay@hawaii.edu"
+    }
+  ],
+
   "defaultData": [
     { "name": "Basket", "quantity": 3, "owner": "john@foo.com", "condition": "excellent" },
     { "name": "Bicycle", "quantity": 2, "owner": "john@foo.com", "condition": "poor" },

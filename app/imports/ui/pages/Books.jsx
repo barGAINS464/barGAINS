@@ -1,6 +1,6 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
-import { Container, Header, Loader, Card } from 'semantic-ui-react';
+import { Container, Header, Loader, Card, Divider } from 'semantic-ui-react';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import { Items } from '../../api/item/Items';
@@ -20,6 +20,7 @@ class Books extends React.Component {
     return (
       <Container>
         <Header as="h2" textAlign="center" inverted>Books</Header>
+        <Divider/>
         <Card.Group itemsPerRow={4}>
           {books.map((items, index) => <ProductShop key={index} product={items}/>)}
         </Card.Group>

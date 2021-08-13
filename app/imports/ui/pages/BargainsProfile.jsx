@@ -3,27 +3,67 @@ import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import { _ } from 'meteor/underscore';
-import { Container, Header, Loader, Card, Grid, Image, Segment, Divider, List, Tab } from 'semantic-ui-react';
+import { Container, Header, Loader, Card, Grid, Image, Segment, Divider, List, Tab, Feed } from 'semantic-ui-react';
+import { AutoForm, HiddenField, LongTextField, NumField, SubmitField, TextField } from 'uniforms-semantic';
+import swal from 'sweetalert';
+import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
 import { Profiles } from '../../api/profile/Profiles';
 import { Items } from '../../api/item/Items';
 import ProductShop from '../components/ProductShop';
+import { Reviews } from '../../api/review/Reviews';
+import Review from '../components/Review';
+
+const bridge = new SimpleSchema2Bridge(Reviews.schema);
 
 class BargainsProfile extends React.Component {
+
+  submit(data, formRef) {
+    const { purchased, rating, createdAt, comment } = data;
+    const commenter = Meteor.user().username;
+    const reviewOwner = this.props.bProfile.email;
+
+    Reviews.collection.insert({ commenter, purchased, rating, createdAt, comment, owner: reviewOwner },
+      (error) => (error ?
+        swal('Error', error.message, 'error') :
+        swal('Success', 'Review posted successfully', 'success')));
+    formRef.reset();
+  }
 
   render() {
     return (this.props.ready) ? this.renderPage() : <Loader active>Getting data</Loader>;
   }
 
   renderPage() {
+    let fRef = null;
+    const commenter = Meteor.users.findOne({ _id: Meteor.userId() }).username;
+    const reviewOwner = this.props.bProfile.email;
+
     const panes = [
-      {
-        menuItem: 'Products', render: () => <Tab.Pane>
-          <Card.Group itemsPerRow={2}>
-            {this.props.products.map((product, index) => <ProductShop key={index} product={product} Products={Items}/>)}
-          </Card.Group>
-        </Tab.Pane>,
-      },
-      { menuItem: 'Reviews', render: () => <Tab.Pane>Reviews will go here.</Tab.Pane> },
+      { menuItem: 'Products', render: () => <Tab.Pane>
+        <Card.Group itemsPerRow={2}>
+          {this.props.products.map((product, index) => <ProductShop key={index} product={product} Products={Items}/>)}
+        </Card.Group>
+      </Tab.Pane> },
+      { menuItem: 'Reviews', render: () => <Tab.Pane>
+        <AutoForm id='review-form' ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => this.submit(data, fRef)}>
+          <Segment attached>
+            <Header icon='user' as='h4'>Seller Reviews</Header>
+            <Divider/>
+            <Feed>
+              {this.props.reviews.map((review, index) => <Review key={index} review={review} Reviews={Reviews}/>)}
+            </Feed>
+          </Segment>
+          <Segment>
+            <NumField name='rating' max={5} min={0}/>
+            <TextField name='purchased'/>
+            <LongTextField name='comment'/>
+            <HiddenField name='commenter' value={commenter}/>
+            <HiddenField name='owner' value={reviewOwner}/>
+            <HiddenField name='createdAt' value={new Date()}/>
+            <SubmitField id='userReview-submit' value='Submit' />
+          </Segment>
+        </AutoForm>
+      </Tab.Pane> },
     ];
 
     return (
@@ -71,6 +111,7 @@ BargainsProfile.propTypes = {
   answers: PropTypes.array.isRequired,
   model: PropTypes.object,
   products: PropTypes.array.isRequired,
+  reviews: PropTypes.array.isRequired,
   ready: PropTypes.bool.isRequired,
 };
 
@@ -83,10 +124,18 @@ export default withTracker(({ match }) => {
   const ready2 = subscription2.ready();
   const username = _.first(_.pluck(Profiles.collection.find(docId).fetch(), 'owner'));
   const products = Items.collection.find({ owner: username }).fetch();
+  const subscription3 = Meteor.subscribe(Reviews.userPublicationName);
+  const ready3 = subscription3.ready();
+  const reviews = Reviews.collection.find({ owner: username }).fetch();
+  // const subscription3 = Meteor.subscribe(Items.userPublicationName);
+  // const ready3 = subscription2.ready();
+
   return {
     bProfile,
     products,
+    reviews,
     ready,
     ready2,
+    ready3,
   };
 })(BargainsProfile);

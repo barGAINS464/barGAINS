@@ -1,6 +1,6 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
-import { Divider, Header, Loader, Card, Container, Segment, Tab, Table } from 'semantic-ui-react';
+import { Divider, Header, Loader, Card, Container, Segment, Tab, Table, Feed } from 'semantic-ui-react';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import { _ } from 'meteor/underscore';
@@ -12,6 +12,8 @@ import MainProfile from '../components/MainProfile';
 // import MyProduct from '../components/MyProduct';
 import Products from '../components/Products';
 import Answer from '../components/Answers';
+import Review from '../components/Review';
+import { Reviews } from '../../api/review/Reviews';
 
 /** Renders a table containing all of the vendor documents. Use <MyVendorData> to render each row. */
 class MyProfile extends React.Component {
@@ -22,7 +24,7 @@ class MyProfile extends React.Component {
 
   // Render the page once subscriptions have been received.
   renderPage() {
-    const username = Meteor.users.findOne({ _id: Meteor.userId() }).username;
+    const username = Meteor.user().username;
 
     const prof1 = _.filter(this.props.profiles, function (profs) {
       if (username === profs.owner) {
@@ -44,13 +46,28 @@ class MyProfile extends React.Component {
       return 0;
     });
 
+    const rev1 = _.filter(this.props.reviews, function (review) {
+      if (username === review.owner) {
+        return review;
+      }
+      return 0;
+    });
+
     const panes = [
       { menuItem: 'My Products', render: () => <Tab.Pane>
         <Card.Group itemsPerRow={2}>
           {prod1.map((product, index) => <Products key={index} product={product} Products={Products}/>)}
         </Card.Group>
       </Tab.Pane> },
-      { menuItem: 'Reviews', render: () => <Tab.Pane>Reviews will go here.</Tab.Pane> },
+      { menuItem: 'Reviews', render: () => <Tab.Pane>
+        <Segment attached>
+          <Header icon='user' as='h4'>Seller Reviews</Header>
+          <Divider/>
+          <Feed>
+            {rev1.map((review, index) => <Review key={index} review={review} Reviews={Reviews}/>)}
+          </Feed>
+        </Segment>
+      </Tab.Pane> },
       { menuItem: 'Questionnaire', render: () => <Tab.Pane>
         <Table celled selectable>
           <Table.Header>
@@ -90,6 +107,7 @@ MyProfile.propTypes = {
   ready: PropTypes.bool.isRequired,
   items: PropTypes.array.isRequired,
   answers: PropTypes.array.isRequired,
+  reviews: PropTypes.array.isRequired,
 };
 
 // withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker
@@ -99,19 +117,24 @@ export default withTracker(() => {
   const subscription = Meteor.subscribe(Profiles.userPublicationName);
   const subscription2 = Meteor.subscribe(Items.userPublicationName);
   const subscription3 = Meteor.subscribe(Answers.userPublicationName);
+  const subscription4 = Meteor.subscribe(Reviews.userPublicationName);
   const ready = subscription.ready();
   const ready2 = subscription2.ready();
   const ready3 = subscription3.ready();
+  const ready4 = subscription4.ready();
   // Get the Vendor documents
   const profiles = Profiles.collection.find({}).fetch();
   const items = Items.collection.find({}).fetch();
   const answers = Answers.collection.find({}).fetch();
+  const reviews = Reviews.collection.find({}).fetch();
   return {
     profiles,
     items,
     answers,
+    reviews,
     ready,
     ready2,
     ready3,
+    ready4,
   };
 })(MyProfile);

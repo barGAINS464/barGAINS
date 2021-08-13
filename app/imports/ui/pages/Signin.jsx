@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link, Redirect } from 'react-router-dom';
 import { Meteor } from 'meteor/meteor';
-import { Container, Form, Grid, Header, Message, Segment } from 'semantic-ui-react';
+import { Container, Divider, Form, Grid, Header, Message, Segment } from 'semantic-ui-react';
 
 /**
  * Signin page overrides the form’s submit event and call Meteor’s loginWithPassword().
@@ -45,9 +45,16 @@ export default class Signin extends React.Component {
       <Container id="signin-page">
         <Grid textAlign="center" verticalAlign="middle" centered columns={2}>
           <Grid.Column>
-            <Header as="h2" textAlign="center">
-              Login to your account
+            <Header as="h2" textAlign="center" inverted>
+              Login to your barGAINS account
             </Header>
+            <Divider/>
+            <Message
+              icon='user circle outline'
+              attached
+              header='Welcome back to the barGAINS site!'
+              content='Login to continue your bartering journey.'
+            />
             <Form onSubmit={this.submit}>
               <Segment stacked>
                 <Form.Input

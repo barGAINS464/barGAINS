@@ -60,6 +60,12 @@ class BargainsSignup extends React.Component {
                 Register your barGAINS account
             </Header>
             <Divider/>
+            <Message
+              icon='user circle outline'
+              attached
+              header='Welcome to the barGAINS site!'
+              content='Create a new account in a few, easy steps.'
+            />
             <Form onSubmit={this.submit}>
               <Segment stacked>
                 <Segment>
