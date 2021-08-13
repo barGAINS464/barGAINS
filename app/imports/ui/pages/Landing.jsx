@@ -13,8 +13,10 @@ class Landing extends React.Component {
       <div className='landingPage' id='landing-page'>
         <Container textAlign='center'>
           <Grid verticalAlign='middle' textAlign='center' container>
-            <Grid.Column width={9}>
+            <Grid.Column width={8}>
               <Image size='medium' src="/images/bargains.png" centered/>
+            </Grid.Column>
+            <Grid.Column width={9}>
               <Header as='h1' inverted >Welcome to barGAINS</Header>
               <Header as='h3' inverted >Where you can buy, sell, and exchange technology, books, and music!</Header>
               <Header as='h2' inverted >No pay, no Gains!</Header>
