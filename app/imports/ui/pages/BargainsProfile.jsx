@@ -73,13 +73,13 @@ class BargainsProfile extends React.Component {
           <Divider/>
           <Grid columns={2} divided>
             <Grid.Column>
+              <Image size='medium rounded image' src={this.props.bProfile.profilePic} wrapped ui={true} centered/>
             </Grid.Column>
             <Grid.Column>
               <Segment>
                 <Header as='h1'
                   textAlign='center'>{this.props.bProfile.firstName} {this.props.bProfile.lastName}</Header>
                 <Divider/>
-                <Image size='medium rounded image' src={this.props.bProfile.profilePic} wrapped ui={true} centered/>
                 <List centered>
                   <List.Item>
                     <List.Icon name='mail'/>
