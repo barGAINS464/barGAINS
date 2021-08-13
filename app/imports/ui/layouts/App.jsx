@@ -27,7 +27,7 @@ import Computers from '../pages/Computers';
 import Music from '../pages/Music';
 import About from '../pages/About';
 import ProductPage from '../pages/ProductPage';
-import UserReview from '../pages/UserReview';
+import AddReview from '../components/AddReview';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
@@ -57,7 +57,7 @@ class App extends React.Component {
             <ProtectedRoute path="/myprofile" component={MyProfile}/>
             <ProtectedRoute path="/bprofile/:_id" component={BargainsProfile}/>
             <ProtectedRoute path="/productpage/:_id" component={ProductPage}/>
-            <ProtectedRoute path="/userReview/" component={UserReview}/>
+            <ProtectedRoute path="/addReview/" component={AddReview}/>
             <Route component={NotFound}/>
           </Switch>
           <Footer/>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Feed, Header, Segment } from 'semantic-ui-react';
+import { Feed, Rating } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 
@@ -7,26 +7,22 @@ import { withRouter } from 'react-router-dom';
 class Review extends React.Component {
   render() {
     return (
-      <Segment>
+      <Feed.Event>
         <Feed.Content>
-          <Feed.Date content={this.props.review.createdAt.toLocaleDateString('en-US')} />
-          <Feed.Summary>
-            <Header as='h5'>{this.props.review.userName}</Header>
-            {this.props.review.userReview}
-          </Feed.Summary>
+          <Feed.User>{this.review.userName}</Feed.User>
+          <Rating defaultRating={this.review.rating()} maxRating={5} disabled />
+          <Feed.Date content={this.review.createdAt.toLocaleDateString('en-US')} />
+          <Feed.Summary content={this.review.purchased} />
+          <Feed.Extra text content={this.review.comment} />
         </Feed.Content>
-      </Segment>
+      </Feed.Event>
     );
   }
 }
 
 // Require a document to be passed to this component.
 Review.propTypes = {
-  review: PropTypes.shape({
-    userName: PropTypes.string,
-    userReview: PropTypes.string,
-    createdAt: PropTypes.string,
-  }).isRequired,
+  review: PropTypes.object.isRequired,
 };
 
 // Wrap this component in withRouter since we use the <Link> React Router element.

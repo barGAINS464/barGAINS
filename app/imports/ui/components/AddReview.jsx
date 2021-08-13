@@ -1,6 +1,6 @@
 import React from 'react';
 import { Segment } from 'semantic-ui-react';
-import { AutoForm, ErrorsField, HiddenField, SubmitField, LongTextField } from 'uniforms-semantic';
+import { AutoForm, HiddenField, SubmitField, LongTextField, NumField, TextField } from 'uniforms-semantic';
 import swal from 'sweetalert';
 import { Meteor } from 'meteor/meteor';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
@@ -12,37 +12,37 @@ const bridge = new SimpleSchema2Bridge(Reviews.schema);
 class AddReview extends React.Component {
 
   submit(data, formRef) {
-    const { bargainSeller, rating, reviewImage, remarks, createdAt } = data;
+    const { rating, reviewImage, comment, createdAt } = data;
     const userName = Meteor.user().username;
-    Reviews.collection.insert({ bargainSeller, userName, rating, reviewImage, remarks, createdAt },
+
+    Reviews.collection.insert({ userName, rating, reviewImage, comment, createdAt },
       (error) => {
         if (error) {
           swal('Error', error.message, 'error');
         } else {
-          swal('Success', 'Reviews added successfully', 'success');
+          swal('Success', 'Your review was posted!', 'success');
           formRef.reset();
         }
       });
   }
 
   render() {
-    // let fRef = null;
-    // const userName = Meteor.user().username;
-    // ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => this.submit(data, fRef)}
+    let fRef = null;
+    const userName = Meteor.user().username;
 
     return (
-      <AutoForm id='review-page' >
+      <AutoForm id='review-form' ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => this.submit(data, fRef)} >
         <Segment>
-          <LongTextField id='review-page-userReview' label="Add a review!" name='userReview'/>
-          <SubmitField id='review-page-userReview-submit' value='Submit'/>
-          <ErrorsField/>
-          <HiddenField name='userName' />
+          <HiddenField name='userName' value={userName}/>
+          <NumField name='rating'/>
+          <LongTextField name='comment'/>
+          <TextField name='reviewImage'/>
           <HiddenField name='createdAt' value={new Date()}/>
+          <SubmitField id='userReview-submit' value='Submit'/>
         </Segment>
       </AutoForm>
     );
   }
 }
 
-// Wrap this component in withRouter since we use the <Link> React Router element.
 export default AddReview;

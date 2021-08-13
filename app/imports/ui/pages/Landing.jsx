@@ -20,7 +20,7 @@ class Landing extends React.Component {
               <Header as='h3' inverted>Where you can buy, sell, and exchange technology, books, and music!</Header>
               <Header as='h2' inverted>No pay, no Gains!</Header>
               <Container textAlign='center'>
-                <Button size="medium" as={Link} to='/Signup'>
+                <Button size="large" as={Link} to='/Signup' color='teal'>
                   Get Started
                 </Button>
               </Container>

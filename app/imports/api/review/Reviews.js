@@ -10,12 +10,12 @@ class ReviewsCollection {
     this.collection = new Mongo.Collection(this.name);
     // Define the structure of each document in the collection.
     this.schema = new SimpleSchema({
-      bargainSeller: String,
       userName: String,
-      rating: String,
-      reviewImage: String,
-      remarks: String,
+      purchased: String,
+      rating: Number,
+      comment: String,
       createdAt: Date,
+      owner: String,
     }, { tracker: Tracker });
     // Attach the schema to the collection, so all attempts to insert a document are checked against schema.
     this.collection.attachSchema(this.schema);
@@ -27,6 +27,6 @@ class ReviewsCollection {
 
 /**
  * The singleton instance of the ItemsCollection.
- * @type {ItemsCollection}
+ * @type {ReviewsCollection}
  */
 export const Reviews = new ReviewsCollection();
