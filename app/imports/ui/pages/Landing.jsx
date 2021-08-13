@@ -14,7 +14,7 @@ class Landing extends React.Component {
         <Container textAlign='center'>
           <Grid verticalAlign='middle' textAlign='center' container>
             <Grid.Column width={9}>
-              <Image size='large' src="/images/bargains.png" centered/>
+              <Image size='medium' src="/images/bargains.png" centered/>
               <Header as='h1' inverted >Welcome to barGAINS</Header>
               <Header as='h3' inverted >Where you can buy, sell, and exchange technology, books, and music!</Header>
               <Header as='h2' inverted >No pay, no Gains!</Header>
