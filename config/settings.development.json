@@ -3,7 +3,8 @@
     { "email": "admin@foo.com", "password": "changeme", "role": "admin" },
     { "email": "john@foo.com", "password": "changeme" },
     { "email": "sueflay@hawaii.edu", "password": "changeme" },
-    { "email": "obijuan@gmail.com", "password": "changeme" }
+    { "email": "obijuan@gmail.com", "password": "changeme" },
+    { "email": "glarita@hawaii.edu", "password": "changeme" }
   ],
 
   "defaultProfiles": [
@@ -38,6 +39,14 @@
       "phone": "(808) 123-4567",
       "questionnaire": "Incomplete",
       "owner": "obijuan@gmail.com"
+    },
+    { "email": "glarita@hawaii.edu",
+      "firstName": "Glen",
+      "lastName": "Larita",
+      "profilePic": "https://pbs.twimg.com/profile_images/1370670925285269513/DyOlBKxa_400x400.jpg",
+      "phone": "(808) 422-2222",
+      "questionnaire": "Completed",
+      "owner": "glarita@hawaii.edu"
     }
   ],
 
